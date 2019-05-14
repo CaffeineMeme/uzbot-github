@@ -184,11 +184,12 @@ client.on("message", message => {
 			});
 		}else if(args[1] === "ar" || args[1] === "arab" || args[1] === "arabic")
 				{
-				for(i2 = 0; i < arab.length;)
+				for(i2 = 0; i <= arab.length;)
 				{
 					words.push(arab[i2]);
 					i2++;
-				}	
+				}
+			if(i2 === arab.length){
 				console.log("arabic had been added to the string bro");
 				for (i = 0; i < titleLength;){
 			 	titleInt = Math.floor(Math.random() * (max - min + 1)) + min;
@@ -201,8 +202,9 @@ client.on("message", message => {
 				completeTitle = title.join(" ");
 				message.channel.send(completeTitle);
 				console.log(completeTitle);
+			}
 			
-	}
+		}
 	}
 		if(command === 'help')
 		{
