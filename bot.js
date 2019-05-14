@@ -198,7 +198,7 @@ client.on("message", message => {
 				completeTitle = title.join(" ");
 				message.channel.send(completeTitle);
 				console.log(completeTitle);
-				for(i2 = words.length - arab.length; i2 > 0)
+				for(i2 = (words.length - arab.length); i2 > 0;)
 				{
 					words.pop();
 				}
