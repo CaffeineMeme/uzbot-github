@@ -149,8 +149,6 @@ client.on("message", message => {
 		completeTitle = "";
 		titleInt = 0;
 		let titleLength = args[0];
-		var min = 0;
-		var max = words.length - 1;
 		var lang = 0;
 		i = 0;
 		i2 = 0;
@@ -186,7 +184,8 @@ client.on("message", message => {
 				{
 				console.log(words.length);
 				words = words.concat(arab);
-				words = words.concat(arab);
+				var min = 0;
+				var max = words.length - 1;
 				console.log("arabic had been added to the string bro");
 				for (i = 0; i < titleLength;){
 			 	titleInt = Math.floor(Math.random() * (max - min + 1)) + min;
@@ -200,7 +199,7 @@ client.on("message", message => {
 				console.log(words.length);
 				message.channel.send(completeTitle);
 				console.log(completeTitle);
-				for(i2 = (arab.length * 2); i2 > 0;)
+				for(i2 = (arab.length); i2 > 0;)
 				{
 					words.pop();
 					i2--;
