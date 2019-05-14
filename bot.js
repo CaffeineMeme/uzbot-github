@@ -177,7 +177,7 @@ client.on("message", message => {
 			}
 				langbool = true;
 			});
-			if(langbool = true)
+			if(langbool == true)
 			{
 				let args = message.content.split(' ');
 				
