@@ -180,8 +180,6 @@ client.on("message", message => {
 				words.push(arab[arab.length - 1]);	
 				console.log("arabic had been added to the string bro");
 				}
-			else if(args[1] != undefined)
-				{
 				for (i = 0; i < titleLength;){
 			 	titleInt = Math.floor(Math.random() * (max - min + 1)) + min;
 			 	title.push(words[titleInt]);
@@ -193,7 +191,6 @@ client.on("message", message => {
 				completeTitle = title.join(" ");
 				message.channel.send(completeTitle);
 				console.log(completeTitle);
-			}
 			
 	}
 		if(command === 'help')
