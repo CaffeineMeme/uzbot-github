@@ -177,7 +177,7 @@ client.on("message", message => {
 			});
 		}else if(args[1] === "ar" || args[1] === "arab" || args[1] === "arabic")
 				{
-				words.push(arab[arab.length - 1]);	
+				words.push(arab);	
 				console.log("arabic had been added to the string bro");
 				}
 				for (i = 0; i < titleLength;){
