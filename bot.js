@@ -165,7 +165,7 @@ client.on("message", message => {
 						{
 						name: "Available Options",
 						value: "Arab (arab, arabic, ar)" + "\n" + "Russian/Slavic (rus, russian, slav)" + "\n" + "Africa(af, africa, african)" + "\n" + "Asia (as, asia, asian)" + 
-						"\n" + "Spanish (es, spanish)" + "\n" + "Euro/European (eu, euro, european)"+ "\n" + "Turkish (tk, turk, turkish" + "\n" + "More coming soon maybe idk"
+						"\n" + "Spanish (es, spanish)" + "\n" + "Euro/European (eu, euro, european)"+ "\n" + "Turkish (tk, turk, turkish)" + "\n" + "More coming soon maybe idk"
 						},
 					],
 						footer: 
@@ -175,18 +175,24 @@ client.on("message", message => {
 						}
 			}	
 			});
-			
-			for (i = 0; i < titleLength;){
-			 titleInt = Math.floor(Math.random() * (max - min + 1)) + min;
-			 title.push(words[titleInt]);
-			 console.log("There's only " + (titleLength - (i + 1)) + " words left");
-			 console.log(title.length);
-			 console.log(title);
-			 i++;
+			if(args[0, 1, 2, 3 , 4, 5, 6] == "ar" || args[0, 1, 2, 3 , 4, 5, 6] == "arab" || args[0, 1, 2, 3 , 4, 5, 6] == "arabic")
+			{
+				words.push(arab[arab.length]);	
 			}
-			completeTitle = title.join(" ");
-			message.channel.send(completeTitle);
-			console.log(completeTitle);
+			if(args[0, 1, 2, 3 , 4, 5, 6] != undefined)
+			{
+				for (i = 0; i < titleLength;){
+			 	titleInt = Math.floor(Math.random() * (max - min + 1)) + min;
+			 	title.push(words[titleInt]);
+			 	console.log("There's only " + (titleLength - (i + 1)) + " words left");
+			 	console.log(title.length);
+			 	console.log(title);
+			 	i++;
+				}
+				completeTitle = title.join(" ");
+				message.channel.send(completeTitle);
+				console.log(completeTitle);
+			}
 		}
 	}
 		if(command === 'help')
