@@ -184,6 +184,7 @@ client.on("message", message => {
 			});
 		}else if(args[1] === "ar" || args[1] === "arab" || args[1] === "arabic")
 				{
+				console.log(words.length);
 				words = words.concat(arab);
 				console.log("arabic had been added to the string bro");
 				for (i = 0; i < titleLength;){
@@ -197,6 +198,7 @@ client.on("message", message => {
 				completeTitle = title.join(" ");
 				message.channel.send(completeTitle);
 				console.log(completeTitle);
+				console.log(words.length);
 			}
 			
 	}
