@@ -175,11 +175,11 @@ client.on("message", message => {
 						}
 			}	
 			});
-			if(args[0, 1, 2, 3 , 4, 5, 6] == "ar" || args[0, 1, 2, 3 , 4, 5, 6] == "arab" || args[0, 1, 2, 3 , 4, 5, 6] == "arabic")
+			if(langargs[0, 1, 2, 3 , 4, 5, 6] == "ar" || args[0, 1, 2, 3 , 4, 5, 6] == "arab" || args[0, 1, 2, 3 , 4, 5, 6] == "arabic")
 			{
 				words.push(arab[arab.length]);	
 			}
-			if(args[0, 1, 2, 3 , 4, 5, 6] != undefined)
+			if(langargs[0, 1, 2, 3 , 4, 5, 6] != undefined)
 			{
 				for (i = 0; i < titleLength;){
 			 	titleInt = Math.floor(Math.random() * (max - min + 1)) + min;
