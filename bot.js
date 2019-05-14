@@ -196,13 +196,13 @@ client.on("message", message => {
 			 	i++;
 				}
 				completeTitle = title.join(" ");
-				message.channel.send(completeTitle);
 				console.log(completeTitle);
 				for(i2 = (words.length - arab.length); i2 > 0;)
 				{
 					words.pop();
 				}
 				console.log(words.length);
+				message.channel.send(completeTitle);
 			}
 			
 	}
