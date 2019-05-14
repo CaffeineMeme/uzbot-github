@@ -56,7 +56,12 @@ var arab = ["رمضان","هندوستان", "أوباما", "باكستان", "
  "الأمير السعودي", "القطري", "Afghan", "iran turtle", "the great punjabi comedy show", "Isrealis", "palestine", "Kurdistan", "Somaliland", "bangla", "delhi", "UAE", "sudan",
 "hindustan", "iraq", "farsi", "amazon.co.in",  "ramadan", "hamood", "india", "arab", "Masameer", "Bangladesh", "Azerbaijan", "hindi",  "hindu",  "Turkmenistan", "Yemen", 
 "Vimto", "allah", "kaaba", "block 13",  "arabia", "bangla", "delhi", "UAE",  "morocco",  "pakistan", "tajikistan",  "zionist", "punjabi", "saudi", "kuwaiti",  "tajikistan", "urdu",
-"tajik", "مزاحیہ", "پاکستان", "بھارت شیطانی"]; 
+"tajik", "مزاحیہ", "پاکستان", "بھارت شیطانی", "مدرس صالح", "الحمام", "انفجار", "twin tower", "saudi", "chant", "medicine", "stoning", "live ISIS stream", "yemen GDP",
+	   "big iran moustache", "mudenseti", "nane", "zibade", "bruh turtle", "war song", "sad arabian", "arabian nights", "hookah", "ak47", "against islam",
+	   "বিষ্ঠা", "baba", "alisha", "underage marriage", "marriage", "prearranged marriage", "beating", "sharia", "dark skin", "sun", "bahrian", "consent", 
+	   "bangla", "palestinians", "lizard man israeli", "pray to allah", "hamood habibi", "nigga poop", "uzbekistan", "kyrgyz", "fake israel",
+	   "fasting", "ramadan fast", "ramadan ape", "iran missile", "oil saudi", "$1 trillion saudi invest", "karim yakarim", "كريم وكريم",
+	   "epic rap battles of allah", "stani", "arab squat toilet"]; 
 var rus = [];
 var africa = [];
 var esp = [];
