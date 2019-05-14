@@ -180,17 +180,13 @@ client.on("message", message => {
 			if(langbool = true)
 			{
 				let args = message.content.split(' ');
-			}
-			else
-			{
-				let args = message.content.slice(process.env.PREFIX.length).trim().split(/ +/g);
-			}
-			if(langargs[0, 1, 2, 3 , 4, 5, 6] == "ar" || args[0, 1, 2, 3 , 4, 5, 6] == "arab" || args[0, 1, 2, 3 , 4, 5, 6] == "arabic")
-			{
+				
+				if(args[0, 1, 2, 3 , 4, 5, 6] == "ar" || args[0, 1, 2, 3 , 4, 5, 6] == "arab" || args[0, 1, 2, 3 , 4, 5, 6] == "arabic")
+				{
 				words.push(arab[arab.length]);	
-			}
-			if(langargs[0, 1, 2, 3 , 4, 5, 6] != undefined)
-			{
+				}
+			if(args[0, 1, 2, 3 , 4, 5, 6] != undefined)
+				{
 				for (i = 0; i < titleLength;){
 			 	titleInt = Math.floor(Math.random() * (max - min + 1)) + min;
 			 	title.push(words[titleInt]);
@@ -203,6 +199,12 @@ client.on("message", message => {
 				message.channel.send(completeTitle);
 				console.log(completeTitle);
 			}
+			}
+			else
+			{
+				let args = message.content.slice(process.env.PREFIX.length).trim().split(/ +/g);
+			}
+			
 		}
 	}
 		if(command === 'help')
