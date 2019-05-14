@@ -111,7 +111,7 @@ var troll = ["https://cdn.discordapp.com/attachments/557265635114090525/57727494
 "https://image.shutterstock.com/image-illustration/laughing-internet-troll-head-3d-450w-528857095.jpg", "https://files.gamebanana.com/img/ico/sprays/5391d4e8edb05.gif", "https://pics.me.me/troll-face-14350384.png"];
 var trollInt;
 
-var langbool = false;
+var langbool = 0;
 
 client.on("ready", () => {
   console.log("tajikistan nigga fart");
@@ -175,9 +175,9 @@ client.on("message", message => {
 							text: "Fun Fact: Allah doesn't like you if you eat during fasting"
 						}
 			}
-				langbool = true;
+				langbool = 1;
 			});
-			if(langbool == true)
+			if(langbool == 1)
 			{
 				let args = message.content.split(' ');
 				
