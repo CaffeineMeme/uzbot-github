@@ -184,7 +184,7 @@ client.on("message", message => {
 			});
 		}else if(args[1] === "ar" || args[1] === "arab" || args[1] === "arabic")
 				{
-				words.concat(arab);
+				words = words.concat(arab);
 				console.log("arabic had been added to the string bro");
 				for (i = 0; i < titleLength;){
 			 	titleInt = Math.floor(Math.random() * (max - min + 1)) + min;
