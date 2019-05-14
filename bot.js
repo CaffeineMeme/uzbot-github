@@ -55,7 +55,7 @@ var arab = ["رمضان","هندوستان", "أوباما", "باكستان", "
  "برتقالى مزعج", "صهيوني", "البنجابية", "فلسطين حرة", "كوميديا", "مفعم بالحيوية", "كارتون كويتي", "هجاء", "سخرية", "البنجابية", "ايفون", "2000 ريال", "تأخير", "حرب", "ضرطة", 
  "الأمير السعودي", "القطري", "Afghan", "iran turtle", "the great punjabi comedy show", "Isrealis", "palestine", "Kurdistan", "Somaliland", "bangla", "delhi", "UAE", "sudan",
 "hindustan", "iraq", "farsi", "amazon.co.in",  "ramadan", "hamood", "india", "arab", "Masameer", "Bangladesh", "Azerbaijan", "hindi",  "hindu",  "Turkmenistan", "Yemen", 
-"Vimto", "allah", "kaaba", "block 13",  "arabia", "bangla", "delhi", "UAE",  "morocco",  "pakistan", "tajikistan",  "zionist", "punjabi", "saudi", "kuwaiti",  "tajikistan", "urdu"
+"Vimto", "allah", "kaaba", "block 13",  "arabia", "bangla", "delhi", "UAE",  "morocco",  "pakistan", "tajikistan",  "zionist", "punjabi", "saudi", "kuwaiti",  "tajikistan", "urdu",
 "tajik", "مزاحیہ", "پاکستان", "بھارت شیطانی"]; 
 var rus = [];
 var africa = [];
