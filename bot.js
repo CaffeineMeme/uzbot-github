@@ -71,6 +71,7 @@ var title = [];
 var completeTitle;
 var titleInt;
 var i = 0;
+var i2 = 0;
 var responses = ["Yes", "No", "Maybe", "Ask Allah Later", "Ask Muhammed Instead", "Go Away", "Probably", "If You Believe in Allah, It Will Happen", "Probably", "Hopefully", "Eventually",
 "Please Refer to Quran", "Are you Zionist?", "You stupit", "Allah does not consent", "Allah likes this", "Allah approved", "Possibly", "Insert 25c to Continue", "I don't feel like it",
 "Stop being degenerate, Allah doesn't like.", "Shut up", "Try Harder", "Free Palestine", "Ask Saudi Prince", "It'll happen soon", "Allah is angry, try later", "You are infidel",
@@ -152,6 +153,7 @@ client.on("message", message => {
 		var max = words.length - 1;
 		var lang = 0;
 		i = 0;
+		i2 = 0;
 		console.log("the length of this string is: " + titleLength);
 		if(args[0] === null || args[0] === undefined){
 			 console.log("YOU FORGOT THE FUNNY!");
@@ -182,7 +184,11 @@ client.on("message", message => {
 			});
 		}else if(args[1] === "ar" || args[1] === "arab" || args[1] === "arabic")
 				{
-				words.push(arab);	
+				for(i2 = 0; i < arab.length;)
+				{
+					words.push(arab[i2]);
+					i2++;
+				}	
 				console.log("arabic had been added to the string bro");
 				for (i = 0; i < titleLength;){
 			 	titleInt = Math.floor(Math.random() * (max - min + 1)) + min;
