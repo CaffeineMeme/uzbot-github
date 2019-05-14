@@ -151,7 +151,7 @@ client.on("message", message => {
 		if(args[0] === null || args[0] === undefined){
 			 console.log("YOU FORGOT THE FUNNY!");
 			 message.channel.send('YOU FORGOT THE FUNNY!');
-		}else if(titleLength >= 30){
+		}else if(titleLength >= 31){
 			message.channel.send("Yo that's kind of cringe, make it shorter");
 		}else if(args[0] != undefined){
 			message.channel.send({embed: {
