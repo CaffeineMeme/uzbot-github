@@ -110,7 +110,6 @@ var troll = ["https://cdn.discordapp.com/attachments/557265635114090525/57727494
 "https://i.ebayimg.com/images/g/Dv0AAOSwl9BWL6v9/s-l300.jpg", "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTXn2JY75kyTgoOtMCJvtxx0G6OdZ3fohKV0UN2sS3FsbC9EPLu", "https://thumbs.dreamstime.com/z/trollface-dark-spectacled-internet-troll-d-illustration-laughing-isolated-53719224.jpg",
 "https://image.shutterstock.com/image-illustration/laughing-internet-troll-head-3d-450w-528857095.jpg", "https://files.gamebanana.com/img/ico/sprays/5391d4e8edb05.gif", "https://pics.me.me/troll-face-14350384.png"];
 var trollInt;
-var lang = 0;
 
 client.on("ready", () => {
   console.log("tajikistan nigga fart");
@@ -146,6 +145,7 @@ client.on("message", message => {
 		let titleLength = args[0];
 		var min = 0;
 		var max = words.length - 1;
+		var lang = 0;
 		i = 0;
 		console.log("the length of this string is: " + titleLength);
 		if(args[0] === null || args[0] === undefined){
@@ -174,7 +174,7 @@ client.on("message", message => {
 							text: "Fun Fact: Allah doesn't like you if you eat during fasting"
 						}
 			}
-				lang += 1;
+				let lang = 1;
 			});
 			if(lang === 1)
 			{
