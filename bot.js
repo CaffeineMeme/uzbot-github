@@ -182,12 +182,12 @@ client.on("message", message => {
 			{
 				let args = message.content.split(' ');
 				
-				if(args[0, 1, 2, 3 , 4, 5, 6] === "ar" || args[0, 1, 2, 3 , 4, 5, 6] === "arab" || args[0, 1, 2, 3 , 4, 5, 6] === "arabic")
+				if(args[0] === "ar" || args[0] === "arab" || args[0] === "arabic")
 				{
 				words.push(arab[arab.length]);	
 				console.log(args);
 				}
-			if(args[0, 1, 2, 3 , 4, 5, 6] != undefined)
+			if(args[0] != undefined)
 				{
 				for (i = 0; i < titleLength;){
 			 	titleInt = Math.floor(Math.random() * (max - min + 1)) + min;
