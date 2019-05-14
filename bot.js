@@ -202,6 +202,7 @@ client.on("message", message => {
 				for(i2 = arab.length; i2 > 0;)
 				{
 					words.pop();
+					i--;
 				}
 			}
 			
