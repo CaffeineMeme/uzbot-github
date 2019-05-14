@@ -111,6 +111,8 @@ var troll = ["https://cdn.discordapp.com/attachments/557265635114090525/57727494
 "https://image.shutterstock.com/image-illustration/laughing-internet-troll-head-3d-450w-528857095.jpg", "https://files.gamebanana.com/img/ico/sprays/5391d4e8edb05.gif", "https://pics.me.me/troll-face-14350384.png"];
 var trollInt;
 
+var langBool = false;
+
 client.on("ready", () => {
   console.log("tajikistan nigga fart");
   client.user.setGame('-uz help');
@@ -123,7 +125,6 @@ client.on("message", message => {
 
   // This is the usual argument parsing we love to use.
   const args = message.content.slice(process.env.PREFIX.length).trim().split(/ +/g);
-  const langargs = message.content.slice().trim().split(/ +/g);
   const command = args.shift().toLowerCase();
 
   // And our 2 real basic commands!
@@ -173,8 +174,17 @@ client.on("message", message => {
 							icon_url: client.user.avatarURL,
 							text: "Fun Fact: Allah doesn't like you if you eat during fasting"
 						}
-			}	
+			}
+				langbool = true;
 			});
+			if(langbool = true)
+			{
+				let args = message.content.split(' ');
+			}
+			else
+			{
+				let args = message.content.slice(process.env.PREFIX.length).trim().split(/ +/g);
+			}
 			if(langargs[0, 1, 2, 3 , 4, 5, 6] == "ar" || args[0, 1, 2, 3 , 4, 5, 6] == "arab" || args[0, 1, 2, 3 , 4, 5, 6] == "arabic")
 			{
 				words.push(arab[arab.length]);	
