@@ -47,7 +47,7 @@ var words = ["nigga", "free", "HD", "sexy", "download", "fart", "cartoon", "funn
 "ping", "nigga troll", "Free Shipping", "amazon prime", "best deal", "only $20", "epic", "best free", "2160p", "anus cream", "clown", "who", "hahahaha", "bean", "funny instrumental",
 "musical", "songs", "full album", "frick", "niggas", "Ram Ranch Full Collection", "Gekyume", "circumsized", "semen", "butthole", "nigga toilet", "insta", "facebook", "twitter",
 "sub 4 sub", "like", "comment", "share", "follow", "donate", "secret link", "in the hood", "poor", "3rd world", "America", "looooool", "mfw", "mfw (my face when", "endgame", "Thanos",
-"dies", "film", "theater release", "official", "phone call", "pick up phone", "virus", "windows defender", "norton", "iOS", "iPhone X", "XXXTentacion", "R.I.P.", "rich", "cock and ball"
+"dies", "film", "theater release", "official", "phone call", "pick up phone", "virus", "windows defender", "norton", "iOS", "iPhone X", "XXXTentacion", "R.I.P.", "rich", "cock and ball",
 "no spoilers", "review", "animated", "parody", "satire", "irony 100%", "shrek", ".avi", ".wav", ".jpg"];
 var arab = ["رمضان","هندوستان", "أوباما", "باكستان", "سلحفاة فارسية", "ਮਾਈਕਰੋਸੌਫਟ", "ਭਾਰਤ", "ਮਜ਼ਾਕੀਆ", "ਨਿਗਲ", "ਧੱਫੜ", "harambe", "ਜੰਜੀਰ", "ਟੋਲ", "ਪੰਜਾਬੀ", "ਪਾਕਿਸਤਾਨ ਦੀ ਧੱਕੇ", "ਪਰਿਵਾਰ 420", 
 "ਤਕਨੀਕੀ ਸਮਰਥਨ", "ਕਾਮੇਡੀ","ਵਾਇਰਸ", "ਕੰਪਿਊਟਰ", "ਮੁਫ਼ਤ ਡਾਊਨਲੋਡ", "ਵਿਸ਼ਨੂੰ", "ਉਰਦੂ", "ਓਬਾਮਾ",  "دعم تقني", "مضحك", "حرام", "قضيب","سعودي", "ضرطة", "نيغا", "براز الانسان", "إسرائيل", "بول", 
