@@ -111,7 +111,7 @@ var troll = ["https://cdn.discordapp.com/attachments/557265635114090525/57727494
 "https://image.shutterstock.com/image-illustration/laughing-internet-troll-head-3d-450w-528857095.jpg", "https://files.gamebanana.com/img/ico/sprays/5391d4e8edb05.gif", "https://pics.me.me/troll-face-14350384.png"];
 var trollInt;
 
-var langBool = false;
+var langbool = false;
 
 client.on("ready", () => {
   console.log("tajikistan nigga fart");
