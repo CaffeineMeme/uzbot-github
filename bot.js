@@ -174,8 +174,10 @@ client.on("message", message => {
 							text: "Fun Fact: Allah doesn't like you if you eat during fasting"
 						}
 			}
-				let lang = 1;
 			});
+			
+			lang = 1;
+			
 			if(lang === 1)
 			{
 				let args = message.content.split(' ');
