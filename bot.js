@@ -178,8 +178,8 @@ client.on("message", message => {
 				
 			if(args[1] === "ar" || args[1] === "arab" || args[1] === "arabic")
 				{
-				words.push(arab[arab.length]);	
-				console.log(args);
+				words.push(arab[arab.length - 1]);	
+				console.log("arabic had been added to the string bro");
 				}
 			if(args[1] != undefined)
 				{
