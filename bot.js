@@ -153,14 +153,14 @@ client.on("message", message => {
 			 message.channel.send('YOU FORGOT THE FUNNY!');
 		}else if(titleLength >= 31){
 			message.channel.send("Yo that's kind of cringe, make it shorter");
-		}else if(args[0] != undefined){
+		}else if(args[0] != undefined && args[1] === undefined){
 			message.channel.send({embed: {
 					color: 0x0099b5,
 					author: {
 						name: client.user.username,
 						icon_url: client.user.avatarURL
 					},
-					title: "Choose some languages from the options",
+					title: "You gotta choose a language from these choices",
 					fields: [
 						{
 						name: "Available Options",
@@ -175,19 +175,13 @@ client.on("message", message => {
 						}
 			}
 			});
-			
-			lang = 1;
-			
-			if(lang === 1)
-			{
-				let args = message.content.split(' ');
 				
-				if(args[0] === "ar" || args[0] === "arab" || args[0] === "arabic")
+			if(args[1] === "ar" || args[1] === "arab" || args[1] === "arabic")
 				{
 				words.push(arab[arab.length]);	
 				console.log(args);
 				}
-			if(args[0] != undefined)
+			if(args[1] != undefined)
 				{
 				for (i = 0; i < titleLength;){
 			 	titleInt = Math.floor(Math.random() * (max - min + 1)) + min;
@@ -200,11 +194,6 @@ client.on("message", message => {
 				completeTitle = title.join(" ");
 				message.channel.send(completeTitle);
 				console.log(completeTitle);
-			}
-			}
-			else
-			{
-				let args = message.content.slice(process.env.PREFIX.length).trim().split(/ +/g);
 			}
 			
 		}
