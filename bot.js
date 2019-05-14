@@ -145,10 +145,6 @@ client.on("message", message => {
     }
 	if(command === 'title')
 	{
-		for(i2 = (words.length - arab.length); i2 > 0;)
-		{
-			words.pop();
-		}
 		title = [];
 		completeTitle = "";
 		titleInt = 0;
@@ -203,6 +199,10 @@ client.on("message", message => {
 				console.log(words.length);
 				message.channel.send(completeTitle);
 				console.log(completeTitle);
+				for(i2 = arab.length; i2 > 0;)
+				{
+					words.pop();
+				}
 			}
 			
 	}
