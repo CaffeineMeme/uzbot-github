@@ -388,7 +388,7 @@ client.on("message", message => {
 		}
 		if(command === 'arabfunny')
 		{
-			postArab(message);
+			loadArab(message);
 		}
 		if(command === 'funnymeter')
 		{	
