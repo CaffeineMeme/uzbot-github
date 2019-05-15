@@ -2,7 +2,7 @@ require('dotenv').config();
 const Discord = require("discord.js");
 const client = new Discord.Client();
 const snekfetch = require('snekfetch');
-const fetch = new snekfetch();
+const nodefetch = require('node-fetch');
 
 var movieInt;
 var movie = ["https://www.youtube.com/watch?v=LWqUupcF7A0", "https://www.youtube.com/watch?v=uwrNwd0_Ug4", "https://www.youtube.com/watch?v=o0G7FL93Hu4", "https://www.youtube.com/watch?v=_TY6kJ3KfT4",
@@ -389,7 +389,7 @@ client.on("message", message => {
 		}
 		if(command === 'arabfunny')
 		{
-			loadArab(message);
+			
 		}
 		if(command === 'funnymeter')
 		{	
@@ -512,22 +512,5 @@ client.on("message", message => {
 		}
 	}
 });
-
-function loadArab() {
-  fetch('https://www.reddit.com/r/arabfunny.json?limit=500&?sort=new&t=all')
-    .then(res => res.json())
-    .then(json => json.data.children.map(v => v.data.url))
-    .then(urls => postRandomArab(urls));
-}
-
-function postRandomArab(urls) {
-  const randomURL = urls[Math.floor(Math.random() * urls.length) + 1];
-  const embed = new Discord.RichEmbed({
-    image: {
-      url: randomURL
-    }
-  });
-  message.channel.send(embed);
-}
 
 client.login(process.env.TOKEN);
