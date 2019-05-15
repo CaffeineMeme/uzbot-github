@@ -66,6 +66,9 @@ var rus = [];
 var africa = [];
 var esp = [];
 var asia = [];
+var turk = []; 
+var euro = [];
+var us = [];
 
 var title = [];
 var completeTitle;
@@ -130,6 +133,8 @@ client.on("message", message => {
   // This is the usual argument parsing we love to use.
   const args = message.content.slice(process.env.PREFIX.length).trim().split(/ +/g);
   const command = args.shift().toLowerCase();
+  const arabres = await snekfetch.get('https://www.reddit.com/r/arabfunny/top/.json?sort=new&limit=500')
+  const arabpost = arabres.body.data.children.filter(arabpost => arabpost.data.preview)
 
   // And our 2 real basic commands!
   if (command === 'bruh') {
@@ -380,6 +385,19 @@ client.on("message", message => {
 		hamoodInt = Math.floor(Math.random() * (maximum - minimum + 1)) + minimum;
 		console.log("dan bull number " + hamoodInt);
         message.channel.send("hamood funny lol 2019 240p arabic animation " + "\n" + hamood[hamoodInt]);
+		}
+		if(command === 'arabfunny')
+		{
+		const post = arabpost[message.channel.guild.id];
+			
+		await message.channel.createMessage({ embed: {
+    		title: post.data.title,
+    		color: 0xce1126,
+    		url: post.data.url,
+    		image: { url: post.data.preview.images[0].source.url },
+    		description: post.data.url,
+    		footer: { text: `posted by ${post.data.author}` }
+  }});
 		}
 		if(command === 'funnymeter')
 		{	
