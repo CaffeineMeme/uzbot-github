@@ -133,7 +133,7 @@ client.on("message", message => {
   // This is the usual argument parsing we love to use.
   const args = message.content.slice(process.env.PREFIX.length).trim().split(/ +/g);
   const command = args.shift().toLowerCase();
-  const arabres = await snekfetch.get('https://www.reddit.com/r/arabfunny/top/.json?sort=new&limit=500')
+  const arabres = snekfetch.get('https://www.reddit.com/r/arabfunny/top/.json?sort=new&limit=500')
   const arabpost = arabres.body.data.children.filter(arabpost => arabpost.data.preview)
 
   // And our 2 real basic commands!
@@ -390,7 +390,7 @@ client.on("message", message => {
 		{
 		const post = arabpost[message.channel.guild.id];
 			
-		await message.channel.createMessage({ embed: {
+		message.channel.createMessage({ embed: {
     		title: post.data.title,
     		color: 0xce1126,
     		url: post.data.url,
