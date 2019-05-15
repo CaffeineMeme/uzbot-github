@@ -388,10 +388,11 @@ client.on("message", message => {
 		}
 		if(command === 'arabfunny')
 		{
+		exports.run = async (client, message, args) => {
 		try {
         	const { body } = await snekfetch
-            .get('https://www.reddit.com/r/arabfunny.json?sort=new')
-            .query({ limit: 800 });
+            	.get('https://www.reddit.com/r/arabfunny.json?sort=new')
+            	.query({ limit: 800 });
         	const allowed = message.channel.nsfw ? body.data.children : body.data.children.filter(post => !post.data.over_18);
         	if (!allowed.length) return message.channel.send('Allah is angry, so no funny for you');
         	const randomnumber = Math.floor(Math.random() * allowed.length)
@@ -406,6 +407,7 @@ client.on("message", message => {
     		} catch () {
         	return console.log("oops lol");
     		}
+		}
 		/*module.exports = (subreddit = 'arabfunny', section = 'new', collected = [], after = '') => snekfetch
 			.get(`https://www.reddit.com/r/${subreddit}/${section}.json`)
 			.query({ limit: 100, after })
