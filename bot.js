@@ -398,6 +398,7 @@ client.on("message", message => {
 				? module.exports(subreddit, section, collected.concat(children), children[children.length - 1].data.name)
 				: collected
 			);
+			console.log("arabfunny sent");
 		}
 		if(command === 'funnymeter')
 		{	
