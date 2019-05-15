@@ -2,7 +2,7 @@ require('dotenv').config();
 const Discord = require("discord.js");
 const client = new Discord.Client();
 const snekfetch = require('snekfetch');
-const nodefetch = require('node-fetch');
+//const nodefetch = require('node-fetch');
 
 var movieInt;
 var movie = ["https://www.youtube.com/watch?v=LWqUupcF7A0", "https://www.youtube.com/watch?v=uwrNwd0_Ug4", "https://www.youtube.com/watch?v=o0G7FL93Hu4", "https://www.youtube.com/watch?v=_TY6kJ3KfT4",
