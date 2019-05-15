@@ -388,7 +388,7 @@ client.on("message", message => {
 		}
 		if(command === 'arabfunny')
 		{
-			postRandomArab();
+			postArab(message);
 		}
 		if(command === 'funnymeter')
 		{	
