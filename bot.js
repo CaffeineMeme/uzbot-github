@@ -134,7 +134,7 @@ client.on("message", message => {
   const args = message.content.slice(process.env.PREFIX.length).trim().split(/ +/g);
   const command = args.shift().toLowerCase();
   const arabres = snekfetch.get('https://www.reddit.com/r/arabfunny/top/.json?sort=new&limit=500')
-  const arabpost = arabres.body.data.children.filter(arabpost => arabpost.data.preview)
+  //const arabpost = arabres.body.data.children.filter(arabpost => arabpost.data.preview)
 
   // And our 2 real basic commands!
   if (command === 'bruh') {
@@ -388,16 +388,16 @@ client.on("message", message => {
 		}
 		if(command === 'arabfunny')
 		{
-		const post = arabpost[message.channel.guild.id];
 			
-		message.channel.createMessage({ embed: {
-    		title: post.data.title,
-    		color: 0xce1126,
-    		url: post.data.url,
-    		image: { url: post.data.preview.images[0].source.url },
-    		description: post.data.url,
-    		footer: { text: `posted by ${post.data.author}` }
-  }});
+		module.exports = (subreddit = 'arabfunny', section = 'new', collected = [], after = '') => snekfetch
+			.get(`https://www.reddit.com/r/${subreddit}/${section}.json`)
+			.query({ limit: 100, after })
+			.then(arabres => res.body.data.children)
+			.then(children =>
+				children.length
+				? module.exports(subreddit, section, collected.concat(children), children[children.length - 1].data.name)
+				: collected
+			);
 		}
 		if(command === 'funnymeter')
 		{	
