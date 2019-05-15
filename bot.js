@@ -403,10 +403,10 @@ client.on("message", message => {
         	.setImage(allowed[randomnumber].data.url)
         	.addField("Other info:", "Up votes: " + allowed[randomnumber].data.ups + " / Comments: " + allowed[randomnumber].data.num_comments)
         	.setFooter("Memes provided by r/dankmemes")
-        	message.channel.send(embed)
-    		} catch () {
+        	message.channel.send(embed);
+    		}/* catch (err) {
         	return console.log("oops lol");
-    		}
+    		}*/
 		}
 		/*module.exports = (subreddit = 'arabfunny', section = 'new', collected = [], after = '') => snekfetch
 			.get(`https://www.reddit.com/r/${subreddit}/${section}.json`)
