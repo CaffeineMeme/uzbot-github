@@ -388,8 +388,25 @@ client.on("message", message => {
 		}
 		if(command === 'arabfunny')
 		{
-			
-		module.exports = (subreddit = 'arabfunny', section = 'new', collected = [], after = '') => snekfetch
+		try {
+        	const { body } = await snekfetch
+            .get('https://www.reddit.com/r/arabfunny.json?sort=new')
+            .query({ limit: 800 });
+        	const allowed = message.channel.nsfw ? body.data.children : body.data.children.filter(post => !post.data.over_18);
+        	if (!allowed.length) return message.channel.send('Allah is angry, so no funny for you');
+        	const randomnumber = Math.floor(Math.random() * allowed.length)
+        	const embed = new Discord.RichEmbed()
+        	.setColor(0x00A2E8)
+        	.setTitle(allowed[randomnumber].data.title)
+        	.setDescription("Posted by: " + allowed[randomnumber].data.author)
+        	.setImage(allowed[randomnumber].data.url)
+        	.addField("Other info:", "Up votes: " + allowed[randomnumber].data.ups + " / Comments: " + allowed[randomnumber].data.num_comments)
+        	.setFooter("Memes provided by r/dankmemes")
+        	message.channel.send(embed)
+    		} catch () {
+        	return console.log("oops lol");
+    		}
+		/*module.exports = (subreddit = 'arabfunny', section = 'new', collected = [], after = '') => snekfetch
 			.get(`https://www.reddit.com/r/${subreddit}/${section}.json`)
 			.query({ limit: 100, after })
 			.then(arabres => res.body.data.children)
@@ -398,7 +415,7 @@ client.on("message", message => {
 				? module.exports(subreddit, section, collected.concat(children), children[children.length - 1].data.name)
 				: collected
 			);
-			console.log("arabfunny sent");
+			console.log("arabfunny sent");*/
 		}
 		if(command === 'funnymeter')
 		{	
