@@ -403,6 +403,7 @@ client.on("message", message => {
         	.addField("Other info:", "Up votes: " + allowed[randomnumber].data.ups + " / Comments: " + allowed[randomnumber].data.num_comments)
         	.setFooter("funny provided by allah");
         	message.channel.send(embed);
+		console.log("arabfunny sent");
     		/* catch (err) {
         	return console.log("oops lol");
     		}*/
@@ -416,7 +417,7 @@ client.on("message", message => {
 				? module.exports(subreddit, section, collected.concat(children), children[children.length - 1].data.name)
 				: collected
 			);
-			console.log("arabfunny sent");*/
+			*/
 		}
 		if(command === 'funnymeter')
 		{	
