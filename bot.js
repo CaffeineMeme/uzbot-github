@@ -388,36 +388,7 @@ client.on("message", message => {
 		}
 		if(command === 'arabfunny')
 		{
-		exports.run = async (client, message, args) => {
-        	const { body } = await snekfetch
-            	.get('https://www.reddit.com/r/arabfunny.json?sort=new')
-            	.query({ limit: 800 });
-        	const allowed = message.channel.nsfw ? body.data.children : body.data.children.filter(post => !post.data.over_18);
-        	if (!allowed.length) return message.channel.send('Allah is angry, so no funny for you');
-        	const randomnumber = Math.floor(Math.random() * allowed.length);
-        	const embed = new Discord.RichEmbed()
-        	.setColor(0x00A2E8)
-        	.setTitle(allowed[randomnumber].data.title)
-        	.setDescription("Posted by: " + allowed[randomnumber].data.author)
-        	.setImage(allowed[randomnumber].data.url)
-        	.addField("Other info:", "Up votes: " + allowed[randomnumber].data.ups + " / Comments: " + allowed[randomnumber].data.num_comments)
-        	.setFooter("funny provided by allah");
-        	message.channel.send(embed);
-		console.log("arabfunny sent");
-    		/* catch (err) {
-        	return console.log("oops lol");
-    		}*/
-		}
-		/*module.exports = (subreddit = 'arabfunny', section = 'new', collected = [], after = '') => snekfetch
-			.get(`https://www.reddit.com/r/${subreddit}/${section}.json`)
-			.query({ limit: 100, after })
-			.then(arabres => res.body.data.children)
-			.then(children =>
-				children.length
-				? module.exports(subreddit, section, collected.concat(children), children[children.length - 1].data.name)
-				: collected
-			);
-			*/
+			postRandomArab();
 		}
 		if(command === 'funnymeter')
 		{	
@@ -540,5 +511,22 @@ client.on("message", message => {
 		}
 	}
 });
+
+function loadArab() {
+  fetch('https://www.reddit.com/r/arabfunny.json?limit=500&?sort=new&t=all')
+    .then(res => res.json())
+    .then(json => json.data.children.map(v => v.data.url))
+    .then(urls => postRandomArab(urls));
+}
+
+function postRandomArab(urls) {
+  const randomURL = urls[Math.floor(Math.random() * urls.length) + 1];
+  const embed = new Discord.RichEmbed({
+    image: {
+      url: randomURL
+    }
+  });
+  message.channel.send(embed);
+}
 
 client.login(process.env.TOKEN);
