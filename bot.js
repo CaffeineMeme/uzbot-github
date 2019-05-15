@@ -389,7 +389,6 @@ client.on("message", message => {
 		if(command === 'arabfunny')
 		{
 		exports.run = async (client, message, args) => {
-		try {
         	const { body } = await snekfetch
             	.get('https://www.reddit.com/r/arabfunny.json?sort=new')
             	.query({ limit: 800 });
@@ -404,7 +403,7 @@ client.on("message", message => {
         	.addField("Other info:", "Up votes: " + allowed[randomnumber].data.ups + " / Comments: " + allowed[randomnumber].data.num_comments)
         	.setFooter("Memes provided by r/dankmemes")
         	message.channel.send(embed);
-    		}/* catch (err) {
+    		/* catch (err) {
         	return console.log("oops lol");
     		}*/
 		}
