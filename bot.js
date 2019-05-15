@@ -63,11 +63,15 @@ var arab = ["رمضان","هندوستان", "أوباما", "باكستان", "
 	   "bangla", "palestinians", "lizard man israeli", "pray to allah", "hamood habibi", "nigga poop", "uzbekistan", "kyrgyz", "fake israel",
 	   "fasting", "ramadan fast", "ramadan ape", "iran missile", "oil saudi", "$1 trillion saudi invest", "karim yakarim", "كريم وكريم",
 	   "epic rap battles of allah", "stani", "arab squat toilet"]; 
-var rus = [];
-var africa = [];
+var rus = ["vodka", "russia", "yugoslavia", "soviet", "putin", "vladmir", "iran deal", "водка", "СССР", "Stalin", "chernobyl", "ruble", "ukraina", "slav", "armenia", "azerbaijan",
+	  "squat", "gopnik", "gulag", "internet closed", "Жопа", "adidas", "cold war", "missile", "nuclear bomb", "capitalist pig", "srbija", "USSR",
+	  "comrade", "комраде", "ushanka", "russia winter", "ww2", "communism", "capitalist pig", "supply and demand", "mafia", "putin funny", "elect", "navalny", "kavkaz",
+	  "georgia", "sakartvelo", "armenia genocide real", "azeri", "dardubala", "დარდუბალა", "ramishvili", "ass", "mail-order wife", "russian bombshell", "landmine border", "angry bear",
+	  "putin riding bear", "KGB", "punch fag", "FSB", "smoke", "government", "russia hack", "hack sony", "gay", "ukraine", "belarus", "tajik ssr", "AYE", "drag race", "illegal", 
+	  "putin vs isis", "bitcoin mine", "investment venezuela", "pachansky", "Zhmysheno", "gopnik vaping", "serb attack", "kill turk", "grandpa smash america ipad", "tarrif america", "rennk",
+	  "winne the pooh", "russian dub", "russian edition", "iraq war", "mongolia is slav", "kazakhstan", "radioactive", "nuclear reactor explosion" ,"[REDACTED]"];
 var esp = [];
 var asia = [];
-var turk = []; 
 var euro = [];
 var us = [];
 
@@ -206,6 +210,30 @@ client.on("message", message => {
 				message.channel.send(completeTitle);
 				console.log(completeTitle);
 				for(i2 = (arab.length); i2 > 0;)
+				{
+					words.pop();
+					i2--;
+				}
+			}else if(args[1] === "ru" || args[1] === "russian" || args[1] === "salv")
+				{
+				console.log(words.length);
+				words = words.concat(rus);
+				var min = 0;
+				var max = words.length - 1;
+				console.log("arabic had been added to the string bro");
+				for (i = 0; i < titleLength;){
+			 	titleInt = Math.floor(Math.random() * (max - min + 1)) + min;
+			 	title.push(words[titleInt]);
+			 	console.log("There's only " + (titleLength - (i + 1)) + " words left");
+			 	console.log(title.length);
+			 	console.log(title);
+			 	i++;
+				}
+				completeTitle = title.join(" ");
+				console.log(words.length);
+				message.channel.send(completeTitle);
+				console.log(completeTitle);
+				for(i2 = (rus.length); i2 > 0;)
 				{
 					words.pop();
 					i2--;
