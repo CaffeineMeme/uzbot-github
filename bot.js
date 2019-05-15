@@ -214,7 +214,7 @@ client.on("message", message => {
 					words.pop();
 					i2--;
 				}
-			}else if(args[1] === "ru" || args[1] === "russian" || args[1] === "salv")
+			}else if(args[1] === "ru" || args[1] === "russian" || args[1] === "slav")
 				{
 				console.log(words.length);
 				words = words.concat(rus);
