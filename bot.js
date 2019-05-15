@@ -69,7 +69,10 @@ var rus = ["vodka", "russia", "yugoslavia", "soviet", "putin", "vladmir", "iran 
 	  "georgia", "sakartvelo", "armenia genocide real", "azeri", "dardubala", "დარდუბალა", "ramishvili", "ass", "mail-order wife", "russian bombshell", "landmine border", "angry bear",
 	  "putin riding bear", "KGB", "punch fag", "FSB", "smoke", "government", "russia hack", "hack sony", "gay", "ukraine", "belarus", "tajik ssr", "AYE", "drag race", "illegal", 
 	  "putin vs isis", "bitcoin mine", "investment venezuela", "pachansky", "Zhmysheno", "gopnik vaping", "serb attack", "kill turk", "grandpa smash america ipad", "tarrif america", "rennk",
-	  "winne the pooh", "russian dub", "russian edition", "iraq war", "mongolia is slav", "kazakhstan", "radioactive", "nuclear reactor explosion" ,"[REDACTED]"];
+	  "winne the pooh", "russian dub", "russian edition", "iraq war", "mongolia is slav", "kazakhstan", "radioactive", "nuclear reactor explosion" ,"[REDACTED]", "смешной",
+	  "туалет", "ниггер", "пердеть", "славянский", "хреновый трах", "Албания", "косово", "косово је србија", "тролл", "ტროლის სახე პრეზიდენტი", "არაყი", "მიხილ საკაშვილი", "ტუალეტი", "геиик", "путин",
+	  "trade deal", ".ru", ".rs", "croatian ustashe", "karadzic", "drink water serb", "serb", "montenegro", "kill bosnia", "CS:GO", "minecraft russian hack", "mc khovanskiy", "free steam key", "only 20 ruble",
+	  "steam key cheap", "cs:go knife", "free skin", "ak47", "kalashnikov", "iran", "banned game", "nintendo of russia", "largest country", "siberia", "snow", "village", "dagestan", "Bloodbath Kavkaz", "Bloodbath Kavkaz full download"];
 var esp = [];
 var asia = [];
 var euro = [];
