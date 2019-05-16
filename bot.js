@@ -435,7 +435,7 @@ client.on("message", message => {
         	.setImage(allowed[randomnumber].data.url)
         	.addField("Other info:", "Up votes: " + allowed[randomnumber].data.ups + " / Comments: " + allowed[randomnumber].data.num_comments)
         	.setFooter("Memes provided by r/dankmemes")*/
-       		.message.channel.send({embed{
+       		.message.channel.send({embed: {
 				      
 				       color: 0x00A2E8,
 				       title: allowed[randomnumber].data.title,
