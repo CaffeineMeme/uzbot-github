@@ -441,13 +441,15 @@ client.on("message", message => {
 				       title: allowed[randomnumber].data.title,
 				       description: allowed[randomnumber].data.url,
 				       image: allowed[randomnumber].data.url,
-				       fields: [
+				       fields: [{
 				       	name: "Other info:",
 				       	value: "Up votes: " + allowed[randomnumber].data.ups + " / Comments: " + allowed[randomnumber].data.num_comments
+				       }
 				       ],
-				       footer: "Let us thank Allah for this feast"
+				       footer: {text: "Let us thank Allah for this feast"}
 				      	}
 				      });
+			console.log("arabfunny sent");
    			 } catch (err) {
         		return console.log("oh nigga you gay");
     				}
