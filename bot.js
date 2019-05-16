@@ -421,8 +421,7 @@ client.on("message", message => {
 		}
 		if(command === 'arabfunny')
 		{
-			fetch('http://www.reddit.com/r/arabfunny/new.json?sort=new', { method: 'POST', body: 'a=1' })
-			.query({ limit: 800 })
+			fetch('http://www.reddit.com/r/arabfunny/new.json?sort=new', { method: 'POST', body: 'a=1', limit: 800})
     			.then(res => res.json()
 			.then(json => console.log(json)));
 		}
