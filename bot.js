@@ -420,7 +420,7 @@ client.on("message", message => {
 		}
 		if(command === 'arabfunny')
 		{
-        	const { body } = await snekfetch
+        	const { body } = snekfetch
         	    .get('https://www.reddit.com/r/dankmemes.json?sort=top&t=week')
         	    .query({ limit: 800 });
         	const allowed = message.channel.nsfw ? body.data.children : body.data.children.filter(post => !post.data.over_18);
