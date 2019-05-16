@@ -552,6 +552,5 @@ async function arabfunny(){
 
   	return weatherObject; // right value
 }
-}
 
 client.login(process.env.TOKEN);
