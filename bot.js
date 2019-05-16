@@ -420,17 +420,7 @@ client.on("message", message => {
 		}
 		if(command === 'arabfunny')
 		{
-			async function arabfunny(){
-  			let url = 'https://www.reddit.com/r/dankmemes.json?sort=new&t=all';
-
-  			let response = await snekfetch.get(url).query({ limit: 800 });
-  			var weatherObject = response.body;
-			console.log ("working on it...");
-  			message.channel.send(weatherObject);
-			return console.log("arabfunny sent");// right value
-}
-	}
-        		arabfunny();
+			message.channel.send("idk how to do this lmao");
 		}
 		if(command === 'funnymeter')
 		{	
