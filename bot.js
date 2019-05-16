@@ -130,7 +130,7 @@ var trollInt;
 
 client.on("ready", () => {
   console.log("tajikistan nigga fart");
-  client.user.setGame('-uz help');
+  client.user.setActivity('-uz help');
 });
 
 client.on("message", message => {
@@ -422,20 +422,32 @@ client.on("message", message => {
 		{
 			exports.run = async (client, message, args) => {
     		try {
-        	const { body } = await snekfetch
+        	const { body } = await nodefetch
         	    .get('https://www.reddit.com/r/dankmemes.json?sort=top&t=week')
         	    .query({ limit: 800 });
         	const allowed = message.channel.nsfw ? body.data.children : body.data.children.filter(post => !post.data.over_18);
         	if (!allowed.length) return message.channel.send('It seems we are out of fresh memes!, Try again later.');
         	const randomnumber = Math.floor(Math.random() * allowed.length)
-        	const embed = new Discord.RichEmbed()
-        	.setColor(0x00A2E8)
-        	.setTitle(allowed[randomnumber].data.title)
+        	/*const embed = new Discord.RichEmbed()
+        	.setColor()
+        	.setTitle()
         	.setDescription("Posted by: " + allowed[randomnumber].data.author)
         	.setImage(allowed[randomnumber].data.url)
         	.addField("Other info:", "Up votes: " + allowed[randomnumber].data.ups + " / Comments: " + allowed[randomnumber].data.num_comments)
-        	.setFooter("Memes provided by r/dankmemes")
-       		.message.channel.send(embed)
+        	.setFooter("Memes provided by r/dankmemes")*/
+       		.message.channel.send({embed{
+				      
+				       color: 0x00A2E8,
+				       title: allowed[randomnumber].data.title,
+				       description: allowed[randomnumber].data.url,
+				       image: allowed[randomnumber].data.url,
+				       fields: [
+				       	name: "Other info:",
+				       	value: "Up votes: " + allowed[randomnumber].data.ups + " / Comments: " + allowed[randomnumber].data.num_comments
+				       ],
+				       footer: "Let us thank Allah for this feast"
+				      	}
+				      });
    			 } catch (err) {
         		return console.log("oh nigga you gay");
     				}
