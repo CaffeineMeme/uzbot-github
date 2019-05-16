@@ -420,6 +420,16 @@ client.on("message", message => {
 		}
 		if(command === 'arabfunny')
 		{
+			async function arabfunny(){
+  			let url = 'https://www.reddit.com/r/dankmemes.json?sort=new&t=all';
+
+  			let response = await snekfetch.get(url).query({ limit: 800 });
+  			var weatherObject = response.body;
+			console.log ("working on it...");
+  			message.channel.send(weatherObject);
+			return console.log("arabfunny sent");// right value
+}
+	}
         		arabfunny();
 		}
 		if(command === 'funnymeter')
@@ -541,17 +551,6 @@ client.on("message", message => {
 			}
 			});
 		}
-			
-		async function arabfunny(){
-  	let url = 'https://www.reddit.com/r/dankmemes.json?sort=new&t=all';
-
-  	let response = await snekfetch.get(url).query({ limit: 800 });
-  	var weatherObject = response.body;
-	console.log ("working on it...");
-  	message.channel.send(weatherObject);
-	return console.log("arabfunny sent");// right value
-}
-	}
 });
 
 client.login(process.env.TOKEN);
