@@ -544,7 +544,7 @@ client.on("message", message => {
 	}
 });
 
-function arabfunny(){
+async function arabfunny(){
   	let url = 'https://www.reddit.com/r/dankmemes.json?sort=new&t=all';
 
   	let response = await snekfetch.get(url).query({ limit: 800 });
