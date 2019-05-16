@@ -420,13 +420,11 @@ client.on("message", message => {
 		}
 		if(command === 'arabfunny')
 		{
-			exports.run = async (client, message, args) => {
-    		try {
-        	const { body } = await nodefetch
+        	const { body } = await snekfetch
         	    .get('https://www.reddit.com/r/dankmemes.json?sort=top&t=week')
         	    .query({ limit: 800 });
         	const allowed = message.channel.nsfw ? body.data.children : body.data.children.filter(post => !post.data.over_18);
-        	if (!allowed.length) return message.channel.send('It seems we are out of fresh memes!, Try again later.');
+        	if (!allowed.length) return message.channel.send('Allah is mad, no funny.');
         	const randomnumber = Math.floor(Math.random() * allowed.length)
         	/*const embed = new Discord.RichEmbed()
         	.setColor()
@@ -450,10 +448,6 @@ client.on("message", message => {
 				      	}
 				      });
 			console.log("arabfunny sent");
-   			 } catch (err) {
-        		return console.log("oh nigga you gay");
-    				}
-			}
 		}
 		if(command === 'funnymeter')
 		{	
