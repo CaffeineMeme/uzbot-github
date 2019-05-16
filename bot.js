@@ -541,10 +541,8 @@ client.on("message", message => {
 			}
 			});
 		}
-	}
-});
-
-async function arabfunny(){
+			
+		async function arabfunny(){
   	let url = 'https://www.reddit.com/r/dankmemes.json?sort=new&t=all';
 
   	let response = await snekfetch.get(url).query({ limit: 800 });
@@ -553,5 +551,7 @@ async function arabfunny(){
   	message.channel.send(weatherObject);
 	return console.log("arabfunny sent");// right value
 }
+	}
+});
 
 client.login(process.env.TOKEN);
