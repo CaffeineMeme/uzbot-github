@@ -550,7 +550,7 @@ async function arabfunny(){
   	let response = await snekfetch.get(url).query({ limit: 800 });
   	var weatherObject = response.body;
 	console.log ("working on it...");
-  	return weatherObject;
+  	message.channel.send(weatherObject);
 	return console.log("arabfunny sent");// right value
 }
 
