@@ -420,34 +420,7 @@ client.on("message", message => {
 		}
 		if(command === 'arabfunny')
 		{
-        	const { body } = snekfetch
-        	    .get('https://www.reddit.com/r/dankmemes.json?sort=top&t=week')
-        	    .query({ limit: 800 });
-        	const allowed = message.channel.nsfw ? body.data.children : body.data.children.filter(post => !post.data.over_18);
-        	if (!allowed.length) return message.channel.send('Allah is mad, no funny.');
-        	const randomnumber = Math.floor(Math.random() * allowed.length)
-        	/*const embed = new Discord.RichEmbed()
-        	.setColor()
-        	.setTitle()
-        	.setDescription("Posted by: " + allowed[randomnumber].data.author)
-        	.setImage(allowed[randomnumber].data.url)
-        	.addField("Other info:", "Up votes: " + allowed[randomnumber].data.ups + " / Comments: " + allowed[randomnumber].data.num_comments)
-        	.setFooter("Memes provided by r/dankmemes")*/
-       		.message.channel.send({embed: {
-				      
-				       color: 0x00A2E8,
-				       title: allowed[randomnumber].data.title,
-				       description: allowed[randomnumber].data.url,
-				       image: allowed[randomnumber].data.url,
-				       fields: [{
-				       	name: "Other info:",
-				       	value: "Up votes: " + allowed[randomnumber].data.ups + " / Comments: " + allowed[randomnumber].data.num_comments
-				       }
-				       ],
-				       footer: {text: "Let us thank Allah for this feast"}
-				      	}
-				      });
-			console.log("arabfunny sent");
+        		arabfunny();
 		}
 		if(command === 'funnymeter')
 		{	
@@ -570,5 +543,15 @@ client.on("message", message => {
 		}
 	}
 });
+
+function arabfunny(){
+  	let url = 'https://www.reddit.com/r/dankmemes.json?sort=new&t=all';
+
+  	let response = await snekfetch.get(url).query({ limit: 800 });
+  	var weatherObject = response.body;
+
+  	return weatherObject; // right value
+}
+}
 
 client.login(process.env.TOKEN);
