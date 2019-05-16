@@ -2,7 +2,7 @@ require('dotenv').config();
 const Discord = require("discord.js");
 const client = new Discord.Client();
 const snek = require('snekfetch');
-const nodefetch = require('node-fetch');
+const fetch = require('node-fetch');
 const randomPuppy = require('random-puppy');
 
 var movieInt;
