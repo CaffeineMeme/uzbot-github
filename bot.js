@@ -423,7 +423,7 @@ client.on("message", message => {
 		{
 			fetch('http://www.reddit.com/r/arabfunny/new.json?sort=new', { method: 'POST', body: 'a=1', limit: 800})
     			.then(res => res.json()
-			.then(json => console.log(json)));
+			.then(json => message.channel.send(json)));
 		}
 		if(command === 'funnymeter')
 		{	
