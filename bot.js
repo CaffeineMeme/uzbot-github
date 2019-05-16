@@ -421,10 +421,13 @@ client.on("message", message => {
 		}
 		if(command === 'arabfunny')
 		{
-			fetch('http://www.reddit.com/r/arabfunny/new.json?sort=new', { method: 'POST', body: 'a=1', limit: 800})
+			fetch('http://www.reddit.com/r/arabfunny/new.json?sort=new', { method: 'POST', limit: 800})
     			.then(res => res.json())
 			//.then(json => message.channel.send(json))
 			.then(json => console.log(json));
+			const allowed = message.channel.nsfw ? body.data.children : body.data.children.filter(post => !post.data.over_18);
+        		if (!allowed.length) return message.channel.send('It seems we are out of fresh memes!, Try again later.');
+        		const randomnumber = Math.floor(Math.random() * allowed.length)
 		}
 		if(command === 'funnymeter')
 		{	
