@@ -1,7 +1,7 @@
 require('dotenv').config(); 
 const Discord = require("discord.js");
 const client = new Discord.Client();
-const snek-fetch = require('snekfetch');
+const snek = require('snekfetch');
 const nodefetch = require('node-fetch');
 const randomPuppy = require('random-puppy');
 
@@ -421,7 +421,7 @@ client.on("message", message => {
 		}
 		if(command === 'arabfunny')
 		{
-			snek-fetch().get('http://www.reddit.com/r/arabfunny/new.json?sort=new')
+			snek().get('http://www.reddit.com/r/arabfunny/new.json?sort=new')
 			.query({ limit: 800 })
     			.then(url => {
        			message.channel.send(url);
