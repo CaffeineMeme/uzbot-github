@@ -421,11 +421,10 @@ client.on("message", message => {
 		}
 		if(command === 'arabfunny')
 		{
-			nodefetch().get('http://www.reddit.com/r/arabfunny/new.json?sort=new')
+			fetch('http://www.reddit.com/r/arabfunny/new.json?sort=new', { method: 'POST', body: 'a=1' })
 			.query({ limit: 800 })
-    			.then(url => {
-       			message.channel.send(url);
-   			});
+    			.then(res => res.json()
+			.then(json => console.log(json));
 		}
 		if(command === 'funnymeter')
 		{	
