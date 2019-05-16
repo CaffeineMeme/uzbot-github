@@ -421,7 +421,7 @@ client.on("message", message => {
 		}
 		if(command === 'arabfunny')
 		{
-			snekfetch().get('http://www.reddit.com/r/arabfunny/new.json?sort=new')
+			new snekfetch().get('http://www.reddit.com/r/arabfunny/new.json?sort=new')
 			.query({ limit: 800 })
     			.then(url => {
        			message.channel.send(url);
