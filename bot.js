@@ -421,7 +421,7 @@ client.on("message", message => {
 		}
 		if(command === 'arabfunny')
 		{
-			exports.run = async (client, message, args) => {
+			exports.run = async () => {
         const { body } = await snek
             .get('https://www.reddit.com/r/dankmemes.json?sort=top&t=week')
             .query({ limit: 800 });
