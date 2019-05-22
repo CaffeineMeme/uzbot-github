@@ -516,7 +516,7 @@ client.on("message", message => {
   			.then(response => response.json())
   			.then(response => {
     			console.log("https://www.reddit.com" + response.data.children[arabInt].data.permalink);
-			message.channel.send("https://www.reddit.com" + response.data.children[arabInt].data.permalink);
+			//message.channel.send("https://www.reddit.com" + response.data.children[arabInt].data.permalink);
   			});
 		}
 		if(command === 'tv' || command === 'show')
