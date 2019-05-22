@@ -150,7 +150,7 @@ var stan = ["uz", "af", "ka", "ta", "pa", "ir", "kyr", "turk", "ghan", "zakh", "
 	    "ya", "hindu", "urdu", "leha", "huna", "hir", "vat", "serbe", "dage", "gole", "bal", "ochi", "lore", 
 	    "bash", "kor", "oto", "tar", "gil", "git", "si", "kara", "kal", "pak", "gobu", "nuri", "dzor", "bu", "elbi",
 	    "sha", "hri", "arabi", "gor", "je", "kohi", "lez", "gi", "qa", "baili", "za", "buli", "kabuli", "dard", "ban", "tu",
-	    "who", "balti", "ghar", "balor", "as", "ore", "dihi", "fr", "ang", "bay", "nig", "wa", "zir"
+	    "who", "balti", "ghar", "balor", "as", "ore", "dihi", "fr", "ang", "bay", "nig", "wa", "zir"];
 
 client.on("ready", () => {
   console.log("tajikistan nigga fart");
@@ -190,7 +190,7 @@ if (command === 'darius72') {
 	
 	if (command === 'stan') {
 				completeTitle = "";
-    				var min = 0;
+    				var min = 3;
 				var max = stan.length - 1;
 				stanInt = Math.floor(Math.random() * (max - min + 1)) + min;
 				for (i = 0; i < stanInt;){
