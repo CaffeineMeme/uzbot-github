@@ -724,13 +724,11 @@ if (command === 'darius72') {
 						
 					},
 					{
-						image = toastLink
-					},
-					{
 						name: "Status:",
 						value: status
 						
 					}],
+					image: toastLink,
 					footer: 
 					{
 							icon_url: client.user.avatarURL,
