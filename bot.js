@@ -250,68 +250,34 @@ client.on("message", message => {
 	}
 		if(command === 'help')
 		{
+			if(args[0] == null || args[0] == undefined){
 						message.channel.send({embed: {
 					color: 0x1eb35a,
 					author: {
 						name: client.user.username,
 						icon_url: client.user.avatarURL
 					},
-					title: "List of UzBot Commands for Newbies, Losers, and Zionists",
+					title: "UzBot Commands for Newbies, Losers, and Zionists",
 					fields: [{
-						name: "help",
-						value: "Self-explanatory, shows you the bot commands. Dum-dum newfag :troll:"
+						name: "Choose a section first",
+						value: "We had to divide this shit to make it readable (-uz help [section])"
 					},
 					{
-						name: "info",
-						value: "Displays bot info, updates, etc."
+						name: "General Fun Stuff [fun]",
+						value: "Fun commands that aren't necessarily arabfunny/worldfunny related"
 					},
 					{
-						name: "movie, film",
-						value: "Pulls up a random movie from a list of classic funny arab punjabi movies in baba's VHS pile"
+						name: "Arabfunny/Worldfunny [arab, world]",
+						value: "Funny commands originally intended for arabfunny/worldfunny"
 					},
 					{
-						name: "funny, lol, source",
-						value: "Pulls up a fucking weird arabic video/meme"
+						name: "Other [other]",
+						value: "Other misc. commands"
 					},
 					{
-						name: "danbull",
-						value: "Pulls up a funny Dan Bull song for arab gamers"
-					},
-					{
-						name: "toby, tobuscus",
-						value: "Pulls up a funny Tobuscus song for people still waiting for TobyGames happy wheels lets plays"
-					},
-					{
-						name: "hamood",
-						value: "hamood habibi nigga"
-					},
-					{
-						name: "troll",
-						value: "Pulls up funny trollface for trolling"
-					},
-					{
-						name: "title [number of words/phrases (up to 30)]",
-						value: "Creates an epic arabfunny title if you're too lazy to use your imagination"
-					},
-					{
-						name: "funnymeter [subject (up to 20 words)]",
-						value: "Determines if something is funny or kinda cringe bro"
-					},
-					{
-						name: "ironymeter [subject (up to 20 words)]",
-						value: "Determines the irony rating of a funny"
-					},
-					{
-						name: "askallah [question (no limit)]",
-						value: "Ask Allah a question an he will respond"
-					},
-					{
-						name: "bruh",
-						value: "Check the bot's pulse"
+						name: "Economy",
+						value: "Coming soon..."
 					}
-					
-					
-					
 				],
 						footer: 
 						{
@@ -319,6 +285,143 @@ client.on("message", message => {
 							text: "Fun Fact: I love you"
 						}
 						}});
+			}
+			else if (args[0] == "fun"){
+					message.channel.send({embed: {
+					color: 0x1eb35a,
+					author: {
+						name: client.user.username,
+						icon_url: client.user.avatarURL
+					},
+					title: "UzBot Commands for Newbies, Losers, and Zionists",
+					fields: [{
+						name: "General Fun Stuff",
+						value: "epic funny command for all"
+					},
+					{
+						name: "askallah [question (no limit)]",
+						value: "Ask allah your important questions"
+					},
+					{
+						name: "troll",
+						value: "pull up a funny trollface"
+					},
+					{
+						name: "danbull",
+						value: "funny dan bull rapper song for gaming"
+					},
+					{
+						name: "tobuscus, toby",
+						value: "funny tobygames nugget in a biscuit song"
+					},
+					{
+						name: "funnymeter [question (30 word limit)]",
+						value: "ranks a funny on it's funnyness"
+					},
+					{
+						name: "ironymeter [question (30 word limit)]",
+						value: "use this to check if it's an irony or not"
+					},
+					{
+						name: "stan",
+						value: "create epic funny stani country"
+					}
+				],
+						footer: 
+						{
+							icon_url: client.user.avatarURL,
+							text: "Fun Fact: South Sudan is fake"
+						}
+						}});
+			}
+			else if (args[0] == "arab" || args[0] == "world"){
+					message.channel.send({embed: {
+					color: 0x1eb35a,
+					author: {
+						name: client.user.username,
+						icon_url: client.user.avatarURL
+					},
+					title: "UzBot Commands for Newbies, Losers, and Zionists",
+					fields: [{
+						name: "Arabfunny/Worldfunny Stuff",
+						value: "funny arabic command"
+					},
+					{
+						name: "title [number of words (up to 30)] [language]",
+						value: "Generate a funny title for arab something else that is not arab",
+						value: "EXAMPLE: -uz title 20 ru"
+					},
+					{
+						name: "movie, film",
+						value: "funny movie for cinemas"
+					},
+					{
+						name: "tv",
+						value: "go through baba's vcr recordings"
+					},
+					{
+						name: "lol, source, funny",
+						value: "funny lol random XD source for arabfunny video"
+					},
+					{
+						name: "music",
+						value: "songs for dance at UN meeting"
+					},
+					{
+						name: "darius72",
+						value: "kys okbr whojew newfag"
+					},
+					{
+						name: "hamood",
+						value: "hamood habibi hamood hamood habibi"
+					}
+				],
+						footer: 
+						{
+							icon_url: client.user.avatarURL,
+							text: "Fun Fact: South Sudan is fake"
+						}
+						}});
+			}else if (args[0] == "other"){
+					message.channel.send({embed: {
+					color: 0x1eb35a,
+					author: {
+						name: client.user.username,
+						icon_url: client.user.avatarURL
+					},
+					title: "UzBot Commands for Newbies, Losers, and Zionists",
+					fields: [{
+						name: "Other Stuff",
+						value: "idk what this is"
+					},
+					{
+						name: "bruh",
+						value: "bruh moment",
+					},
+					{
+						name: "maketoast",
+						value: "toast for dinner"
+					},
+					{
+						name: "info",
+						value: "new updates and new for arab"
+					},
+					{
+						name: "help",
+						value: "for zion who don't know"
+					},
+					{
+						name: "invite",
+						value: "free uzbot 4 u server"
+					},
+				],
+						footer: 
+						{
+							icon_url: client.user.avatarURL,
+							text: "Fun Fact: South Sudan is fake"
+						}
+						}});
+			}
 		}
 		if(command === 'info')
 		{
