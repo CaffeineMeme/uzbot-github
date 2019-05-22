@@ -520,10 +520,10 @@ client.on("message", message => {
 			message.channel.send("https://www.reddit.com" + response.data.children[arabInt].data.permalink);
   			});
 		}
-		if(command === 'arabfunny')
+		if(command === 'worldfunny')
 		{
 			var minimum = 0;
-			var maximum = 100;
+			var maximum = 50;
 			fetch("https://www.reddit.com/r/worldfunnies/new.json?limit=100")
   			.then(response => response.json())
   			.then(response => {
