@@ -127,11 +127,23 @@ var troll = ["https://cdn.discordapp.com/attachments/557265635114090525/57727494
 "https://cdn.discordapp.com/attachments/557265635114090525/577276175475539981/emote.png", "https://media1.tenor.com/images/5e0021dce6226d67bce5b2af6d20a37d/tenor.gif?itemid=3530316", "https://i.ytimg.com/vi/7SdUB6Va7AY/maxresdefault.jpg",
 "https://i.ebayimg.com/images/g/Dv0AAOSwl9BWL6v9/s-l300.jpg", "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTXn2JY75kyTgoOtMCJvtxx0G6OdZ3fohKV0UN2sS3FsbC9EPLu", "https://thumbs.dreamstime.com/z/trollface-dark-spectacled-internet-troll-d-illustration-laughing-isolated-53719224.jpg",
 "https://image.shutterstock.com/image-illustration/laughing-internet-troll-head-3d-450w-528857095.jpg", "https://files.gamebanana.com/img/ico/sprays/5391d4e8edb05.gif", "https://pics.me.me/troll-face-14350384.png"];
+var toast = ["https://media.discordapp.net/attachments/577835516993732630/580736414174543873/tile000.png",
+	    "https://media.discordapp.net/attachments/577835516993732630/580736416267632641/tile001.png",
+	    "https://media.discordapp.net/attachments/577835516993732630/580736418360459304/tile002.png", 
+	    "https://media.discordapp.net/attachments/577835516993732630/580736420180787210/tile003.png",
+	    "https://media.discordapp.net/attachments/577835516993732630/580736422131138561/tile004.png",
+	    "https://media.discordapp.net/attachments/577835516993732630/580736424287141914/tile005.png"];
 var trollInt;
 
 client.on("ready", () => {
   console.log("tajikistan nigga fart");
-  client.user.setActivity('-uz help');
+  client.user.setPresence({
+	  data:{
+		game: { 
+			name: '-uz help | Currently in' + client.guilds.size + ' servers'
+		},
+		  status: 'online'
+	  }
 });
 
 client.on("message", message => {
