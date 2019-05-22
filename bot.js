@@ -145,6 +145,7 @@ client.on("ready", () => {
 		  status: 'online'
 	  }
 });
+});
 
 client.on("message", message => {
   if (message.author.bot) return;
