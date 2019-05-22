@@ -72,9 +72,17 @@ var rus = ["vodka", "russia", "yugoslavia", "soviet", "putin", "vladmir", "iran 
 	  "trade deal", ".ru", ".rs", "croatian ustashe", "karadzic", "drink water serb", "serb", "montenegro", "kill bosnia", "CS:GO", "minecraft russian hack", "mc khovanskiy", "free steam key", "only 20 ruble",
 	  "steam key cheap", "cs:go knife", "free skin", "ak47", "kalashnikov", "iran", "banned game", "nintendo of russia", "largest country", "siberia", "snow", "village", "dagestan", "Bloodbath Kavkaz", "Bloodbath Kavkaz full download"];
 var esp = [];
-var asia = [];
+var asia = ["fried rice", "cat", "china"];
 var euro = [];
-var us = [];
+var us = ["oil", "hamburger", "ronald mcdonald", "grilling", "beer", "alabama", "abortion", "redneck", "cousin", "incest", "tea", "1/32 native american", "orange man", "trump lol",
+	 "libtard rekt", "broh", "getto", "nigga", "homo", "LGBT", "god hates fags", "alcoholism", "Jimmy Fallon", "comedian", "free movie ticket", "$3.99 on sale", "DVD bluray", "comcast",
+	 "seinfeld", "funny movies", "gasoline", "car crash", "surgery", "nigga doctor", "bomb", "obama", "mobamba", "president", "clinton president girl", "rights", "burger king", "fish mcbite",
+	 "may may", "meemee", "trump baby balloon", ".co.uk.", "import tax", "amazon prime best deal", "$$$", "scotland", "america", "american", "freedom", "cuck", "boomer", "doomer", "zoomer", "jew media", "zion control government",
+	 "bomb pakistan", "iran missile deal", "kim jong un", "trump jong un", "north korea", "capitalism", "communist bad", "commie", "kill commie", "trade war", "britain", "illegal butterknife", "liscence", "police", "beating", "prison shower", "shower rape",
+	 "hurricane", "puerto rico next state", "rated M", "bernie", "cartoon", "pistol", "school shooting", "funny monkey", "cringe baby", "landfill", "brit", "crisps", "bro", "football", "pigskin", "bacon", "wendy's burder funny twitter", "porno american", "big money",
+	 "mcdonald employment", "call now", "free consultation", "youtube unblocker", "adblock", "lower class", "funny nigga ghetto", "vodka america", "pancake", "abraham lincoln", "omg george washington come alive???", "poop",
+	 "shit on toilet", "lawnmower", "uwu", "california", "gold miner", "native maerican", "1/16 cherokee", "inbred", "crooked teeth", "highest GDP", "missile codes", "twitter", "amy scheumer funny", "comedy show", "live on tv", "informercial",
+	 "syrup", "gay", "speak english", "english dub", "for free", "free download", "VPN", "advertisement", "best buy"];
 
 var title = [];
 var completeTitle;
@@ -186,8 +194,8 @@ client.on("message", message => {
 					fields: [
 						{
 						name: "Available Options",
-						value: "Arab (arab, arabic, ar)" + "\n" + "Russian/Slavic (rus, russian, slav)" + "\n" + "Africa(af, africa, african)" + "\n" + "Asia (as, asia, asian)" + 
-						"\n" + "Spanish (es, spanish)" + "\n" + "Euro/European (eu, euro, european)"+ "\n" + "Turkish (tk, turk, turkish)" + "\n" + "More coming soon maybe idk"
+						value: "Arab (arab, arabic, ar)" + "\n" + "Russian/Slavic (rus, russian, slav)" + "\n" + "Asia (as, asia, asian)" + 
+						"\n" + "Spanish (es, spanish)" + "\n" + "Euro/European (eu, euro, european)"+ "\n" + "English (en, us, america)" + "\n" + "More coming soon maybe idk"
 						},
 					],
 						footer: 
@@ -241,6 +249,31 @@ client.on("message", message => {
 				message.channel.send(completeTitle);
 				console.log(completeTitle);
 				for(i2 = (rus.length); i2 > 0;)
+				{
+					words.pop();
+					i2--;
+				}
+			}
+			else if(args[1] === "en" || args[1] === "us" || args[1] === "american")
+				{
+				console.log(words.length);
+				words = words.concat(us);
+				var min = 0;
+				var max = words.length - 1;
+				console.log("english had been added to the string bro");
+				for (i = 0; i < titleLength;){
+			 	titleInt = Math.floor(Math.random() * (max - min + 1)) + min;
+			 	title.push(words[titleInt]);
+			 	console.log("There's only " + (titleLength - (i + 1)) + " words left");
+			 	console.log(title.length);
+			 	console.log(title);
+			 	i++;
+				}
+				completeTitle = title.join(" ");
+				console.log(words.length);
+				message.channel.send(completeTitle);
+				console.log(completeTitle);
+				for(i2 = (us.length); i2 > 0;)
 				{
 					words.pop();
 					i2--;
