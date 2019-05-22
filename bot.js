@@ -6,17 +6,14 @@ const fetch = require('node-fetch');
 const randomPuppy = require('random-puppy');
 
 var movieInt;
-var movie = ["https://www.youtube.com/watch?v=LWqUupcF7A0", "https://www.youtube.com/watch?v=uwrNwd0_Ug4", "https://www.youtube.com/watch?v=o0G7FL93Hu4", "https://www.youtube.com/watch?v=_TY6kJ3KfT4",
-"https://www.youtube.com/watch?v=siWDiZhbBek", "https://www.youtube.com/watch?v=7ZsGOyWWj6k", "https://www.youtube.com/watch?v=VsewNIhWwJg", "https://www.youtube.com/watch?v=wz4ewxLCTOE",
-"https://www.youtube.com/watch?v=XVccZkiyH-o", "https://www.youtube.com/watch?v=y51ZNsBXpwg", "https://www.youtube.com/watch?v=2R2zzdjfXl4", "https://www.youtube.com/watch?v=XjIZCdWSA-I",
-"https://www.youtube.com/watch?v=s28m79VkWYI", "https://www.youtube.com/watch?v=eJ1du32NUV8", "https://www.youtube.com/watch?v=mySnCk1uXUM", "https://www.youtube.com/watch?v=dHRFwB_brrw",
-"https://www.youtube.com/watch?v=e8si-7tY1VI", "https://www.youtube.com/watch?v=nof2KwWV32o", "https://www.youtube.com/watch?v=Zp3K48ojImw", "https://www.youtube.com/watch?v=DkuYJiyKbrQ",
-"https://www.youtube.com/watch?v=ubBxPqCDFk4", "https://www.youtube.com/watch?v=ubBxPqCDFk4", "https://www.youtube.com/watch?v=O1MeI-S70Ag", "https://www.youtube.com/watch?v=HbTf_dYogeg",
-"https://www.youtube.com/watch?v=5QDKX5ExXqM", "https://www.youtube.com/watch?v=K0cu4rZoTSw", "https://www.youtube.com/watch?v=kwAtbc0rYZc", "https://www.youtube.com/watch?v=Kf4hN9s1nic",
-"https://www.youtube.com/watch?v=nJWuLqpSYqM", "https://www.youtube.com/watch?v=Gl2s_DRtPDo", "https://www.youtube.com/watch?v=Wbreg7yMxSk", "https://www.youtube.com/watch?v=dUNHmyb6oVM",
-"https://www.youtube.com/watch?v=VenkCoKuOxo", "https://www.youtube.com/watch?v=ye5HlqJtYKA", "https://www.youtube.com/watch?v=ZtrGw-oahDk", "https://www.youtube.com/watch?v=P3-OklovCg0",
-"https://www.youtube.com/watch?v=2rFcZ1xGbeU", "https://www.youtube.com/watch?v=CR0UlM1y7do", "https://www.youtube.com/watch?v=nkzbMcREj1s", "https://www.youtube.com/watch?v=zB2uW7hFs1I",
-"https://www.youtube.com/watch?v=l7E0kTvARsA", "https://www.youtube.com/watch?v=3zxasmxPMro", "https://www.youtube.com/watch?v=3M7g6DPUWK0", "https://www.youtube.com/watch?v=Ssu2nOTMjYM"]; 
+var movie = ["LWqUupcF7A0", "uwrNwd0_Ug4", "o0G7FL93Hu4", "_TY6kJ3KfT4", "siWDiZhbBek", "7ZsGOyWWj6k", "VsewNIhWwJg", "wz4ewxLCTOE",
+"XVccZkiyH-o", "y51ZNsBXpwg", "2R2zzdjfXl4", "XjIZCdWSA-I", "s28m79VkWYI", "eJ1du32NUV8", "mySnCk1uXUM", "dHRFwB_brrw", "e8si-7tY1VI",
+"nof2KwWV32o", "Zp3K48ojImw", "DkuYJiyKbrQ", "ubBxPqCDFk4", "ubBxPqCDFk4", "O1MeI-S70Ag", "HbTf_dYogeg", "5QDKX5ExXqM", "K0cu4rZoTSw", 
+"kwAtbc0rYZc", "Kf4hN9s1nic", "nJWuLqpSYqM", "Gl2s_DRtPDo", "Wbreg7yMxSk", "dUNHmyb6oVM", "VenkCoKuOxo", "ye5HlqJtYKA", "ZtrGw-oahDk", 
+"P3-OklovCg0", "2rFcZ1xGbeU", "CR0UlM1y7do", "nkzbMcREj1s", "zB2uW7hFs1I", "l7E0kTvARsA", "3zxasmxPMro", "3M7g6DPUWK0", "Ssu2nOTMjYM",
+"U6ITU1LHzvk", "mDmLJ8LHYTA", "E-Jx9yZugrg", "89vivDEChc", "WNh5LIwPKyk", "_azpWSFEL_Y", "GibI7qM0tYk", "Wz-vegualMg", "KEoGrbKAyKE",
+"51dfpYSDz5M", "oOjCXIPpMeo", "N09ygrKKNJE", "fOdBtRzYf5Q", "Tumix4dDDKk", "sz0JhqCGqP0", "vIlJuP5ipH0", "BDFsrztIs8c", "6gggODjnI6Y",
+"G2ZRuxCyapc", "nVNRUoLt7EI", "f0GtzlklbGI", "Uao5vyTpyzc"]; 
 var musicInt;
 var music = [""];
 var tvInt;
@@ -161,7 +158,7 @@ client.on("message", message => {
 	  var maximum = movie.length;
 	  movieInt = Math.floor(Math.random() * (maximum - minimum + 1)) + minimum;
 		console.log("bruh we watching movie number " + movieInt);
-        message.channel.send("Baba, I have found a nice movie for us the in the VHS collection! " + "\n" + movie[movieInt]);
+        message.channel.send("Baba, I have found a nice movie for us the in the VHS collection! " + "\n" + "https://www.youtube.com/watch?v=" + movie[movieInt]);
     }
 	if(command === 'title')
 	{
