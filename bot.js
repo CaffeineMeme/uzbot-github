@@ -207,8 +207,8 @@ if (command === 'darius72') {
 			 	i++;
 				}
 				title.push("stan");
-				completeTitle = title.join(" ");
-				completeTitle.charAt(0).toUpperCase();
+				completeTitle = title.join("");
+				completeTitle =  completeTitle.charAt(0).toUpperCase() + completeTitle.slice(1);
 				message.channel.send(completeTitle);
 				console.log(completeTitle);
   }
