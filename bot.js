@@ -176,9 +176,10 @@ client.on("message", message => {
 if (command === 'darius72') {
 				completeTitle = "";
     				var min = 1;
-				var max = darius.length - 1;
+				var max = 10;
+				var dariusInt2 = Math.floor(Math.random() * (max - min + 1)) + min;
+				for (i = 0; i < dariusInt2;){
 				dariusInt = Math.floor(Math.random() * (max - min + 1)) + min;
-				for (i = 0; i < dariusInt;){
 			 	title.push(darius[dariusInt]);
 			 	console.log(title);
 			 	i++;
@@ -191,9 +192,10 @@ if (command === 'darius72') {
 	if (command === 'stan') {
 				completeTitle = "";
     				var min = 3;
-				var max = stan.length - 1;
+				var max = 25;
+				var stanInt2 = Math.floor(Math.random() * (max - min + 1)) + min;
+				for (i = 0; i < stanInt2;){
 				stanInt = Math.floor(Math.random() * (max - min + 1)) + min;
-				for (i = 0; i < stanInt;){
 			 	title.push(stan[stanInt]);
 			 	console.log(title);
 			 	i++;
