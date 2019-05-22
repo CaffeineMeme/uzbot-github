@@ -16,6 +16,7 @@ var movie = ["LWqUupcF7A0", "uwrNwd0_Ug4", "o0G7FL93Hu4", "_TY6kJ3KfT4", "siWDiZ
 "G2ZRuxCyapc", "nVNRUoLt7EI", "f0GtzlklbGI", "Uao5vyTpyzc"]; 
 var musicInt;
 var music = [""];
+var arabInt;
 var tvInt;
 var tv = ["https://www.youtube.com/watch?v=4xEH43Dmm4I", "https://www.youtube.com/watch?v=73Yfuu9Nmjw", "https://www.youtube.com/watch?v=ZiKaFiikhL8", "https://www.youtube.com/watch?v=oWLwsIXPN8o",
 "https://www.youtube.com/watch?v=gMmjuVtNlBk", "https://www.youtube.com/watch?v=BX5IeuLlovc", "https://www.youtube.com/watch?v=9jstuGMumK0", "https://www.youtube.com/watch?v=vU5dU8upwwE",
@@ -510,13 +511,12 @@ client.on("message", message => {
 		{
 			var minimum = 0;
 			var maximum = 500;
-			var arabInt;
-			arabInt = Math.floor(Math.random() * (maximum - minimum + 1)) + minimum;
-			console.log(arabInt);
 			fetch("https://www.reddit.com/r/arabfunny/new.json?limit=500")
   			.then(response => response.json())
   			.then(response => {
-    			console.log("https://www.reddit.com" + response.data.children[arabInt].permalink);
+			arabInt = Math.floor(Math.random() * (maximum - minimum + 1)) + minimum;
+			console.log(arabInt);
+    			console.log("https://www.reddit.com" + response.data.children[arabInt].data.permalink);
 			//message.channel.send("https://www.reddit.com" + response.data.children[arabInt].data.permalink);
   			});
 		}
