@@ -73,7 +73,14 @@ var rus = ["vodka", "russia", "yugoslavia", "soviet", "putin", "vladmir", "iran 
 	  "trade deal", ".ru", ".rs", "croatian ustashe", "karadzic", "drink water serb", "serb", "montenegro", "kill bosnia", "CS:GO", "minecraft russian hack", "mc khovanskiy", "free steam key", "only 20 ruble",
 	  "steam key cheap", "cs:go knife", "free skin", "ak47", "kalashnikov", "iran", "banned game", "nintendo of russia", "largest country", "siberia", "snow", "village", "dagestan", "Bloodbath Kavkaz", "Bloodbath Kavkaz full download"];
 var esp = [];
-var asia = ["fried rice", "cat", "china"];
+var asia = ["fried rice", "cat", "china", "myanmar", "cambodia", "chicken", "mao", "free pirated movie", "tiananment square", "sex robot", "japan", "hentai", "anime", "jov", "jap", "ww2", "hiroshima", "nuke", "loas", "thailand", "trap" ,"vietnam", "vietnam war", "1989",
+	   "bangladesh", "rohingya", "philippines", "singapore", "arrested for gum", "small penis", "korea", "best korea", "kpop", "live concert", "kim", "kim jong um", "us summit", "fuck united nations", "ching chong", "karaoke", "chinese dub", "sub", "japan dub", "anime dvd",
+	   "yangon", "landmines on border", "panda express", "fortune cookie", "horoscope", "manicure", "trap", "cringe", "yuan value", "5000 yen", "animation studio", "slave labor", "child labor", "only 1 child", "eat children", "eternal life", "face cream", "chigga", "shampoo", 
+	   "sanctions", "amelikan pig", "pronounce r", "china government", "glorious leader", "free with purchase", "cock and ball", "korean animate", "kid make tshirt", "eat cat", "fried dog", "free child", "child for sale", "china hooker", "love you long time", "thai trap", 
+	   "toilet hole", "poop in hole", "shit on street", "amelika", "kim jong", "cambodia genocide", "滑稽", "史诗", "智障", "黑人", "米姆", "nothing happened", "天安门广场", "大街上的便便", "手机厂", "童工", "血汗工厂", "工作室", "below minimmum wage", "no job", "rice farm", "buffalo poop",
+	   "水牛屎", "水牛屎", "大声笑", "xixixixi", "腾讯", "沙特", "黑鬼", "김정은", "tree", "viet tang", "검열", "권자", "염소", "똥", "공산주의", "영화", "一个孩子的法律", "缅甸", "小便和便便", "喜剧搞笑", "清冲", "天安门广场上没有任何事情发生", "烟雾", "铅中毒", "伟大的领袖", "洗头", "讽刺", 
+	   "ရွှင်မြူးဘွယ်ဖြစ်သော", "ကြှဲ", "ဆန်လယ်ယာ", "ဆိတ်", "ကျပ်", "တရုတ်လိင်တံ", "ကုန်သွယ်ရေးစစ်ပွဲ", "ပြဇါတ်", "ရုပ်မြင်သံကြားပြပွဲ", "အပြည့်အဝရုပ်ရှင်ရုပ်ရှင်ရုံ", "ပြဇာတ်ရုံ", "အမေရိကတိုက်", "ကျွဲမစင်", "ဒီမိုကရေစီ", "masama ang gamot", "bluray factory", "age consent 13", "batas ng baril", "tito titi", "nakakatawa", 
+	   "mga mahihirap na tao", "itim na tao", "ປະເທດກຳປູເຈຍ", "อินเทอร์เน็ต", "เกย์กับดัก", "ลาว gdp", "ดาวน์โหลดฟรี", "เกมจบภาพยนตร์ที่สมบูรณ์"];
 var euro = [];
 var us = ["oil", "hamburger", "ronald mcdonald", "grilling", "beer", "alabama", "abortion", "redneck", "cousin", "incest", "tea", "1/32 native american", "orange man", "trump lol",
 	 "libtard rekt", "broh", "getto", "nigga", "homo", "LGBT", "god hates fags", "alcoholism", "Jimmy Fallon", "comedian", "free movie ticket", "$3.99 on sale", "DVD bluray", "comcast",
@@ -173,6 +180,10 @@ client.on("message", message => {
     message.channel.send('bruh moment');
   }
 	
+if (command === 'bruh') {
+    message.channel.send('https://discordapp.com/oauth2/authorize?client_id=576404103110852617&scope=bot&permissions=59392');
+  }
+	
 if (command === 'darius72') {
 				completeTitle = "";
 				title = [];
@@ -190,7 +201,7 @@ if (command === 'darius72') {
 				completeTitle = title.join(" ");
 				message.channel.send(completeTitle);
 				console.log(completeTitle);
-  }
+  	}
 	
 	if (command === 'stan') {
 				completeTitle = "";
@@ -331,6 +342,31 @@ if (command === 'darius72') {
 					i2--;
 				}
 			}
+			else if(args[1] === "as" || args[1] === "asia" || args[1] === "asian")
+				{
+				console.log(words.length);
+				words = words.concat(asia);
+				var min = 0;
+				var max = words.length - 1;
+				console.log("ching chong had been added to the string bro");
+				for (i = 0; i < titleLength;){
+			 	titleInt = Math.floor(Math.random() * (max - min + 1)) + min;
+			 	title.push(words[titleInt]);
+			 	console.log("There's only " + (titleLength - (i + 1)) + " words left");
+			 	console.log(title.length);
+			 	console.log(title);
+			 	i++;
+				}
+				completeTitle = title.join(" ");
+				console.log(words.length);
+				message.channel.send(completeTitle);
+				console.log(completeTitle);
+				for(i2 = (asia.length); i2 > 0;)
+				{
+					words.pop();
+					i2--;
+				}
+			}
 			
 	}
 		if(command === 'help')
@@ -455,6 +491,14 @@ if (command === 'darius72') {
 					{
 						name: "darius72",
 						value: "kys okbr whojew newfag"
+					},
+					{
+						name: "arabfunny",
+						value: "funny arabfunny comedy post best sub"
+					},
+					{
+						name: "worldfunny",
+						value: "arabfunny but the whole world bro very comedy 10/10"
 					},
 					{
 						name: "hamood",
