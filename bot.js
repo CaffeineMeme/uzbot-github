@@ -137,14 +137,7 @@ var trollInt;
 
 client.on("ready", () => {
   console.log("tajikistan nigga fart");
-  client.user.setPresence({
-	  data:{
-		game: { 
-			name: '-uz help | Currently in' + client.guilds.size + ' servers'
-		},
-		  status: 'online'
-	  }
-});
+  client.user.setActivity('-uz help for commands | Currently in ' + client.guilds.size + ' servers');
 });
 
 client.on("message", message => {
