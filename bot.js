@@ -650,7 +650,8 @@ if (command === 'darius72') {
 		var maximum = troll.length - 1;
 		trollInt = Math.floor(Math.random() * (maximum - minimum + 1)) + minimum;
 		console.log("dan bull number " + trollInt);
-        message.channel.send("lol " + "\n" + troll[trollInt]);
+		const embed = new Discord.RichEmbed().setColor(0x0099b5).setTitle("trolled").addField("lol bro u got trolled", "lol dumb nigga was just trolled what a loser", true).setImage(troll[trollInt])
+        	message.channel.send("lol " + "\n" + troll[trollInt]);
 		}
 		if(command === 'toby' || command === 'tobuscus')
 		{
