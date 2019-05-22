@@ -141,7 +141,7 @@ var toast = ["https://media.discordapp.net/attachments/577835516993732630/580736
 	    "https://media.discordapp.net/attachments/577835516993732630/580736424287141914/tile005.png"];
 var trollInt;
 var dariusInt;
-var darius["kys", "who", "literally who", "jew", "nigger", "whojew", "retard", "okbr", "fag", "obkrfag", "whofag", "newwho", 
+var darius = ["kys", "who", "literally who", "jew", "nigger", "whojew", "retard", "okbr", "fag", "obkrfag", "whofag", "newwho", 
 	   "clown", "speak up", "i don't speak who", "what are you saying", "who clown", "newfag", "i don't speak who", "i don't understand",
 	  "soy face", "kill yourself", "autist", "NIGGER", "cuck", "trolled", "owned", "ez", "lol", "dumbass", "clown nigger", "loli", "hentai",
 	  "ew", "who?", "?", "stupid"];
