@@ -737,7 +737,6 @@ if (command === 'darius72') {
 			}
 			});
 		}
-		}
 		if(command === 'funnymeter')
 		{	
 			if(args.length > 20){
