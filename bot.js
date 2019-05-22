@@ -508,10 +508,15 @@ client.on("message", message => {
 		}
 		if(command === 'arabfunny')
 		{
+			var minimum = 0;
+			var maximum = 500;
+			var arabInt;
+			arabInt = Math.floor(Math.random() * (maximum - minimum + 1)) + minimum;
 			fetch("https://www.reddit.com/r/arabfunny/new.json?limit=500")
   			.then(response => response.json())
   			.then(response => {
-    			console.log(response.data.children[0].data.permalink);
+    			console.log("https://www.reddit.com" + response.data.children[arabInt].data.permalink);
+			message.channel.send("https://www.reddit.com" + response.data.children[arabInt].data.permalink);
   			});
 		}
 		if(command === 'tv' || command === 'show')
