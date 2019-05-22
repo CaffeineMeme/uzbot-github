@@ -515,7 +515,7 @@ client.on("message", message => {
 			fetch("https://www.reddit.com/r/arabfunny/new.json?limit=500")
   			.then(response => response.json())
   			.then(response => {
-    				console.log(/*"https://www.reddit.com" + */response.data.children[10].data.permalink);
+    				console.log("https://www.reddit.com" + response.data.children[Math.floor(Math.random() * (maximum - minimum + 1)) + minimum].data.permalink);
 			//message.channel.send("https://www.reddit.com" + response.data.children[arabInt].data.permalink);
   			});
 		}
