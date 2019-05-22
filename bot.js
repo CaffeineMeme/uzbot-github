@@ -512,10 +512,11 @@ client.on("message", message => {
 			var maximum = 500;
 			var arabInt;
 			arabInt = Math.floor(Math.random() * (maximum - minimum + 1)) + minimum;
+			console.log(arabInt);
 			fetch("https://www.reddit.com/r/arabfunny/new.json?limit=500")
   			.then(response => response.json())
   			.then(response => {
-    				console.log("https://www.reddit.com" + response.data.children[Math.floor(Math.random() * (maximum - minimum + 1)) + minimum].data.permalink);
+    			console.log("https://www.reddit.com" + response.data.children[Math.floor(Math.random() * (maximum - minimum + 1)) + minimum].data.permalink);
 			//message.channel.send("https://www.reddit.com" + response.data.children[arabInt].data.permalink);
   			});
 		}
