@@ -506,9 +506,13 @@ client.on("message", message => {
 				message.channel.send("**Allah says: **" + "\n" + responses[responseInt]);
 			}
 		}
-		if(command === 'song' || command === 'music')
+		if(command === 'arabfunny')
 		{
-
+			fetch("https://www.reddit.com/r/arabfunny/new.json?limit=500")
+  			.then(response => response.json())
+  			.then(response => {
+    			console.log(response.data.children[0].data.permalink);
+  			});
 		}
 		if(command === 'tv' || command === 'show')
 		{
@@ -557,25 +561,6 @@ client.on("message", message => {
 		hamoodInt = Math.floor(Math.random() * (maximum - minimum + 1)) + minimum;
 		console.log("dan bull number " + hamoodInt);
         message.channel.send("hamood funny lol 2019 240p arabic animation " + "\n" + hamood[hamoodInt]);
-		}
-		if(command === 'arabfunny')
-		{
-			exports.run = async () => {
-        const { body } = await snek
-            .get('https://www.reddit.com/r/dankmemes.json?sort=top&t=week')
-            .query({ limit: 800 });
-        const allowed = message.channel.nsfw ? body.data.children : body.data.children.filter(post => !post.data.over_18);
-        if (!allowed.length) return message.channel.send('It seems we are out of fresh memes!, Try again later.');
-        const randomnumber = Math.floor(Math.random() * allowed.length);
-        const embed = new Discord.RichEmbed()
-        .setColor(0x00A2E8)
-        .setTitle(allowed[randomnumber].data.title)
-        .setDescription("Posted by: " + allowed[randomnumber].data.author)
-        .setImage(allowed[randomnumber].data.url)
-        .addField("Other info:", "Up votes: " + allowed[randomnumber].data.ups + " / Comments: " + allowed[randomnumber].data.num_comments)
-        .setFooter("Memes provided by r/dankmemes");
-        message.channel.send(embed);
-}
 		}
 		if(command === 'funnymeter')
 		{	
