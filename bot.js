@@ -677,6 +677,69 @@ if (command === 'darius72') {
 		console.log("dan bull number " + hamoodInt);
         message.channel.send("hamood funny lol 2019 240p arabic animation " + "\n" + hamood[hamoodInt]);
 		}
+		if(command === 'maketoast')
+		{	
+			var minimum = 0;
+			var maximum = 110;
+			var toastLink = "";
+			scale = responseInt = Math.floor(Math.random() * (maximum - minimum + 1)) + minimum;
+			subject = args.join(" ");
+			if(scale < 21){
+				status = "Lol untoasted you dumbass";
+				toastLink = toast[0];
+			}
+			else if(scale > 21 && scale < 41){
+				status = "barely toasted but still toast";
+				toastLink = toast[1];
+			}
+			else if(scale > 41 && scale < 61){
+				status = "yum good";
+				toastLink = toast[2];
+			}
+			else if(scale > 61 && scale < 81){
+				status = "bro this kinda brown yo";
+				toastLink = toast[3];
+			}
+			else if(scale > 81 && scale < 101){
+				status = "bruh nigga you overtoast";
+				toastLink = toast[4];
+			}
+			else if(scale > 101){
+				status = "SUDAN TOAST SUDAN TOAST SUDAN TOAST";
+				toastLink = toast[5];
+				
+			}
+
+			message.channel.send({embed: {
+					color: 0xce1126,
+					author: {
+						name: "you made toast over the sand",
+						icon_url: client.user.avatarURL
+					},
+					title: "UzBot Official FunnyMeter",
+					fields: [
+					{
+						name: "Toastedness:",
+						value: scale + "/100"
+						
+					},
+					{
+						image = toastLink
+					},
+					{
+						name: "Status:",
+						value: status
+						
+					}],
+					footer: 
+					{
+							icon_url: client.user.avatarURL,
+							text: "Fun Fact: Israel is fucking fake"
+					}
+			}
+			});
+		}
+		}
 		if(command === 'funnymeter')
 		{	
 			if(args.length > 20){
