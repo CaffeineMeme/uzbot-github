@@ -517,7 +517,20 @@ client.on("message", message => {
 			arabInt = Math.floor(Math.random() * (maximum - minimum + 1)) + minimum;
 			console.log(arabInt);
     			console.log("https://www.reddit.com" + response.data.children[arabInt].data.permalink);
-			//message.channel.send("https://www.reddit.com" + response.data.children[arabInt].data.permalink);
+			message.channel.send("https://www.reddit.com" + response.data.children[arabInt].data.permalink);
+  			});
+		}
+		if(command === 'arabfunny')
+		{
+			var minimum = 0;
+			var maximum = 100;
+			fetch("https://www.reddit.com/r/worldfunnies/new.json?limit=100")
+  			.then(response => response.json())
+  			.then(response => {
+			arabInt = Math.floor(Math.random() * (maximum - minimum + 1)) + minimum;
+			console.log(arabInt);
+    			console.log("https://www.reddit.com" + response.data.children[arabInt].data.permalink);
+			message.channel.send("https://www.reddit.com" + response.data.children[arabInt].data.permalink);
   			});
 		}
 		if(command === 'tv' || command === 'show')
