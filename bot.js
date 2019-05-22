@@ -510,8 +510,8 @@ client.on("message", message => {
 		if(command === 'arabfunny')
 		{
 			var minimum = 0;
-			var maximum = 500;
-			fetch("https://www.reddit.com/r/arabfunny/new.json?limit=500")
+			var maximum = 100;
+			fetch("https://www.reddit.com/r/arabfunny/new.json?limit=100")
   			.then(response => response.json())
   			.then(response => {
 			arabInt = Math.floor(Math.random() * (maximum - minimum + 1)) + minimum;
