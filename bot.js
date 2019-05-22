@@ -140,6 +140,17 @@ var toast = ["https://media.discordapp.net/attachments/577835516993732630/580736
 	    "https://media.discordapp.net/attachments/577835516993732630/580736422131138561/tile004.png",
 	    "https://media.discordapp.net/attachments/577835516993732630/580736424287141914/tile005.png"];
 var trollInt;
+var dariusInt;
+var darius["kys", "who", "literally who", "jew", "nigger", "whojew", "retard", "okbr", "fag", "obkrfag", "whofag", "newwho", 
+	   "clown", "speak up", "i don't speak who", "what are you saying", "who clown", "newfag", "i don't speak who", "i don't understand",
+	  "soy face", "kill yourself", "autist", "NIGGER", "cuck", "trolled", "owned", "ez", "lol", "dumbass", "clown nigger", "loli", "hentai",
+	  "ew", "who?", "?", "stupid"];
+var stanInt;
+var stan = ["uz", "af", "ka", "ta", "pa", "ir", "kyr", "turk", "ghan", "zakh", "ijiki", "meni", "gyz", "ki", "ha", 
+	    "ya", "hindu", "urdu", "leha", "huna", "hir", "vat", "serbe", "dage", "gole", "bal", "ochi", "lore", 
+	    "bash", "kor", "oto", "tar", "gil", "git", "si", "kara", "kal", "pak", "gobu", "nuri", "dzor", "bu", "elbi",
+	    "sha", "hri", "arabi", "gor", "je", "kohi", "lez", "gi", "qa", "baili", "za", "buli", "kabuli", "dard", "ban", "tu",
+	    "who", "balti", "ghar", "balor", "as", "ore", "dihi", "fr", "ang", "bay", "nig", "wa", "zir"
 
 client.on("ready", () => {
   console.log("tajikistan nigga fart");
@@ -160,6 +171,38 @@ client.on("message", message => {
   // And our 2 real basic commands!
   if (command === 'bruh') {
     message.channel.send('bruh moment');
+  }
+	
+if (command === 'darius72') {
+				completeTitle = "";
+    				var min = 1;
+				var max = darius.length - 1;
+				dariusInt = Math.floor(Math.random() * (max - min + 1)) + min;
+				for (i = 0; i < dariusInt;){
+			 	title.push(darius[dariusInt]);
+			 	console.log(title);
+			 	i++;
+				}
+				completeTitle = title.join(" ");
+				message.channel.send(completeTitle);
+				console.log(completeTitle);
+  }
+	
+	if (command === 'stan') {
+				completeTitle = "";
+    				var min = 0;
+				var max = stan.length - 1;
+				stanInt = Math.floor(Math.random() * (max - min + 1)) + min;
+				for (i = 0; i < stanInt;){
+			 	title.push(stan[stanInt]);
+			 	console.log(title);
+			 	i++;
+				}
+				title.push("stan");
+				completeTitle = title.join(" ");
+				completeTitle.charAt(0).toUpperCase();
+				message.channel.send(completeTitle);
+				console.log(completeTitle);
   }
   
   if (command == 'movie' || command == 'film') {
