@@ -615,7 +615,7 @@ if (command === 'darius72') {
 						name: "News and Updates",
 						value: "Lots of new and epic commands" + "\n"
 						+ "Remade title generator to include worldfunny regions" + "\n" + 
-						"Increase databases for various commands" + "\n"
+						"Increase databases for various commands" + "\n" +
 						"Reorganized help into sections" + "\n" +
 						"Code optimizations"
 						
