@@ -62,6 +62,7 @@ var arab = ["رمضان","هندوستان", "أوباما", "باكستان", "
 	   "bangla", "palestinians", "lizard man israeli", "pray to allah", "hamood habibi", "nigga poop", "uzbekistan", "kyrgyz", "fake israel",
 	   "fasting", "ramadan fast", "ramadan ape", "iran missile", "oil saudi", "$1 trillion saudi invest", "karim yakarim", "كريم وكريم",
 	   "epic rap battles of allah", "stani", "arab squat toilet"]; 
+
 var rus = ["vodka", "russia", "yugoslavia", "soviet", "putin", "vladmir", "iran deal", "водка", "СССР", "Stalin", "chernobyl", "ruble", "ukraina", "slav", "armenia", "azerbaijan",
 	  "squat", "gopnik", "gulag", "internet closed", "Жопа", "adidas", "cold war", "missile", "nuclear bomb", "capitalist pig", "srbija", "USSR",
 	  "comrade", "комраде", "ushanka", "russia winter", "ww2", "communism", "capitalist pig", "supply and demand", "mafia", "putin funny", "elect", "navalny", "kavkaz",
@@ -72,7 +73,18 @@ var rus = ["vodka", "russia", "yugoslavia", "soviet", "putin", "vladmir", "iran 
 	  "туалет", "ниггер", "пердеть", "славянский", "хреновый трах", "Албания", "косово", "косово је србија", "тролл", "ტროლის სახე პრეზიდენტი", "არაყი", "მიხილ საკაშვილი", "ტუალეტი", "геиик", "путин",
 	  "trade deal", ".ru", ".rs", "croatian ustashe", "karadzic", "drink water serb", "serb", "montenegro", "kill bosnia", "CS:GO", "minecraft russian hack", "mc khovanskiy", "free steam key", "only 20 ruble",
 	  "steam key cheap", "cs:go knife", "free skin", "ak47", "kalashnikov", "iran", "banned game", "nintendo of russia", "largest country", "siberia", "snow", "village", "dagestan", "Bloodbath Kavkaz", "Bloodbath Kavkaz full download"];
-var esp = [];
+
+var esp = ["ay ay ay", "quien", "no intiendo", "comedia", "negrito", "doritos gallo de pico", "100 pesos", "descuento", "africanos", "hermano", "puto", "chingate", "mexico", "guatemala", "caravan", "cocaina", "el chapo", "beheading video el chapo", "weed money", "mexico prison", "venezuela", "foreign aid",
+	  "papi", "modelo", "television", "televisa", "funny el chavo", "el chavo animado", "pepsi vidrio", "alcolico", "chulo", "guey", "frijoles", "burrito guero", "guero", "video juego de nokia", "descargar gratis", "facebook espana", "jodate", "irmao", "bolsonaro", "brazil trump", "gratis", "compra barata",
+	  "brasilia", "coffee bean country", "suicidio", "immigrantes", "immigrant", "america border", "we no pay for it", "mow lawns", "cheap mexican maid", "mexico sexi", "leche fresca", "chingate lol", "anime subtitulo espanol", "matematicas de caballo", "pelo de testiculos", "pito", "chichis", 
+	   "leche de cabra de india", "culo", "coco", "loco", "fetiche de pies", "asqueroso", "escuela", "molho szechuan de rick e morti", "joto", "omosexual son feo", "mexico strong",
+	  "venezuela embargo", "gran colombia", "colombia cocaine", "nicaragua", "nicauguan drug trade", "el savlador", "burning garbage", "pan dulce", "platano", "foda-te", "uruguay", "chile", "long country", "pedo",
+	  "ecuador", "venezuela poop in hole", "bano lleno", "caca", "vaca", "islam in mexico", "baja california", "venzuela 2 president", "chingow", "calvo",
+	  "risa", "lol espanol risas cool", "china", "viva espana", "ecuatorial guinea", "spanish africa", "nigga speak spanish", "lol poor niggas", "sudan del sur", "bombas", "cacahuates", "muy caro",
+	  "espanol comedia", "endgame spanish dub", "callate", "chapulin colorado", "glass pepsi bottle", "latin america poor bro", "spanish nigga", "puerto rico", "hurrican reparations", 
+	"domican republic", "nigga mexico", "muy gracioso", "salchipapa", "takis", "jalapeno", "retrasado", "relaciones de mexico y china", "quetzal", "aztec", "blood god", "bruh sacrifice", "nueva ropa", "obama presidente", "naranja molestia",
+	  "republica dominicana", "dispierta america", "hugo chavez", "maduro venezuela", "parabrillas", "sonriete estas con cricket"];
+
 var asia = ["fried rice", "cat", "china", "myanmar", "cambodia", "chicken", "mao", "free pirated movie", "tiananment square", "sex robot", "japan", "hentai", "anime", "jov", "jap", "ww2", "hiroshima", "nuke", "loas", "thailand", "trap" ,"vietnam", "vietnam war", "1989",
 	   "bangladesh", "rohingya", "philippines", "singapore", "arrested for gum", "small penis", "korea", "best korea", "kpop", "live concert", "kim", "kim jong um", "us summit", "fuck united nations", "ching chong", "karaoke", "chinese dub", "sub", "japan dub", "anime dvd",
 	   "yangon", "landmines on border", "panda express", "fortune cookie", "horoscope", "manicure", "trap", "cringe", "yuan value", "5000 yen", "animation studio", "slave labor", "child labor", "only 1 child", "eat children", "eternal life", "face cream", "chigga", "shampoo", 
@@ -81,7 +93,12 @@ var asia = ["fried rice", "cat", "china", "myanmar", "cambodia", "chicken", "mao
 	   "水牛屎", "水牛屎", "大声笑", "xixixixi", "腾讯", "沙特", "黑鬼", "김정은", "tree", "viet tang", "검열", "권자", "염소", "똥", "공산주의", "영화", "一个孩子的法律", "缅甸", "小便和便便", "喜剧搞笑", "清冲", "天安门广场上没有任何事情发生", "烟雾", "铅中毒", "伟大的领袖", "洗头", "讽刺", 
 	   "ရွှင်မြူးဘွယ်ဖြစ်သော", "ကြှဲ", "ဆန်လယ်ယာ", "ဆိတ်", "ကျပ်", "တရုတ်လိင်တံ", "ကုန်သွယ်ရေးစစ်ပွဲ", "ပြဇါတ်", "ရုပ်မြင်သံကြားပြပွဲ", "အပြည့်အဝရုပ်ရှင်ရုပ်ရှင်ရုံ", "ပြဇာတ်ရုံ", "အမေရိကတိုက်", "ကျွဲမစင်", "ဒီမိုကရေစီ", "masama ang gamot", "bluray factory", "age consent 13", "batas ng baril", "tito titi", "nakakatawa", 
 	   "mga mahihirap na tao", "itim na tao", "ປະເທດກຳປູເຈຍ", "อินเทอร์เน็ต", "เกย์กับดัก", "ลาว gdp", "ดาวน์โหลดฟรี", "เกมจบภาพยนตร์ที่สมบูรณ์"];
-var euro = [];
+
+var euro = ["immigrant", "sweden", "trans", "rape cases", "syria migrant", "euro", "brexit", "EU", "germany", "third reich", "nazi", "ww2", "axis power", "annex", "nazi reparations", "holocaust", "kill jew", "butterknife banned", "tv license", "article 13 funny politic", 
+	    "romania", "transylvania is hungary", "finland", "danke", "frank", "france", "baguette", "wine", "smelly american", "armpit", "french", "hon hon", "ibradude ramadan", "open border", "dumb tourist nigga", "french bread", "garlic", "quebec is france", "dildo ice cream",
+	   "76 gender", "swede", "pewdiepie", "gaming", "poland", "funny ball comic", "polandball lol xd", "sniff fart", "anschluss", "warsaw", "polska strong", "estonia", "azeri x russia", "netherlands", "europe weed smoke", "euro porn", "frankfurter", "turkey", "turkey is EU",
+	   "dumb turkey lol", "sweden tranny child sad story", "USSR", "yugoslav", "anti-vax", "european union", "le", "transnistria", "moldova", "europoor", "lol ukraine", "yukaina", "eurofag", "darius", "romania lettuce funny pun"];
+	    
 var us = ["oil", "hamburger", "ronald mcdonald", "grilling", "beer", "alabama", "abortion", "redneck", "cousin", "incest", "tea", "1/32 native american", "orange man", "trump lol",
 	 "libtard rekt", "broh", "getto", "nigga", "homo", "LGBT", "god hates fags", "alcoholism", "Jimmy Fallon", "comedian", "free movie ticket", "$3.99 on sale", "DVD bluray", "comcast",
 	 "seinfeld", "funny movies", "gasoline", "car crash", "surgery", "nigga doctor", "bomb", "obama", "mobamba", "president", "clinton president girl", "rights", "burger king", "fish mcbite",
@@ -90,7 +107,7 @@ var us = ["oil", "hamburger", "ronald mcdonald", "grilling", "beer", "alabama", 
 	 "hurricane", "puerto rico next state", "rated M", "bernie", "cartoon", "pistol", "school shooting", "funny monkey", "cringe baby", "landfill", "brit", "crisps", "bro", "football", "pigskin", "bacon", "wendy's burder funny twitter", "porno american", "big money",
 	 "mcdonald employment", "call now", "free consultation", "youtube unblocker", "adblock", "lower class", "funny nigga ghetto", "vodka america", "pancake", "abraham lincoln", "omg george washington come alive???", "poop",
 	 "shit on toilet", "lawnmower", "uwu", "california", "gold miner", "native maerican", "1/16 cherokee", "inbred", "crooked teeth", "highest GDP", "missile codes", "twitter", "amy scheumer funny", "comedy show", "live on tv", "informercial",
-	 "syrup", "gay", "speak english", "english dub", "for free", "free download", "VPN", "advertisement", "best buy"];
+	 "syrup", "gay", "speak english", "english dub", "for free", "free download", "VPN", "advertisement", "best buy", "anti-vax", "autism", "vaccines", "soccer", "soccer mom", "funny divorce", "abortion fetus", "nigga fetus", "inter-racial penis"];
 
 var title = [];
 var completeTitle;
@@ -101,7 +118,8 @@ var responses = ["Yes", "No", "Maybe", "Ask Allah Later", "Ask Muhammed Instead"
 "Please Refer to Quran", "Are you Zionist?", "You stupit", "Allah does not consent", "Allah likes this", "Allah approved", "Possibly", "Insert 25c to Continue", "I don't feel like it",
 "Stop being degenerate, Allah doesn't like.", "Shut up", "Try Harder", "Free Palestine", "Ask Saudi Prince", "It'll happen soon", "Allah is angry, try later", "You are infidel",
 "nigga", "bruh", "Stop reading bible", "You will be beheaded", "Ask goat", "Women cannot ask", "I want an offering first", "Hell yeah nigga", "dude that's haram", "Yeah", "Nah",
-"Yes bro", "It's happening", "Wish granted by Allah", "Allah is busy"];
+"Yes bro", "It's happening", "Wish granted by Allah", "Allah is busy", "The Quran agrees", "I will answer you at the Kaaba", "Pray to Allah, and it will be so", "Allah sees you haven't prayed",
+"Read the Quran first, then ask again", "Will Smith Allah", "Definitely", "Absolutely", "Mohammed disagrees with you, and I do too", "Mohammed and I agree on this", "Fuck you", "I don't speak who"];
 var responseInt;
 var danbull = ["https://www.youtube.com/watch?v=h_wUdzVZD3o", "https://www.youtube.com/watch?v=8slWBUSdGBE", "https://www.youtube.com/watch?v=Pa5Ti_tR0hE", "https://www.youtube.com/watch?v=szXAh0fDnrA",
 "https://www.youtube.com/watch?v=rkfVkC_Xprk", "https://www.youtube.com/watch?v=ZZujisNZuw0", "https://www.youtube.com/watch?v=ZZujisNZuw0", "https://www.youtube.com/watch?v=vZG_s7eHrGc",
@@ -257,8 +275,8 @@ if (command === 'darius72') {
 					fields: [
 						{
 						name: "Available Options",
-						value: "Arab (arab, arabic, ar)" + "\n" + "Russian/Slavic (rus, russian, slav)" + "\n" + "Asia (as, asia, asian)" + 
-						"\n" + "Spanish (es, spanish)" + "\n" + "Euro/European (eu, euro, european)"+ "\n" + "English (en, us, america)" + "\n" + "More coming soon maybe idk"
+						value: "Arab (arab, arabic, ar)" + "\n" + "Russian/Slavic (ru, russian, slav)" + "\n" + "Asia (as, asia, asian)" + 
+						"\n" + "Spanish (es, esp, spanish)" + "\n" + "Euro/European (eu, euro, european)"+ "\n" + "English (en, us, america)" + "\n" + "More coming soon maybe idk"
 						},
 					],
 						footer: 
@@ -367,6 +385,31 @@ if (command === 'darius72') {
 					i2--;
 				}
 			}
+			else if(args[1] === "es" || args[1] === "esp" || args[1] === "spanish")
+				{
+				console.log(words.length);
+				words = words.concat(esp);
+				var min = 0;
+				var max = words.length - 1;
+				console.log("ching chong had been added to the string bro");
+				for (i = 0; i < titleLength;){
+			 	titleInt = Math.floor(Math.random() * (max - min + 1)) + min;
+			 	title.push(words[titleInt]);
+			 	console.log("There's only " + (titleLength - (i + 1)) + " words left");
+			 	console.log(title.length);
+			 	console.log(title);
+			 	i++;
+				}
+				completeTitle = title.join(" ");
+				console.log(words.length);
+				message.channel.send(completeTitle);
+				console.log(completeTitle);
+				for(i2 = (esp.length); i2 > 0;)
+				{
+					words.pop();
+					i2--;
+				}
+			}
 			
 	}
 		if(command === 'help')
@@ -469,8 +512,7 @@ if (command === 'darius72') {
 					},
 					{
 						name: "title [number of words (up to 30)] [language]",
-						value: "Generate a funny title for arab something else that is not arab",
-						value: "EXAMPLE: -uz title 20 ru"
+						value: "Generate a funny title for arab something else that is not arab" +"\n"+ "EXAMPLE: -uz title 20 ru"
 					},
 					{
 						name: "movie, film",
@@ -563,7 +605,7 @@ if (command === 'darius72') {
 					title: "Yo whats up this is UzBot",
 					fields: [{
 						name: "Verison",
-						value: "Current UzBot Version: Urgench (0.6.0)" + "\n" + "Current Status: Beta"
+						value: "Current UzBot Version: Bukhara (0.9.2)" + "\n" + "Current Status: Late Beta"
 					},
 					{
 						name: "Creators",
@@ -571,8 +613,11 @@ if (command === 'darius72') {
 					},
 					{
 						name: "News and Updates",
-						value: "New Commands Added:" + "\n" + "troll" + "\n" + "funny/lol/source" + "\n" + "funnymeter" + "\n" + "ironymeter" + "\n" + "askallah" + "\n" + "danbull"+ "\n" + "toby/tobuscus" + "\n" + "hamood" + "\n" + "tv/show"
-						+ "Updated title output stuff" + "\n" + "Removed music for a bit"
+						value: "Lots of new and epic commands" + "\n"
+						+ "Remade title generator to include worldfunny regions" + "\n" + 
+						"Increase databases for various commands" + "\n"
+						"Reorganized help into sections" + "\n" +
+						"Code optimizations"
 						
 					},
 					{ 
