@@ -22,7 +22,7 @@ if(canWork === true){
         db.add(`money_${message.author.id}`, amount);
         canWork = false;
         setTimeout(  () => {    canWork = true;  },  timeLeft * 1000);
-        for(i = 0; i >= timeLeft;)
+        for(i = 0; i <= timeLeft;)
         {
             setTimeout(  () => {  i++;   timeLeft--; }, 1000);
         }
@@ -40,7 +40,7 @@ if(canWork === true){
         db.add(`money_${message.author.id}`, amount);
         canWork = false;
         setTimeout(  () => {    canWork = true;  },  timeLeft * 1000);
-        for(i = 0; i >= timeLeft;)
+        for(i = 0; i <= timeLeft;)
         {
             setTimeout(  () => {  i++;   timeLeft--; }, 1000);
         }
@@ -59,9 +59,9 @@ if(canWork === true){
         db.add(`totalMoney_${message.author.id}`, amount);
         canWork = false;
         setTimeout(  () => {    canWork = true;  },  timeLeft * 1000);
-        for(i = 0; i >= timeLeft;)
+        for(i = 0; i <= timeLeft;)
         {
-            setTimeout(  () => {  i++;   timeLeft--; }, 1000);
+            setTimeout(  () => {  i++;  timeLeft--; }, 1000);
         }
     }
     }else{
