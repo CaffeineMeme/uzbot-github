@@ -18,5 +18,7 @@ exports.run = async (client, message, args, config) => {
     }else{
       message.channel.send('you are too infidel, level up more first');
     }
-  }
+  }else{
+    message.channel.send('nigga you gotta put a job first');
+    }
 }
