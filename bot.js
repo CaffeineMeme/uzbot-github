@@ -5,8 +5,8 @@ const fs = require("fs");
 const db = require("quick.db");
 const client = new Discord.Client();
 
-var levelUpGoal = 5000;
-var levelUpExpo = 1.05
+var levelUpGoal = 3000;
+var levelUpExpo = 1.05;
 
 client.on("up", () => {
   console.log("tajikistan nigga fart");
