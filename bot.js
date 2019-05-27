@@ -4,6 +4,7 @@ const client = new Discord.Client();
 const snek = require('snekfetch');
 const fetch = require('node-fetch');
 const randomPuppy = require('random-puppy');
+const db = require("quick.db");
 
 var movieInt;
 var movie = ["LWqUupcF7A0", "uwrNwd0_Ug4", "o0G7FL93Hu4", "_TY6kJ3KfT4", "siWDiZhbBek", "7ZsGOyWWj6k", "VsewNIhWwJg", "wz4ewxLCTOE",
@@ -905,6 +906,19 @@ if (command === 'darius72') {
 			});
 		}
 		}
+	
+	//ECONOMY STUFF HOLY SHIT THIS BOT IS UNOPTOMIZED
+	//
+	//
+	//
+	const som = client.emojis.find(emoji => emoji.name === "som");
+	if(command == "balance")
+	{
+		let user = message.mentions.members.first() || message.author;
+		let money = await db.fetch ('money_${user.id}');
+		
+		message.channel.send('${user}, you have лв${money} ${som} niggaface');
+	}
 });
 
 client.login(process.env.TOKEN);
