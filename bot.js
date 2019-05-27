@@ -1,28 +1,29 @@
 require('dotenv').config(); 
 const Discord = require("discord.js");
+const Enmap = require("enmap");
+const fs = require("fs");
 const client = new Discord.Client();
-const db = require('quick.db');
-const config = require("./config.json");
 
-client.on("ready", () => {
-  console.log("tajikistan nigga fart");
-  client.user.setActivity('-uz help for commands | Currently in ' + client.guilds.size + ' servers');
+fs.readdir("./events/", (err, files) => {
+  if (err) return console.error(err);
+  files.forEach(file => {
+    const event = require(`./events/${file}`);
+    let eventName = file.split(".")[0];
+    client.on(eventName, event.bind(null, client));
+  });
 });
 
-client.on('message', message => {
+client.commands = new Enmap();
 
-    if (message.author.bot) return;
-    const args = message.content.slice(process.env.PREFIX.length).trim().split(/ +/g)
-    const command = args.shift().toLowerCase();
-    
-    if (message.content.indexOf(process.env.PREFIX.length) != 0) return;
-
-    try {
-        let commandFile = require(`./commands/${command}.js`);
-        commandFile.run(client, message, args)
-    } catch (err) {
-        return;
-    }
+fs.readdir("./commands/", (err, files) => {
+  if (err) return console.error(err);
+  files.forEach(file => {
+    if (!file.endsWith(".js")) return;
+    let props = require(`./commands/${file}`);
+    let commandName = file.split(".")[0];
+    console.log(`Attempting to load command ${commandName}`);
+    client.commands.set(commandName, props);
+  });
 });
 
 client.login(process.env.TOKEN);
