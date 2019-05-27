@@ -4,6 +4,11 @@ const Enmap = require("enmap");
 const fs = require("fs");
 const client = new Discord.Client();
 
+client.on("ready", () => {
+  console.log("tajikistan nigga fart");
+  client.user.setActivity('-uz help for commands | Currently in ' + client.guilds.size + ' servers');
+});
+
 fs.readdir("./events/", (err, files) => {
   if (err) return console.error(err);
   files.forEach(file => {
