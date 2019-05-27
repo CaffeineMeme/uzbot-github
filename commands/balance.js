@@ -17,7 +17,7 @@ module.exports.run = async (client, message, args) => {
                 
                 let user = message.mentions.users.first();
                 let otherbal = db.fetch(`money_${user.id}`)
-                message.channel.send(user + ' has a balance of лв`' + otherbal + '`' + som);
+                message.channel.send("<@" + user.id + '> has a balance of лв`' + otherbal + '`' + som);
                 if(otherbal > bal)
                 {
                 message.channel.send("They're richer than you " + lol); 
