@@ -2,6 +2,7 @@ require('dotenv').config();
 const Discord = require("discord.js");
 const client = new Discord.Client();
 const db = require('quick.db');
+const config = require("./config.json");
 
 client.on("ready", () => {
   console.log("tajikistan nigga fart");
