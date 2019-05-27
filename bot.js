@@ -923,6 +923,9 @@ if (command === 'darius72') {
 		message.channel.send('${user}, you have лв${money} ${som} niggaface');
 	//}
 	}
+	if(command == "som"){
+		message.channel.send('${som}');
+	}
 });
 
 client.login(process.env.TOKEN);
