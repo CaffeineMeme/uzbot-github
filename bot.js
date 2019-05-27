@@ -914,14 +914,14 @@ if (command === 'darius72') {
 	const som = client.emojis.find(emoji => emoji.name === "som");
 	if(command == "balance")
 	{
-	module.exports.run = async (client, message, args, config) => {
+	//module.exports.run = async (client, message, args, config) => {
 		let user = message.mentions.members.first() || message.author;
-		let money = await db.fetch ('money_${user.id}');
+		let money = /*await*/ db.fetch ('money_${user.id}');
 		
 		if (money === null){money = 0;}
 		
 		message.channel.send('${user}, you have лв${money} ${som} niggaface');
-	}
+	//}
 	}
 });
 
