@@ -7,11 +7,13 @@ exports.run = async (client, message, args, config) => {
     var canWork = db.fetch(`canWork_${message.author.id}`);
     var timer = setInterval(  () => {timeRemaining--; console.log(timeRemaining);}, 1000);
     
+    canWork = db.set(`canWork_${message.author.id}`, true);
+    
     if(timeRemaining <= 0)
         {
             clearTimeout();
             clearInterval(timer);
-            canWork = true;
+            canWork = db.set(`canWork_${message.author.id}`, true);
             timeLeft = 0;
         }
 if(canWork === true){
