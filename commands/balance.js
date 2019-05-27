@@ -13,11 +13,10 @@ module.exports.run = async (client, message, args) => {
     	message.channel.send('You have a balance of лв`' + bal + '`' + som);
         }else if(args[0] != null || args[0] != undefined)
         {
-                if (otherbal === null) otherbal = 0;
-                
                 let user = message.mentions.users.first();
                 let otherbal = db.fetch(`money_${user.id}`)
-                message.channel.send("<@" + user.id + '> has a balance of лв`' + otherbal + '`' + som);
+                if (otherbal === null) otherbal = 0;
+                message.channel.send(user + ' has a balance of лв`' + otherbal + '`' + som);
                 if(otherbal > bal)
                 {
                 message.channel.send("They're richer than you " + lol); 
