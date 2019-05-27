@@ -13,6 +13,8 @@
       "node": "8.x",
       "npm": "*"
     },
+    "enmap": "^4.8.7",
+    "fs": "0.0.1-security",
     "long": {
       "integrity": "sha1-2CG3E4yhy1gcFymQ7xTbIAtcR0s=",
       "resolved": "https://registry.npmjs.org/long/-/long-3.2.0.tgz",
