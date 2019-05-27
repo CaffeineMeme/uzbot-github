@@ -9,7 +9,7 @@ exports.run = async (client, message, args, config) => {
     let level = db.fetch(`level_${message.author.id}`);
     let jobTitle = args.join(' ');
     if((jobTitle == "preacher" || jobTitle == "street merchant") || ((jobTitle == "hijab maker" || jobTitle == "executioner") && level == 1)){
-    db.add(`job_${message.author.id}`, jobTitle); 
+    db.set(`job_${message.author.id}`, jobTitle); 
     message.channel.send("okay you are a " + jobTitle + " now, gl bro");
     }else{
       message.channel.send('you are too infidel, level up more first');
