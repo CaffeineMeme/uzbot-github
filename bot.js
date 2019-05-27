@@ -911,12 +911,14 @@ if (command === 'darius72') {
 	//
 	//
 	//
-	exports.run = async (client, message, args, config) => {
+	module.exports.run = async (client, message, args, config) => {
 	const som = client.emojis.find(emoji => emoji.name === "som");
 	if(command == "balance")
 	{
 		let user = message.mentions.members.first() || message.author;
 		let money = await db.fetch ('money_${user.id}');
+		
+		if (money === null){money = 0;}
 		
 		message.channel.send('${user}, you have лв${money} ${som} niggaface');
 	}
