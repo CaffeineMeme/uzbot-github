@@ -8,5 +8,5 @@ module.exports.run = async (client, message, args) => {
 
    	if (bal === null) bal = 0;
 
-    	message.channel.send('You have a balance of лв`' + (money_${message.author.id}) + '`' + som);
+    	message.channel.send('You have a balance of лв`' + bal + '`' + som);
 }
