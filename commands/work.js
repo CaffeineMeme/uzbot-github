@@ -3,6 +3,7 @@ const Discord = require('discord.js');
 
 var canWork = true;
 var timeLeft;
+var timeRemaining;
 
 exports.run = async (client, message, args, config) => {
 if(canWork === true){
@@ -17,14 +18,15 @@ if(canWork === true){
         .setColor("RANDOM");
         
         timeLeft = 20;
+        timeRemaining = 20;
         message.channel.send(embed);
         db.add(`totalMoney_${message.author.id}`, amount);
         db.add(`money_${message.author.id}`, amount);
         canWork = false;
         setTimeout(  () => {    canWork = true;  },  timeLeft * 1000);
-        for(i = 0; i <= timeLeft;)
+        for(i = 0; i < timeLeft;)
         {
-            setTimeout(  () => {  i++;   timeLeft--; }, 1000);
+            setTimeout(  () => {  i++;   timeRemaining--; }, 1000);
         }
     } else if(args[0] == 'troll') {
         let amount = Math.floor(Math.random() * 350) + 1; // 1-500 random number. whatever you'd like
@@ -35,14 +37,15 @@ if(canWork === true){
         .setColor("RANDOM");
         
         timeLeft = 35;
+        timeRemaining = 35;
         message.channel.send(embed);
         db.add(`totalMoney_${message.author.id}`, amount);
         db.add(`money_${message.author.id}`, amount);
         canWork = false;
         setTimeout(  () => {    canWork = true;  },  timeLeft * 1000);
-        for(i = 0; i <= timeLeft;)
+        for(i = 0; i < timeLeft;)
         {
-            setTimeout(  () => {  i++;   timeLeft--; }, 1000);
+            setTimeout(  () => {  i++;   timeRemaining--; }, 1000);
         }
     } else if(args[0] == 'terrorist') {
         let amount = Math.floor(Math.random() * 600) + 1; // 1-500 random number. change to whatever you'd like
@@ -59,12 +62,12 @@ if(canWork === true){
         db.add(`totalMoney_${message.author.id}`, amount);
         canWork = false;
         setTimeout(  () => {    canWork = true;  },  timeLeft * 1000);
-        for(i = 0; i <= timeLeft;)
+        for(i = 0; i < timeLeft;)
         {
-            setTimeout(  () => {  i++;  timeLeft--; }, 1000);
+            setTimeout(  () => {  i++;  timeRemaining--; }, 1000);
         }
     }
     }else{
-        message.channel.send("Yo hold on you've only got " + timeLeft + " seconds before you can work again");
+        message.channel.send("Yo hold on you've only got " + timeRemaining + " seconds before you can work again");
     }
 }
