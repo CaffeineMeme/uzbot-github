@@ -8,6 +8,7 @@ var timer = setInterval(  () => {timeLeft--;}, 1000);
 
 exports.run = async (client, message, args, config) => {
     
+    var timer = setInterval(  () => {timeLeft--;}, 1000);
     var timeLeft = db.fetch(`timeLeft_${message.author.id}`);
     
     if(timeLeft <= 0)
