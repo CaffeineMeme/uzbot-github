@@ -915,7 +915,7 @@ if (command === 'darius72') {
 	if(command == "balance")
 	{
 		let user = message.mentions.members.first() || message.author;
-		let money = await db.fetch ('money_${user.id}');
+		let money = db.fetch ('money_${user.id}');
 		
 		message.channel.send('${user}, you have лв${money} ${som} niggaface');
 	}
