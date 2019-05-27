@@ -1,6 +1,6 @@
 const db = require('quick.db');
 const Discord = require('discord.js');
-var timeRemaining;
+var timeRemaining = 0;
 
 exports.run = async (client, message, args, config) => {
     var timeLeft = db.fetch(`timeLeft_${message.author.id}`);
