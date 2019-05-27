@@ -2,12 +2,13 @@ const db = require('quick.db');
 const Discord = require('discord.js');
 
 var canWork = true;
-var timeLeft = db.fetch(`timeLeft_${message.author.id}`);
 var timeRemaining;
 
 var timer = setInterval(  () => {timeLeft--;}, 1000);
 
 exports.run = async (client, message, args, config) => {
+    
+    var timeLeft = db.fetch(`timeLeft_${message.author.id}`);
     
     if(timeLeft <= 0)
         {
