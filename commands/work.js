@@ -5,7 +5,7 @@ var timeRemaining;
 exports.run = async (client, message, args, config) => {
     var timeLeft = db.fetch(`timeLeft_${message.author.id}`);
     var canWork = db.fetch(`canWork_${message.author.id}`);
-    var timer = setInterval(  () => {timeLeft--; console.log(timeLeft);}, 1000);
+    var timer = setInterval(  () => {timeRemaining--; console.log(timeRemaining);}, 1000);
     
     if(timeLeft <= 0)
         {
@@ -65,6 +65,6 @@ if(canWork === true){
         setTimeout(  () => {    db.set(`canWork_${message.author.id}`, true);  },  timeLeft * 1000);
     }
     }else{
-        message.channel.send("Yo hold on you've only got " + timeLeft + " seconds before you can work again");
+        message.channel.send("Yo hold on you've only got " + timeRemaining + " seconds before you can work again");
     }
 }
