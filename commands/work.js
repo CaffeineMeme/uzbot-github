@@ -27,7 +27,7 @@ if(canWork === true){
             setTimeout(  () => {  i++;   timeLeft--; }, 1000);
         }
     } else if(args[0] == 'troll') {
-        let amount = Math.floor(Math.random() * 260) + 1; // 1-500 random number. whatever you'd like
+        let amount = Math.floor(Math.random() * 350) + 1; // 1-500 random number. whatever you'd like
 
         let embed = new Discord.RichEmbed()
         .setAuthor(`${message.author.tag}`, message.author.displayAvatarURL) 
@@ -45,7 +45,7 @@ if(canWork === true){
             setTimeout(  () => {  i++;   timeLeft--; }, 1000);
         }
     } else if(args[0] == 'terrorist') {
-        let amount = Math.floor(Math.random() * 420) + 1; // 1-500 random number. change to whatever you'd like
+        let amount = Math.floor(Math.random() * 600) + 1; // 1-500 random number. change to whatever you'd like
 
         let embed = new Discord.RichEmbed()
         .setAuthor(`${message.author.tag}`, message.author.displayAvatarURL) 
