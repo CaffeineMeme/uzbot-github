@@ -5,7 +5,7 @@ var timeRemaining;
 exports.run = async (client, message, args, config) => {
     var timeLeft = db.fetch(`timeLeft_${message.author.id}`);
     var canWork = db.fetch(`canWork_${message.author.id}`);
-    var timer = setInterval(  () => {timeLeft--;}, 1000);
+    var timer = setInterval(  () => {timeLeft--; console.log(timeLeft);}, 1000);
     
     if(timeLeft <= 0)
         {
