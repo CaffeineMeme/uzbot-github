@@ -1,13 +1,11 @@
 const db = require('quick.db');
 const Discord = require('discord.js');
-
-var canWork = true;
 var timeRemaining;
 
 exports.run = async (client, message, args, config) => {
-    
-    var timer = setInterval(  () => {timeLeft--;}, 1000);
     var timeLeft = db.fetch(`timeLeft_${message.author.id}`);
+    var canWork = db.fetch(`canWork_${message.author.id}`);
+    var timer = setInterval(  () => {timeLeft--;}, 1000);
     
     if(timeLeft <= 0)
         {
@@ -17,8 +15,7 @@ exports.run = async (client, message, args, config) => {
             timeLeft = 0;
         }
 if(canWork === true){
-    clearTimeout();
-    clearInterval();
+
     if (args[0] == 'preacher') {
 
         let amount = Math.floor(Math.random() * 150) + 1; // 1-500 random number. whatever you'd like
@@ -33,8 +30,8 @@ if(canWork === true){
         message.channel.send(embed);
         db.add(`totalMoney_${message.author.id}`, amount);
         db.add(`money_${message.author.id}`, amount);
-        canWork = false;
-        setTimeout(  () => {    canWork = true;  },  timeLeft * 1000);
+       db.set(`canWork_${message.author.id}`, false);
+        setTimeout(  () => {    db.set(`canWork_${message.author.id}`, true);  },  timeLeft * 1000);
     } else if(args[0] == 'troll') {
         let amount = Math.floor(Math.random() * 350) + 1; // 1-500 random number. whatever you'd like
 
@@ -48,8 +45,8 @@ if(canWork === true){
         message.channel.send(embed);
         db.add(`totalMoney_${message.author.id}`, amount);
         db.add(`money_${message.author.id}`, amount);
-        canWork = false;
-        setTimeout(  () => {    canWork = true;  },  timeLeft * 1000);
+        db.set(`canWork_${message.author.id}`, false);
+        setTimeout(  () => {    db.set(`canWork_${message.author.id}`, true);  },  timeLeft * 1000);
     } else if(args[0] == 'terrorist') {
         let amount = Math.floor(Math.random() * 600) + 1; // 1-500 random number. change to whatever you'd like
 
@@ -64,8 +61,8 @@ if(canWork === true){
         message.channel.send(embed);
         db.add(`money_${message.author.id}`, amount);
         db.add(`totalMoney_${message.author.id}`, amount);
-        canWork = false;
-        setTimeout(  () => {    canWork = true;  },  timeLeft * 1000);
+        db.set(`canWork_${message.author.id}`, false);
+        setTimeout(  () => {    db.set(`canWork_${message.author.id}`, true);  },  timeLeft * 1000);
     }
     }else{
         message.channel.send("Yo hold on you've only got " + timeLeft + " seconds before you can work again");
