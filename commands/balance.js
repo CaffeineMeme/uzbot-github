@@ -20,7 +20,7 @@ module.exports.run = async (client, message, args) => {
                 if(otherbal > bal)
                 {
                 message.channel.send("They're richer than you " + lol); 
-                }else if(otherbal > bal)
+                }else if(otherbal < bal)
                 {
                 message.channel.send("They're poorer than you " + lol); 
                 }if(otherbal === bal)
