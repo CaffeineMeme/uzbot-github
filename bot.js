@@ -16,7 +16,6 @@ client.on("up", () => {
 client.on("message", message => 
 {
   
-  Math.ceil((n+1)/10)*10
   let bal = db.fetch(`totalMoney_${message.author.id}`);
   if(bal >= levelUpGoal)
   {
