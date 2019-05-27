@@ -199,7 +199,7 @@ client.on("message", message => {
     message.channel.send('bruh moment');
   }
 	
-if (command === 'bruh') {
+if (command === 'invite') {
     message.channel.send('https://discordapp.com/oauth2/authorize?client_id=576404103110852617&scope=bot&permissions=59392');
   }
 	
@@ -924,7 +924,7 @@ if (command === 'darius72') {
 	//}
 	}
 	if(command == "som"){
-		message.channel.send(som);
+		message.channel.send('<:som:582392722854379520>');
 	}
 });
 
