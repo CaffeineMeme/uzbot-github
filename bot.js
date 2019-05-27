@@ -911,10 +911,10 @@ if (command === 'darius72') {
 	//
 	//
 	//
-	module.exports.run = async (client, message, args, config) => {
 	const som = client.emojis.find(emoji => emoji.name === "som");
 	if(command == "balance")
 	{
+	module.exports.run = async (client, message, args, config) => {
 		let user = message.mentions.members.first() || message.author;
 		let money = await db.fetch ('money_${user.id}');
 		
