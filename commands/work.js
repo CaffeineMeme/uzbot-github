@@ -21,7 +21,7 @@ if(canWork === true){
         message.channel.send(embed);
         db.add(`money_${message.author.id}`, amount);
         setTimeout(  () => {    canWork = true;  },  timeLeft * 1000);
-        setInterval  () => {timeLeft--;}, 1000);
+        setInterval(  () => {timeLeft--;}, 1000);
     } else if(args[0] == 'troll') {
         let amount = Math.floor(Math.random() * 260) + 1; // 1-500 random number. whatever you'd like
 
@@ -34,7 +34,7 @@ if(canWork === true){
         message.channel.send(embed);
         db.add(`money_${message.author.id}`, amount);
         setTimeout(  () => {    canWork = true;  },  timeLeft * 1000);
-        setInterval  () => {timeLeft--;}, 1000);
+        setInterval(  () => {timeLeft--;}, 1000);
     } else if(args[0] == 'terrorist') {
         let amount = Math.floor(Math.random() * 420) + 1; // 1-500 random number. change to whatever you'd like
 
@@ -48,7 +48,7 @@ if(canWork === true){
         message.channel.send(embed);
         db.add(`money_${message.author.id}`, amount);
         setTimeout(  () => {    canWork = true;  },  timeLeft * 1000);
-        setInterval  () => {timeLeft--;}, 1000);
+        setInterval(  () => {timeLeft--;}, 1000);
     }
     }else{
         message.channel.send("Yo hold on you've only got " + timeLeft + " before you can work again");
