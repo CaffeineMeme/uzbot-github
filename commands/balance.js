@@ -9,9 +9,9 @@ module.exports.run = async (client, message, args) => {
 
    	if (bal === null) bal = 0;
         
-        if(args[1] === null || args[1] === undefined){
+        if(args[0] === null || args[0] === undefined){
     	message.channel.send('You have a balance of лв`' + bal + '`' + som);
-        }else if(args[1] != null)
+        }else if(args[0] === message.mentions.users.first())
         {
                 let user = message.mentions.users.first().id;
                 let otherbal = db.fetch(`money_${user.id}`)
