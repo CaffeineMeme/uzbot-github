@@ -6,8 +6,17 @@ var timeLeft;
 var timeRemaining;
 
 exports.run = async (client, message, args, config) => {
+    
+    if(timeLeft <= 0)
+        {
+            clearTimeout();
+            clearInterval();
+            canWork = true;
+            timeLeft = 0;
+        }
 if(canWork === true){
     clearTimeout();
+    clearInterval();
     if (args[0] == 'preacher') {
 
         let amount = Math.floor(Math.random() * 150) + 1; // 1-500 random number. whatever you'd like
@@ -24,10 +33,7 @@ if(canWork === true){
         db.add(`money_${message.author.id}`, amount);
         canWork = false;
         setTimeout(  () => {    canWork = true;  },  timeLeft * 1000);
-        for(i = 0; i < timeLeft;)
-        {
-            setTimeout(  () => {  i++;   timeRemaining--; }, 1000);
-        }
+        setInterval(  () => {timeLeft--;}, 1000);
     } else if(args[0] == 'troll') {
         let amount = Math.floor(Math.random() * 350) + 1; // 1-500 random number. whatever you'd like
 
@@ -43,10 +49,7 @@ if(canWork === true){
         db.add(`money_${message.author.id}`, amount);
         canWork = false;
         setTimeout(  () => {    canWork = true;  },  timeLeft * 1000);
-        for(i = 0; i < timeLeft;)
-        {
-            setTimeout(  () => {  i++;   timeRemaining--; }, 1000);
-        }
+        setInterval(  () => {timeLeft--;}, 1000);
     } else if(args[0] == 'terrorist') {
         let amount = Math.floor(Math.random() * 600) + 1; // 1-500 random number. change to whatever you'd like
 
@@ -62,12 +65,9 @@ if(canWork === true){
         db.add(`totalMoney_${message.author.id}`, amount);
         canWork = false;
         setTimeout(  () => {    canWork = true;  },  timeLeft * 1000);
-        for(i = 0; i < timeLeft;)
-        {
-            setTimeout(  () => {  i++;  timeRemaining--; }, 1000);
-        }
+        setInterval(  () => {timeLeft--;}, 1000);
     }
     }else{
-        message.channel.send("Yo hold on you've only got " + timeRemaining + " seconds before you can work again");
+        message.channel.send("Yo hold on you've only got " + timeLeft + " seconds before you can work again");
     }
 }
