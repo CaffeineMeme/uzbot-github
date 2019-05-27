@@ -2,9 +2,12 @@ require('dotenv').config();
 const Discord = require("discord.js");
 const Enmap = require("enmap");
 const fs = require("fs");
+const db = require("quick.db");
 const client = new Discord.Client();
 
-client.on("ready", () => {
+var levelUpGoal = 5000;
+
+client.on("up", () => {
   console.log("tajikistan nigga fart");
   client.user.setActivity('-uz help for commands | Currently in ' + client.guilds.size + ' servers');
 });
