@@ -911,7 +911,7 @@ if (command === 'darius72') {
 	//
 	//
 	//
-	export.run = async (client, message, args, config) => {
+	exports.run = async (client, message, args, config) => {
 	const som = client.emojis.find(emoji => emoji.name === "som");
 	if(command == "balance")
 	{
