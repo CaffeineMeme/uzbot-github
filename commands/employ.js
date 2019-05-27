@@ -4,12 +4,13 @@ const Discord = require('discord.js');
 var jobTitle;
 
 exports.run = async (client, message, args, config) => {
-  if(args[0] == null || args[0] == undefined)
+  if(args[0] != null || args[0] != undefined)
   {
     let level = db.fetch(`level_${message.author.id}`);
     jobTitle = args.join(" ");
     if((jobTitle == "preacher" || jobTitle == "street merchant") || ((jobTitle == "hijab maker" || jobTitle == "executioner") && level == 1)){
     db.add(`job_${message.author.id}`, jobTitle); 
+    message.channel.send("okay you are a " + jobTitle + " now, gl bro");
     }else{
       message.channel.send('you are too infidel, level up more first');
     }
