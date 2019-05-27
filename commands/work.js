@@ -7,7 +7,7 @@ exports.run = async (client, message, args, config) => {
     var canWork = db.fetch(`canWork_${message.author.id}`);
     var timer = setInterval(  () => {timeRemaining--; console.log(timeRemaining);}, 1000);
     
-    if(timeLeft <= 0)
+    if(timeRemaining <= 0)
         {
             clearTimeout();
             clearInterval(timer);
@@ -57,7 +57,7 @@ if(canWork === true){
         
     
         timeLeft = db.add(`timeLeft_${message.author.id}`, 50);
-        timeRemaining = 35;
+        timeRemaining = 50;
         message.channel.send(embed);
         db.add(`money_${message.author.id}`, amount);
         db.add(`totalMoney_${message.author.id}`, amount);
