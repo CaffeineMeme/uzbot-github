@@ -20,6 +20,7 @@ if(canWork === true){
         timeLeft = 10;
         message.channel.send(embed);
         db.add(`money_${message.author.id}`, amount);
+        canWork = false;
         setTimeout(  () => {    canWork = true;  },  timeLeft * 1000);
         setInterval(  () => {timeLeft--;}, 1000);
     } else if(args[0] == 'troll') {
@@ -33,6 +34,7 @@ if(canWork === true){
         timeLeft = 15;
         message.channel.send(embed);
         db.add(`money_${message.author.id}`, amount);
+        canWork = false;
         setTimeout(  () => {    canWork = true;  },  timeLeft * 1000);
         setInterval(  () => {timeLeft--;}, 1000);
     } else if(args[0] == 'terrorist') {
@@ -47,6 +49,7 @@ if(canWork === true){
         timeLeft = 20;
         message.channel.send(embed);
         db.add(`money_${message.author.id}`, amount);
+        canWork = false;
         setTimeout(  () => {    canWork = true;  },  timeLeft * 1000);
         setInterval(  () => {timeLeft--;}, 1000);
     }
