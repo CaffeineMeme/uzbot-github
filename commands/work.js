@@ -4,8 +4,6 @@ const Discord = require('discord.js');
 var canWork = true;
 var timeRemaining;
 
-var timer = setInterval(  () => {timeLeft--;}, 1000);
-
 exports.run = async (client, message, args, config) => {
     
     var timer = setInterval(  () => {timeLeft--;}, 1000);
