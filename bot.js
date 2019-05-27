@@ -22,7 +22,7 @@ client.on("message", message =>
   {
     levelUpGoal = (Math.ceil((((levelUpGoal * 2.5 ^ levelUpExpo) - (levelUpGoal * 0.2) + 1)/10) * 10));
     levelUpExpo += .0125;
-    message.channel.send(congrats a nigga leveled up);
+    message.channel.send("congrats a nigga leveled up");
     db.add(`level_${message.author.id}`, 1);
   }
 });
