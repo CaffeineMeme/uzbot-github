@@ -924,7 +924,7 @@ if (command === 'darius72') {
 	//}
 	}
 	if(command == "som"){
-		message.channel.send('${som}');
+		message.channel.send('$som');
 	}
 });
 
