@@ -7,11 +7,14 @@ var canApply;
 exports.run = async (client, message, args, config) => {
   let som = client.emojis.find(emoji => emoji.name === "som");
   if(canApply == false){
-    message.channel.send('work more and then you can quit bro');
+    message.channel.send('work more and then you can quit bro') 
   }else {
-    else if(jobTitle == undefined){
   if(args[0] != null || args[0] != undefined)
   {
+    if(args[0] == "quit"){
+      message.channel.send('ok bro u quit now find a new job lmao');
+      db.set(`job_${message.author.id}`, null);
+    }else{
     let level = db.fetch(`level_${message.author.id}`);
     let jobTitle = args.join(' ');
     if((jobTitle == "preacher" || jobTitle == "street merchant") || ((jobTitle == "hijab maker" || jobTitle == "executioner") && level == 1) || ((jobTitle == "tech support" || jobTitle == "saudi comedian") && level == 2)){
@@ -19,6 +22,7 @@ exports.run = async (client, message, args, config) => {
     message.channel.send("okay you are a " + jobTitle + " now, gl bro" + "\n" + "If you wanna quit you gotta wait an hour");
     canApply = false;
      setTimeout(  () => {    canApply = true;  },  360 * 1000);
+    }
   }else{
     message.channel.send('choose a job first');
     let embed = new Discord.RichEmbed()
