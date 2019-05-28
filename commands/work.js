@@ -84,7 +84,7 @@ exports.run = async (client, message, args, config) => {
         }
         
         let fail = Math.floor(Math.random() * (100 - 0 + 1)) + 0;
-        let amount = Math.floor(Math.random() * (maximum - minimum + 1)) + minimum;
+        let amount = Math.floor(Math.random() * (earnMax - earnMin + 1)) + earnMin;
         
         if(fail <= failMax)
         {
