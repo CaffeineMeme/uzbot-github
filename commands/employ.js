@@ -2,19 +2,23 @@ const db = require('quick.db');
 const Discord = require('discord.js');
 
 var jobTitle;
+var canApply;
 
 exports.run = async (client, message, args, config) => {
   let som = client.emojis.find(emoji => emoji.name === "som");
+  if(canApply == false){
+    message.channel.send('work more and then you can quit bro');
+  }else {
+    else if(jobTitle == undefined){
   if(args[0] != null || args[0] != undefined)
   {
     let level = db.fetch(`level_${message.author.id}`);
     let jobTitle = args.join(' ');
     if((jobTitle == "preacher" || jobTitle == "street merchant") || ((jobTitle == "hijab maker" || jobTitle == "executioner") && level == 1) || ((jobTitle == "tech support" || jobTitle == "saudi comedian") && level == 2)){
     db.set(`job_${message.author.id}`, jobTitle); 
-    message.channel.send("okay you are a " + jobTitle + " now, gl bro");
-    }else{
-      message.channel.send('that is either not a job or you are too infidel to apply');
-    }
+    message.channel.send("okay you are a " + jobTitle + " now, gl bro" + "\n" + "If you wanna quit you gotta wait an hour");
+    canApply = false;
+     setTimeout(  () => {    canApply = true;  },  360 * 1000);
   }else{
     message.channel.send('choose a job first');
     let embed = new Discord.RichEmbed()
@@ -29,6 +33,8 @@ exports.run = async (client, message, args, config) => {
     
         .setColor("RANDOM");
   message.channel.send(embed);
+}
+}
 }
 }
 /* || ((jobTitle == "tech support" || == "saudi comedian") && level == 2) || ((jobTitle == "quran printer" || jobTitle == "ISIS manager") && level == 3) || ((jobTitle == "terrorist" || jobTitle == "shitting street supervisor") && level == 4)*/
