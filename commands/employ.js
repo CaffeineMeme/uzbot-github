@@ -23,6 +23,7 @@ exports.run = async (client, message, args, config) => {
     canApply = false;
      setTimeout(  () => {    canApply = true;  },  360 * 1000);
     }
+    }
   }else{
     message.channel.send('choose a job first');
     let embed = new Discord.RichEmbed()
