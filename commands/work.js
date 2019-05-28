@@ -90,7 +90,7 @@ exports.run = async (client, message, args, config) => {
         {
             let embed = new Discord.RichEmbed()
             .setAuthor(`${message.author.tag}`, message.author.displayAvatarURL) 
-            .setDescription(`${message.author},+ failSmg + ${amount}$`)
+            .setDescription(`${message.author}`, + failSmg + `${amount}` + som)
             .setColor("RANDOM");
             message.channel.send(embed);
              db.add(`money_${message.author.id}`, (amount * -1));
@@ -100,7 +100,7 @@ exports.run = async (client, message, args, config) => {
         {
             let embed = new Discord.RichEmbed()
             .setAuthor(`${message.author.tag}`, message.author.displayAvatarURL) 
-            .setDescription(`${message.author},+ successMsg + ${amount}$`)
+            .setDescription(`${message.author}`, + successMsg + `${amount}` + som)
             .setColor("RANDOM");
             message.channel.send(embed);
             db.add(`money_${message.author.id}`, (amount));
