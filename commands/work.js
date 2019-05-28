@@ -1,11 +1,15 @@
 const db = require('quick.db');
 const Discord = require('discord.js');
-var timeRemaining = 0;
+var timeRemaining;
 
 exports.run = async (client, message, args, config) => {
     var timeLeft = db.fetch(`timeLeft_${message.author.id}`);
     var canWork = db.fetch(`canWork_${message.author.id}`);
     var timer = setInterval(  () => {timeRemaining--; console.log(timeRemaining);}, 1000);
+   
+    if (timeRemaining == undefined){
+        timeRemaining = 0;
+    }
     
     canWork = db.set(`canWork_${message.author.id}`, true);
     
@@ -15,6 +19,7 @@ exports.run = async (client, message, args, config) => {
             clearInterval(timer);
             canWork = db.set(`canWork_${message.author.id}`, true);
             timeLeft = 0;
+            timeRemaining = 0;
         }
 if(canWork === true){
 
@@ -33,7 +38,7 @@ if(canWork === true){
         db.add(`totalMoney_${message.author.id}`, amount);
         db.add(`money_${message.author.id}`, amount);
        db.set(`canWork_${message.author.id}`, false);
-        setTimeout(  () => {    db.set(`canWork_${message.author.id}`, true);  },  timeLeft * 1000);
+        setTimeout(  () => {    db.set(`canWork_${message.author.id}`, true);  },  timeRemaining * 1000);
     } else if(args[0] == 'troll') {
         let amount = Math.floor(Math.random() * 350) + 1; // 1-500 random number. whatever you'd like
 
@@ -48,7 +53,7 @@ if(canWork === true){
         db.add(`totalMoney_${message.author.id}`, amount);
         db.add(`money_${message.author.id}`, amount);
         db.set(`canWork_${message.author.id}`, false);
-        setTimeout(  () => {    db.set(`canWork_${message.author.id}`, true);  },  timeLeft * 1000);
+        setTimeout(  () => {    db.set(`canWork_${message.author.id}`, true);  },  timeRemaining * 1000);
     } else if(args[0] == 'terrorist') {
         let amount = Math.floor(Math.random() * 600) + 1; // 1-500 random number. change to whatever you'd like
 
@@ -64,7 +69,7 @@ if(canWork === true){
         db.add(`money_${message.author.id}`, amount);
         db.add(`totalMoney_${message.author.id}`, amount);
         db.set(`canWork_${message.author.id}`, false);
-        setTimeout(  () => {    db.set(`canWork_${message.author.id}`, true);  },  timeLeft * 1000);
+        setTimeout(  () => {    db.set(`canWork_${message.author.id}`, true);  },  timeRemaining * 1000);
     }
     }else{
         message.channel.send("Yo hold on you've only got " + timeRemaining + " seconds before you can work again");
