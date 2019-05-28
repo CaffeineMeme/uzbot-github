@@ -14,8 +14,10 @@ var failSmg;
 
 exports.run = async (client, message, args, config) => {
     
-    let job = db.fetch(`job_${message.author.id}`);
+    var job = db.fetch(`job_${message.author.id}`);
     let som = client.emojis.find(emoji => emoji.name === "som");
+    
+    console.log(job);
     
     if(canWork === true){
         if (job == 'preacher') {
