@@ -33,7 +33,7 @@ exports.run = async (client, message, args, config) => {
         earnMin = 30;
         failMin = 0;
         failMax = 10;
-        cooldownTime = 15;
+        cooldownTime = db.set(`job_${message.author.id}`, 15);
         successMsg = "You made allah happy so he gave you ";
         failSmg = "You made allah fuckin angry so he pissed on you and stole ";
         }
@@ -42,7 +42,7 @@ exports.run = async (client, message, args, config) => {
         earnMin = 80;
         failMin = 0;
         failMax = 17;
-        cooldownTime = 20;
+        cooldownTime =  db.set(`job_${message.author.id}`, 20);
             successMsg = "You sold your garbage to dumbasses and got ";
         failSmg = "Some niggas stole your shit and about ";
         }
@@ -51,7 +51,7 @@ exports.run = async (client, message, args, config) => {
         earnMin = 110;
         failMin = 0;
         failMax = 12;
-        cooldownTime = 30;
+         db.set(`job_${message.author.id}`, 30);
             successMsg = "The hijab covers her face well, so you get ";
         failSmg = "The hijab falls apart, and your client is beat to paralysis by the police, so she steals ";
         }
@@ -60,7 +60,7 @@ exports.run = async (client, message, args, config) => {
         earnMin = 90;
         failMin = 0;
         failMax = 6;
-        cooldownTime = 45;
+         db.set(`job_${message.author.id}`, 45);
             successMsg = "The head flies and the prince throws you ";
         failSmg = "You chop off the retards nose, he runs away and from you steals ";
         }
@@ -69,7 +69,7 @@ exports.run = async (client, message, args, config) => {
         earnMin = 170;
         failMin = 0;
         failMax = 15;
-        cooldownTime = 25;
+         db.set(`job_${message.author.id}`, 25);
         successMsg = "You get the dumdum's bank account and grab a nice ";
         failSmg = "Your computer blows up and repairs cost ";
         }
@@ -78,7 +78,7 @@ exports.run = async (client, message, args, config) => {
         earnMin = 270;
         failMin = 0;
         failMax = 22;
-        cooldownTime = 55;
+        db.set(`job_${message.author.id}`, 55);
             successMsg = "You make a funny and get ";
         failSmg = "You make the audience mad. They stone you and medical bills cost ";
         }
