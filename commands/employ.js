@@ -5,6 +5,7 @@ var jobTitle;
 var canApply;
 
 exports.run = async (client, message, args, config) => {
+  let cooldown =  db.fetch(`jobCooldown_${message.author.id}`);
   let som = client.emojis.find(emoji => emoji.name === "som");
   if(canApply == false){
     message.channel.send('work more and then you can quit bro') 
@@ -21,7 +22,8 @@ exports.run = async (client, message, args, config) => {
     db.set(`job_${message.author.id}`, jobTitle); 
     message.channel.send("okay you are a " + jobTitle + " now, gl bro" + "\n" + "If you wanna quit you gotta wait an hour");
     canApply = false;
-     setTimeout(  () => {    canApply = true;  },  360 * 1000);
+     let cooldown =  db.set(`jobCooldown_${message.author.id}`, 360);
+     setTimeout(  () => {    canApply = true;  },  cooldown * 1000);
     }
     }
   }else{
