@@ -7,18 +7,8 @@ var timeRemaining;
 exports.run = async (client, message, args, config) => {
     
     var timer = setInterval(  () => {timeLeft--;}, 1000);
-    var timeLeft = db.fetch(`timeLeft_${message.author.id}`);
     
-    if(timeLeft <= 0)
-        {
-            clearTimeout();
-            clearInterval(timer);
-            canWork = true;
-            timeLeft = 0;
-        }
 if(canWork === true){
-    clearTimeout();
-    clearInterval();
     if (args[0] == 'preacher') {
 
         let amount = Math.floor(Math.random() * 150) + 1; // 1-500 random number. whatever you'd like
