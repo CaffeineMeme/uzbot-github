@@ -114,7 +114,7 @@ exports.run = async (client, message, args, config) => {
                 levelUpGoal = (Math.ceil((((levelUpGoal * 2.625 ^ levelUpExpo) - (levelUpGoal * 0.05) + 1)/10) * 10));
                 levelUpExpo += .0125;
                  db.add(`level_${message.author.id}`, 1);
-                 let level = db.fetch(`level_${message.author.id});
+                 let level = db.fetch(`level_${message.author.id}`);
                 message.channel.send("Congrats, now you're level " + level + ", now you can get a better job and stuff");
   }
         }
