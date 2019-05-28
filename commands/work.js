@@ -5,7 +5,7 @@ var timeRemaining;
 exports.run = async (client, message, args, config) => {
     var timeLeft = db.fetch(`timeLeft_${message.author.id}`);
     var canWork = db.fetch(`canWork_${message.author.id}`);
-    var timer = setInterval(  () => {timeRemaining--; console.log(timeRemaining);}, 1000);
+    var timer = setInterval(  () => {db.add(`timeLeft_${message.author.id}`, -1); console.log(timeLeft);}, 1100);
    
     if (timeRemaining == undefined){
         timeRemaining = 0;
@@ -13,7 +13,7 @@ exports.run = async (client, message, args, config) => {
     
     canWork = db.set(`canWork_${message.author.id}`, true);
     
-    if(timeRemaining <= 0)
+    if(timeLeft <= 0)
         {
             clearTimeout();
             clearInterval(timer);
@@ -24,9 +24,10 @@ exports.run = async (client, message, args, config) => {
 if(canWork === true){
 
     if (args[0] == 'preacher') {
+            var minimum = 20;
+			var maximum = 150;
 
-        let amount = Math.floor(Math.random() * 150) + 1; // 1-500 random number. whatever you'd like
-
+        let amount = Math.floor(Math.random() * (maximum - minimum + 1)) + minimum;
         let embed = new Discord.RichEmbed()
         .setAuthor(`${message.author.tag}`, message.author.displayAvatarURL) 
         .setDescription(`${message.author}, you prayed to Allah and he gave you ${amount}$`)
@@ -38,9 +39,12 @@ if(canWork === true){
         db.add(`totalMoney_${message.author.id}`, amount);
         db.add(`money_${message.author.id}`, amount);
        db.set(`canWork_${message.author.id}`, false);
-        setTimeout(  () => {    db.set(`canWork_${message.author.id}`, true);  },  timeRemaining * 1000);
+        setTimeout(  () => {    db.set(`canWork_${message.author.id}`, true);  },  timeLeft * 1100);
     } else if(args[0] == 'troll') {
-        let amount = Math.floor(Math.random() * 350) + 1; // 1-500 random number. whatever you'd like
+        var minimum = 100;
+			var maximum = 350;
+
+        let amount = Math.floor(Math.random() * (maximum - minimum + 1)) + minimum;
 
         let embed = new Discord.RichEmbed()
         .setAuthor(`${message.author.tag}`, message.author.displayAvatarURL) 
@@ -53,9 +57,12 @@ if(canWork === true){
         db.add(`totalMoney_${message.author.id}`, amount);
         db.add(`money_${message.author.id}`, amount);
         db.set(`canWork_${message.author.id}`, false);
-        setTimeout(  () => {    db.set(`canWork_${message.author.id}`, true);  },  timeRemaining * 1000);
+        setTimeout(  () => {    db.set(`canWork_${message.author.id}`, true);  },  timeLeft * 1100);
     } else if(args[0] == 'terrorist') {
-        let amount = Math.floor(Math.random() * 600) + 1; // 1-500 random number. change to whatever you'd like
+        var minimum = 300;
+			var maximum = 600;
+
+        let amount = Math.floor(Math.random() * (maximum - minimum + 1)) + minimum;
 
         let embed = new Discord.RichEmbed()
         .setAuthor(`${message.author.tag}`, message.author.displayAvatarURL) 
@@ -69,9 +76,9 @@ if(canWork === true){
         db.add(`money_${message.author.id}`, amount);
         db.add(`totalMoney_${message.author.id}`, amount);
         db.set(`canWork_${message.author.id}`, false);
-        setTimeout(  () => {    db.set(`canWork_${message.author.id}`, true);  },  timeRemaining * 1000);
+        setTimeout(  () => {    db.set(`canWork_${message.author.id}`, true);  },  timeLeft * 1100);
     }
     }else{
-        message.channel.send("Yo hold on you've only got " + timeRemaining + " seconds before you can work again");
+        message.channel.send("Yo hold on you've only got " + timeLeft + " seconds before you can work again");
     }
 }
