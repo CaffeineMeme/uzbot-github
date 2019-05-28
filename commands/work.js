@@ -4,7 +4,7 @@ const Discord = require('discord.js');
 var canWork = true;
 var timeRemaining;
 var timeLeft;
-var job = (`job_${message.author.id}`);
+var job = db.fetch(`job_${message.author.id}`);
 var earnMax;
 var earnMin;
 var failMax;
