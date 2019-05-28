@@ -2,7 +2,7 @@ const Discord = require('discord.js')
 const db = require('quick.db')
 
 module.exports.run = async (bot, message, args) => {
-    let bal =  db.fetch(`money_${message..id}`);
+    let bal =  db.fetch(`money_${message.author.id}`);
 
     if (!args[0]) return message.reply('Please specify an amount to add.');
     if (isNaN(args[0])) return message.reply('That was not a valid number!');
