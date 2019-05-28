@@ -4,7 +4,6 @@ const Discord = require('discord.js');
 var canWork = true;
 var timeRemaining;
 var timeLeft;
-var job = db.fetch(`job_${message.author.id}`);
 var earnMax;
 var earnMin;
 var failMax;
@@ -15,6 +14,7 @@ var failSmg;
 
 exports.run = async (client, message, args, config) => {
     
+    let job = db.fetch(`job_${message.author.id}`);
     let som = client.emojis.find(emoji => emoji.name === "som");
     
     if(canWork === true){
