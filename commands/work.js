@@ -12,6 +12,9 @@ var cooldownTime;
 var successMsg;
 var failSmg;
 
+var levelUpGoal = 3000;
+var levelUpExpo = 1.05;
+
 exports.run = async (client, message, args, config) => {
     
     var job = db.fetch(`job_${message.author.id}`);
