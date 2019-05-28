@@ -20,6 +20,14 @@ exports.run = async (client, message, args, config) => {
     console.log(job);
     
     if(canWork === true){
+        if (job == undefined || job == null){
+            earnMax = 0;
+            minimum = 0;
+            failMax = 0;
+            failMin = 0;
+            cooldownTime = 0;
+            message.channel.send("you don't have a job, use -uz employ to get one");
+        }else{
         if (job == 'preacher') {
         earnMax = 150;
         earnMin = 30;
@@ -74,14 +82,7 @@ exports.run = async (client, message, args, config) => {
             successMsg = "You make a funny and get ";
         failSmg = "You make the audience mad. They stone you and medical bills cost ";
         }
-        else if (job == undefined || job == null){
-            earnMax = 0;
-            minimum = 0;
-            failMax = 0;
-            failMin = 0;
-            cooldownTime = 0;
-            message.channel.send("you don't have a job, use -uz employ to get one");
-        }
+        
         
         let fail = Math.floor(Math.random() * (100 - 0 + 1)) + 0;
         let amount = Math.floor(Math.random() * (earnMax - earnMin + 1)) + earnMin;
@@ -90,7 +91,7 @@ exports.run = async (client, message, args, config) => {
         {
             let embed = new Discord.RichEmbed()
             .setAuthor(`${message.author.tag}`, message.author.displayAvatarURL) 
-            .setDescription(`${message.author} , ${failSmg} + ${amount} + ${som}`)
+            .setDescription(`${message.author} , ${failSmg} ${amount}${som}`)
             .setColor("RANDOM");
             message.channel.send(embed);
              db.add(`money_${message.author.id}`, (amount * -1));
@@ -100,12 +101,13 @@ exports.run = async (client, message, args, config) => {
         {
             let embed = new Discord.RichEmbed()
             .setAuthor(`${message.author.tag}`, message.author.displayAvatarURL) 
-            .setDescription(`${message.author} , ${successMsg} + ${amount} + ${som}`)
+            .setDescription(`${message.author} , ${successMsg} ${amount}${som}`)
             .setColor("RANDOM");
             message.channel.send(embed);
             db.add(`money_${message.author.id}`, (amount));
             canWork = false;
             setTimeout(  () => {    canWork = true;  },  cooldownTime * 1000);
+        }
         }
     }
     else{
