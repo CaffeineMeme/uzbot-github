@@ -20,12 +20,12 @@ exports.run = async (client, message, args, config) => {
     let embed = new Discord.RichEmbed()
         .setAuthor(`${message.author.tag}`, message.author.displayAvatarURL) 
         .setDescription(`List of available jobs`)
-        .addField("Preacher", "Praise allah to pay off allah" + "\n" + "Payment: 30 - 150" + som + "\n" + "Fail Rate: 10%" "\n" + "Level Requirement: 0+")
-        .addField("Street Merchant", "Sell your trash to dumb niggas" + "\n" + "Payment: 80 - 250" + som + "\n" + "Fail Rate: 17%" "\n" + "Level Requirement: 0+")
-        .addField("Hijab Maker", "Cover em up" + "\n" + "Payment: 110 - 280" + som + "\n" + "Fail Rate: 12%" "\n" + "Level Requirement: 1+")
-        .addField("Executioner", "Fun job for everyone" + "\n" + "Payment: 90 - 170" + som + "\n" + "Fail Rate: 6%" "\n" + "Level Requirement: 1+")
-        .addField("Tech Support", "Hello this is Rajeesh of Microsoft, how may I assist you?" + "\n" + "Payment: 170 - 340" + som + "\n" + "Fail Rate: 15%" "\n" + "Level Requirement: 2+")
-        .addField("Saudi Comedian", "Make Allah laugh" + "\n" + "Payment: 270 - 600" + som + "\n" + "Fail Rate: 23%" "\n" + "Level Requirement: 2+")
+        .addField("Preacher", "Praise allah to pay off allah" + "\n" + "Payment: 30 - 150" + som + "\n" + "Fail Rate: 10%" "\n" + "Level Requirement: 0+", true)
+        .addField("Street Merchant", "Sell your trash to dumb niggas" + "\n" + "Payment: 80 - 250" + som + "\n" + "Fail Rate: 17%" "\n" + "Level Requirement: 0+", true)
+        .addField("Hijab Maker", "Cover em up" + "\n" + "Payment: 110 - 280" + som + "\n" + "Fail Rate: 12%" "\n" + "Level Requirement: 1+", true)
+        .addField("Executioner", "Fun job for everyone" + "\n" + "Payment: 90 - 170" + som + "\n" + "Fail Rate: 6%" "\n" + "Level Requirement: 1+", true)
+        .addField("Tech Support", "Hello this is Rajeesh of Microsoft, how may I assist you?" + "\n" + "Payment: 170 - 340" + som + "\n" + "Fail Rate: 15%" "\n" + "Level Requirement: 2+", true)
+        .addField("Saudi Comedian", "Make Allah laugh" + "\n" + "Payment: 270 - 600" + som + "\n" + "Fail Rate: 23%" "\n" + "Level Requirement: 2+", true)
     
         .setColor("RANDOM");
   message.channel.send(embed);
