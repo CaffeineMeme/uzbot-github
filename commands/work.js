@@ -3,61 +3,111 @@ const Discord = require('discord.js');
 
 var canWork = true;
 var timeRemaining;
+var timeLeft;
+var job = (`job_${message.author.id}`);
+var earnMax;
+var earnMin;
+var failMax;
+var failMin;
+var cooldownTime;
+var successMsg;
+var failSmg;
 
 exports.run = async (client, message, args, config) => {
     
-    var timer = setInterval(  () => {timeLeft--;}, 1000);
+    let som = client.emojis.find(emoji => emoji.name === "som");
     
-if(canWork === true){
-    if (args[0] == 'preacher') {
-
-        let amount = Math.floor(Math.random() * 150) + 1; // 1-500 random number. whatever you'd like
-
-        let embed = new Discord.RichEmbed()
-        .setAuthor(`${message.author.tag}`, message.author.displayAvatarURL) 
-        .setDescription(`${message.author}, you prayed to Allah and he gave you ${amount}$`)
-        .setColor("RANDOM");
+    if(canWork === true){
+        if (job == 'preacher') {
+        earnMax = 150;
+        earnMin = 30;
+        failMin = 0;
+        failMax = 10;
+        cooldownTime = 15;
+        successMsg = "You made allah happy so he gave you ";
+        failSmg = "You made allah fuckin angry so he pissed on you and stole ";
+        }
+        else if (job == 'street merchant') {
+        earnMax = 250;
+        earnMin = 80;
+        failMin = 0;
+        failMax = 17;
+        cooldownTime = 20;
+            successMsg = "You sold your garbage to dumbasses and got ";
+        failSmg = "Some niggas stole your shit and about ";
+        }
+        else if (job == 'hijab maker') {
+        earnMax = 280;
+        earnMin = 110;
+        failMin = 0;
+        failMax = 12;
+        cooldownTime = 30;
+            successMsg = "The hijab covers her face well, so you get ";
+        failSmg = "The hijab falls apart, and your client is beat to paralysis by the police, so she steals ";
+        }
+        else if (job == 'executioner') {
+        earnMax = 170;
+        earnMin = 90;
+        failMin = 0;
+        failMax = 6;
+        cooldownTime = 45;
+            successMsg = "The head flies and the prince throws you ";
+        failSmg = "You chop off the retards nose, he runs away and from you steals ";
+        }
+        else if (job == 'tech support') {
+        earnMax = 340;
+        earnMin = 170;
+        failMin = 0;
+        failMax = 15;
+        cooldownTime = 25;
+        successMsg = "You get the dumdum's bank account and grab a nice ";
+        failSmg = "Your computer blows up and repairs cost ";
+        }
+        else if (job == 'saudi comedian') {
+        earnMax = 600;
+        earnMin = 270;
+        failMin = 0;
+        failMax = 22;
+        cooldownTime = 55;
+            successMsg = "You make a funny and get ";
+        failSmg = "You make the audience mad. They stone you and medical bills cost ";
+        }
+        else if (job == undefined){
+            earnMax = 0;
+            minimum = 0;
+            failMax = 0;
+            failMin = 0;
+            cooldownTime = 0;
+            message.channel.send("you don't have a job, use -uz employ to get one");
+        }
         
-        timeLeft = db.set(`timeLeft_${message.author.id}`, 20);
-        timeRemaining = 20;
-        message.channel.send(embed);
-        db.add(`totalMoney_${message.author.id}`, amount);
-        db.add(`money_${message.author.id}`, amount);
-        canWork = false;
-        setTimeout(  () => {    canWork = true;  },  timeLeft * 1000);
-    } else if(args[0] == 'troll') {
-        let amount = Math.floor(Math.random() * 350) + 1; // 1-500 random number. whatever you'd like
-
-        let embed = new Discord.RichEmbed()
-        .setAuthor(`${message.author.tag}`, message.author.displayAvatarURL) 
-        .setDescription(`${message.author}, you trolled some gay niggas, and stole ${amount}$ worth of JahCoin.`)
-        .setColor("RANDOM");
+        let fail = Math.floor(Math.random() * (100 - 0 + 1)) + 0;
+        let amount = Math.floor(Math.random() * (maximum - minimum + 1)) + minimum;
         
-        timeLeft = db.set(`timeLeft_${message.author.id}`, 35);
-        timeRemaining = 35;
-        message.channel.send(embed);
-        db.add(`totalMoney_${message.author.id}`, amount);
-        db.add(`money_${message.author.id}`, amount);
-        canWork = false;
-        setTimeout(  () => {    canWork = true;  },  timeLeft * 1000);
-    } else if(args[0] == 'terrorist') {
-        let amount = Math.floor(Math.random() * 600) + 1; // 1-500 random number. change to whatever you'd like
-
-        let embed = new Discord.RichEmbed()
-        .setAuthor(`${message.author.tag}`, message.author.displayAvatarURL) 
-        .setDescription(`${message.author}, you bombed a tower and stole ${amount}$ in flaming money`)
-        .setColor("RANDOM");
-        
-    
-        timeLeft = db.set(`timeLeft_${message.author.id}`, 50);
-        timeRemaining = 35;
-        message.channel.send(embed);
-        db.add(`money_${message.author.id}`, amount);
-        db.add(`totalMoney_${message.author.id}`, amount);
-        canWork = false;
-        setTimeout(  () => {    canWork = true;  },  timeLeft * 1000);
+        if(fail <= failMax)
+        {
+            let embed = new Discord.RichEmbed()
+            .setAuthor(`${message.author.tag}`, message.author.displayAvatarURL) 
+            .setDescription(`${message.author},+ failSmg + ${amount}$`)
+            .setColor("RANDOM");
+            message.channel.send(embed);
+             db.add(`money_${message.author.id}`, (amount * -1));
+            canWork = false;
+            setTimeout(  () => {    canWork = true;  },  cooldownTime * 1000);
+        }else
+        {
+            let embed = new Discord.RichEmbed()
+            .setAuthor(`${message.author.tag}`, message.author.displayAvatarURL) 
+            .setDescription(`${message.author},+ successMsg + ${amount}$`)
+            .setColor("RANDOM");
+            message.channel.send(embed);
+            db.add(`money_${message.author.id}`, (amount));
+            canWork = false;
+            setTimeout(  () => {    canWork = true;  },  cooldownTime * 1000);
+        }
     }
-    }else{
+    else{
         message.channel.send("hold on faggot, let's not spam commands");
-    }}
+    }
+}
 
