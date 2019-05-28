@@ -18,7 +18,7 @@ if(canWork === true){
         .setDescription(`${message.author}, you prayed to Allah and he gave you ${amount}$`)
         .setColor("RANDOM");
         
-        timeLeft = db.add(`timeLeft_${message.author.id}`, 20);
+        timeLeft = db.set(`timeLeft_${message.author.id}`, 20);
         timeRemaining = 20;
         message.channel.send(embed);
         db.add(`totalMoney_${message.author.id}`, amount);
@@ -33,7 +33,7 @@ if(canWork === true){
         .setDescription(`${message.author}, you trolled some gay niggas, and stole ${amount}$ worth of JahCoin.`)
         .setColor("RANDOM");
         
-        timeLeft = db.add(`timeLeft_${message.author.id}`, 35);
+        timeLeft = db.set(`timeLeft_${message.author.id}`, 35);
         timeRemaining = 35;
         message.channel.send(embed);
         db.add(`totalMoney_${message.author.id}`, amount);
@@ -49,7 +49,7 @@ if(canWork === true){
         .setColor("RANDOM");
         
     
-        timeLeft = db.add(`timeLeft_${message.author.id}`, 50);
+        timeLeft = db.set(`timeLeft_${message.author.id}`, 50);
         timeRemaining = 35;
         message.channel.send(embed);
         db.add(`money_${message.author.id}`, amount);
@@ -58,6 +58,6 @@ if(canWork === true){
         setTimeout(  () => {    canWork = true;  },  timeLeft * 1000);
     }
     }else{
-        message.channel.send("Yo hold on you've only got " + timeLeft + " seconds before you can work again");
+        message.channel.send("hold on faggot, let's not spam commands");
     }}
 
