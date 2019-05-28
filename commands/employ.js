@@ -30,4 +30,5 @@ exports.run = async (client, message, args, config) => {
         .setColor("RANDOM");
   message.channel.send(embed);
 }
+}
 /* || ((jobTitle == "tech support" || == "saudi comedian") && level == 2) || ((jobTitle == "quran printer" || jobTitle == "ISIS manager") && level == 3) || ((jobTitle == "terrorist" || jobTitle == "shitting street supervisor") && level == 4)*/
