@@ -74,7 +74,7 @@ exports.run = async (client, message, args, config) => {
             successMsg = "You make a funny and get ";
         failSmg = "You make the audience mad. They stone you and medical bills cost ";
         }
-        else if (job == undefined){
+        else if (job == undefined || job == null){
             earnMax = 0;
             minimum = 0;
             failMax = 0;
