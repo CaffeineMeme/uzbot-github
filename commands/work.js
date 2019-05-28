@@ -69,5 +69,5 @@ if(canWork === true){
     }
     }else{
         message.channel.send("Yo hold on you've only got " + timeLeft + " seconds before you can work again");
-    }
+    }}
 
