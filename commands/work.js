@@ -12,9 +12,6 @@ var cooldownTime;
 var successMsg;
 var failSmg;
 
-var levelUpGoal = 3000;
-var levelUpExpo = 1.05;
-
 exports.run = async (client, message, args, config) => {
     
     var job = db.fetch(`job_${message.author.id}`);
@@ -108,18 +105,10 @@ exports.run = async (client, message, args, config) => {
             .setColor("RANDOM");
             message.channel.send(embed);
             db.add(`money_${message.author.id}`, (amount));
+            db.add(`totalMoney_${message.author.id}`, (amount));
             canWork = false;
             setTimeout(  () => {    canWork = true;  },  cooldownTime * 1000);
         }
-            let totalBal = db.fetch(`totalMoney_${message.author.id}`);
-            if(totalBal >= levelUpGoal)
-             {
-                levelUpGoal = (Math.ceil((((levelUpGoal * 2.625 ^ levelUpExpo) - (levelUpGoal * 0.05) + 1)/10) * 10));
-                levelUpExpo += .0125;
-                 db.add(`level_${message.author.id}`, 1);
-                 let level = db.fetch(`level_${message.author.id}`);
-                message.channel.send("Congrats, now you're level " + level + ", now you can get a better job and stuff");
-  }
         }
     }
     else{
