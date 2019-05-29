@@ -10,7 +10,7 @@ module.exports.run = async (bot, message, args) => {
 	let itemListPrice = db.get(`shopItemPrice${message.guild.id}`);
 	let itemListType = db.get(`shopItemType${message.guild.id}`);
 	
-	if(isNaN(args[0]) return message.reply('That was not a valid number!');
+	if(isNaN(args[0])) return message.reply('That was not a valid number!');
 	if (!args[0]) args[0] = 0;
 	
 	let currentPage = (args[0] * 5);
