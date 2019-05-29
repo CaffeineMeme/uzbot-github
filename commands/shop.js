@@ -14,7 +14,7 @@ module.exports.run = async (bot, message, args) => {
 	console.log(itemListPrice);
 	
 	if(isNaN(args[0])) return message.reply('That was not a valid number!');
-	if (!args[0]) let args[0] = 1;
+	if (!args[0]) return message.reply('input a page number dum dum');
 	
 	let currentPage = ((args[0] - 1)* 5);
 	
