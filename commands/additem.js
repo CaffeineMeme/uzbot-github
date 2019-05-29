@@ -13,16 +13,16 @@ module.exports.run = async (bot, message, args) => {
     let price = args[0];
     let itemType = args[1];
     
-    if (args[1] == role)
+    if (args[1] == "role")
     {
         if (!args[2]) return message.reply('Please specify a role');
         
     }
-    if (args[1] == item)
+    if (args[1] == "item")
     {
         if (!args[2]) return message.reply('Please specify an item name');
     }
-    if (args[1] == consumable)
+    if (args[1] == "consumable")
     {
         if (!args[2]) return message.reply('Please specify a consumable name');
     }
