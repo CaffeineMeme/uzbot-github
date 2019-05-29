@@ -10,13 +10,13 @@ module.exports.run = async (bot, message, args) => {
 	let itemListPrice = db.get(`shopItemPrice${message.guild.id}`);
 	let itemListType = db.get(`shopItemType${message.guild.id}`);
 	
-	if(isNaN(args[0])) return message.reply('That was not a valid number!');
-	if (!args[0]) args[0] = 0;
+	console.log(itemListName);
+	console.log(itemListPrice);
 	
-	let currentPage = (args[0] * 5);
-
-	shopList = db.get(`shopItem${message.guild.id}`);
-	console.log(shopList);
+	if(isNaN(args[0])) return message.reply('That was not a valid number!');
+	if (!args[0]) let args[0] = 1;
+	
+	let currentPage = ((args[0] - 1)* 5);
 	
 	let embed = new Discord.RichEmbed()
 	.setTitle("Uzbekistan Funny Shop lole")
