@@ -10,7 +10,7 @@ module.exports.run = async (bot, message, args) => {
 	
 	let embed = new Discord.RichEmbed()
 	.setTitle("Uzbekistan Funny Shop lole")
-	.addField("shopList[0]");
+	.addField(shopList[0]);
 	
 	message.channel.send(embed);
 
