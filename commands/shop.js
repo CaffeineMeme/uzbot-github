@@ -6,12 +6,14 @@ var itemListPrice = [];
 var itemListType = [];
 
 module.exports.run = async (bot, message, args) => {
-	let itemListName = db.get(`shopItemName${message.guild.id}`);
-	let itemListPrice = db.get(`shopItemPrice${message.guild.id}`);
-	let itemListType = db.get(`shopItemType${message.guild.id}`);
+	let itemListName[] = db.get(`shopItemName${message.guild.id}`);
+	let itemListPrice[] = db.get(`shopItemPrice${message.guild.id}`);
+	let itemListType[] = db.get(`shopItemType${message.guild.id}`);
 	
-	console.log(itemListName);
-	console.log(itemListPrice);
+	console.log(itemListName[0]);
+	console.log(itemListPrice[0]);
+	console.log(itemListName[1]);
+	console.log(itemListPrice[1]);
 	
 	if(isNaN(args[0])) return message.reply('That was not a valid number!');
 	if (!args[0]) return message.reply('input a page number dum dum');
@@ -20,7 +22,8 @@ module.exports.run = async (bot, message, args) => {
 	
 	let embed = new Discord.RichEmbed()
 	.setTitle("Uzbekistan Funny Shop lole")
-	.addField(itemListName[0 + currentPage], "Price: " + itemListPrice[0 + currentPage].toString() + "\n" + "Item Type: " + itemListType[0 + currentPage]);
+	.addField(itemListName[0 + currentPage], "Price: " + itemListPrice[0 + currentPage] + "\n" + "Item Type: " + itemListType[0 + currentPage])
+	.addField(itemListName[1 + currentPage], "Price: " + itemListPrice[1 + currentPage] + "\n" + "Item Type: " + itemListType[1 + currentPage]);
 	
 	message.channel.send(embed);
 
