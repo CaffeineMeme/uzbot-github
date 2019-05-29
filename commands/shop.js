@@ -20,7 +20,7 @@ module.exports.run = async (bot, message, args) => {
 	
 	let embed = new Discord.RichEmbed()
 	.setTitle("Uzbekistan Funny Shop lole")
-	.addField(itemListName[0 + currentPage], "Price: " + itemListPrice[0 + currentPage].charAt(0).toUpperCase() + completeTitle.slice(1) + "\n" + "Item Type: " + itemListType[0 + currentPage].charAt(0).toUpperCase() + completeTitle.slice(1));
+	.addField(itemListName[0 + currentPage], "Price: " + itemListPrice[0 + currentPage] + "\n" + "Item Type: " + itemListType[0 + currentPage]);
 	
 	message.channel.send(embed);
 
