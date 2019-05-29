@@ -8,7 +8,7 @@ module.exports.run = async (bot, message, args) => {
 	shopList = db.get(`shopItem${message.guild.id}`);
 	console.log(shopList);
 	
-	let embed = Discord.RichEmbed()
+	let embed = new Discord.RichEmbed()
 	.setTitle("Uzbekistan Funny Shop lole")
 	.addField("shopList[0]");
 	
