@@ -6,9 +6,9 @@ var itemListPrice = [];
 var itemListType = [];
 
 module.exports.run = async (bot, message, args) => {
-	let itemListName[] = db.get(`shopItemName${message.guild.id}`);
-	let itemListPrice[] = db.get(`shopItemPrice${message.guild.id}`);
-	let itemListType[] = db.get(`shopItemType${message.guild.id}`);
+	itemListName = db.get(`shopItemName${message.guild.id}`);
+	itemListPrice = db.get(`shopItemPrice${message.guild.id}`);
+	itemListType = db.get(`shopItemType${message.guild.id}`);
 	
 	console.log(itemListName[0]);
 	console.log(itemListPrice[0]);
