@@ -35,8 +35,8 @@ module.exports.run = async (bot, message, args) => {
     itemString = price + " " + itemType + " " + name;
     console.log(itemString);
     
-    db.push(`shopItemPrice${message.guild.id}`, price);
-    db.push(`shopItemType${message.guild.id}`, itemType);
-    db.push(`shopItemName${message.guild.id}`, name);
-
+    db.push(`shopItemPrice${message.guild.id}`, [price.toString()]);
+    db.push(`shopItemType${message.guild.id}`, [itemType]);
+    db.push(`shopItemName${message.guild.id}`, [name]);
+    
 }
