@@ -1,5 +1,6 @@
 const Discord = require('discord.js')
 const db = require('quick.db')
+const client = new Discord.Client()
 
 module.exports.run = async (bot, message, args) => {
 
@@ -22,7 +23,7 @@ module.exports.run = async (bot, message, args) => {
     {
         if (!args[2]) return message.reply('Please specify an item name');
     }
-    if (args[1] == "consumable")
+    if (args[1] == "consumible")
     {
         if (!args[2]) return message.reply('Please specify a consumable name');
     }
@@ -32,6 +33,6 @@ module.exports.run = async (bot, message, args) => {
     itemString = price + " " + itemType + " " + name
     console.log(itemString);
     
-    db.push(`shopItem${guild.id}`, itemString);
+    db.push(`shopItem${client.guild.id}`, itemString);
 
 }
