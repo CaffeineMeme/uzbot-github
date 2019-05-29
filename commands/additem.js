@@ -30,6 +30,8 @@ module.exports.run = async (bot, message, args) => {
     
     let name = args[2];
     
+    message.channel.send("Added item " + item + " to shop");
+    
     itemString = price + " " + itemType + " " + name
     console.log(itemString);
     
