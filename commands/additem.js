@@ -8,7 +8,7 @@ module.exports.run = async (bot, message, args) => {
 	itemListPrice = db.get(`shop${message.guild.id.price}`);
 	itemListType  = db.get(`shop${message.guild.id.type}`);
     
-    if(itemListName.length < 1)
+    if(itemListName === null)
     {
         db.set(`shop${message.guild.id}`, {price: [], name: [], type: []});
     }
