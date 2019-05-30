@@ -4,14 +4,11 @@ const client = new Discord.Client()
 
 module.exports.run = async (bot, message, args) => {
     
-    itemListName = db.get(`shop${message.guild.id.name}`);
+    	itemListName = db.get(`shop${message.guild.id.name}`);
 	itemListPrice = db.get(`shop${message.guild.id.price}`);
 	itemListType  = db.get(`shop${message.guild.id.type}`);
     
-    if(itemListName === null)
-    {
         db.set(`shop${message.guild.id}`, {price: 'poop', name: 'poop', type: 'poop'});
-    }
   
     if (!message.member.hasPermission('ADMINISTRATOR')) {
         return message.reply('You do not have enough permission to use this command.');
