@@ -3,7 +3,16 @@ const db = require('quick.db')
 const client = new Discord.Client()
 
 module.exports.run = async (bot, message, args) => {
-
+    
+    itemListName = db.get(`shop${message.guild.id.name}`);
+	itemListPrice = db.get(`shop${message.guild.id.price}`);
+	itemListType  = db.get(`shop${message.guild.id.type}`);
+    
+    if(itemListName.length < 1)
+    {
+        db.set(`shop${message.guild.id}`, {price: [], name: [], type: []});
+    }
+  
     if (!message.member.hasPermission('ADMINISTRATOR')) {
         return message.reply('You do not have enough permission to use this command.');
     }
@@ -28,15 +37,15 @@ module.exports.run = async (bot, message, args) => {
         if (!args[2]) return message.reply('Please specify a consumable name');
     }
     
-    let name = args[2];
+    let name = args[2] + args[3] + args[4] + args[5] + args[6];
     
     message.channel.send("Added item " + name + " to shop");
     
     itemString = price + " " + itemType + " " + name;
     console.log(itemString);
     
-    db.push(`shopItemPrice${message.guild.id}`, [price.toString()]);
-    db.push(`shopItemType${message.guild.id}`, [itemType]);
-    db.push(`shopItemName${message.guild.id}`, [name]);
+    db.push(`shop${message.guild.id.price}`, price.toString);
+    db.push(`shop${message.guild.id.type}`, itemType);
+    db.push(`shop${message.guild.id.name}`, name);
     
 }
