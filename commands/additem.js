@@ -10,7 +10,7 @@ module.exports.run = async (bot, message, args) => {
     
     if(itemListName === null)
     {
-        db.set(`shop${message.guild.id}`, {price: [""], name: [""], type: [""]});
+        db.set(`shop${message.guild.id}`, {price: 'poop', name: 'poop', type: 'poop'});
     }
   
     if (!message.member.hasPermission('ADMINISTRATOR')) {
