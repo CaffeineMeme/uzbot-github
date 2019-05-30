@@ -37,7 +37,7 @@ module.exports.run = async (bot, message, args) => {
         if (!args[2]) return message.reply('Please specify a consumable name');
     }
     
-    let name = args[2] + args[3] + args[4] + args[5] + args[6];
+    let name = args[2];
     
     message.channel.send("Added item " + name + " to shop");
     
