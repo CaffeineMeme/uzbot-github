@@ -10,7 +10,7 @@ module.exports.run = async (bot, message, args) => {
     
     if(itemListName === null)
     {
-        db.set(`shop${message.guild.id}`, {price: [], name: [], type: []});
+        db.set(`shop${message.guild.id}`, {price: [""], name: [""], type: [""]});
     }
   
     if (!message.member.hasPermission('ADMINISTRATOR')) {
@@ -47,5 +47,9 @@ module.exports.run = async (bot, message, args) => {
     db.push(`shop${message.guild.id.price}`, price.toString);
     db.push(`shop${message.guild.id.type}`, itemType);
     db.push(`shop${message.guild.id.name}`, name);
+	
+	console.log(itemListName);
+	console.log(itemListPrice);
+	console.log(itemListType);
     
 }
