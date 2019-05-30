@@ -8,7 +8,9 @@ module.exports.run = async (bot, message, args) => {
 	itemListPrice = db.get(`shop${message.guild.id}.price`);
 	itemListType  = db.get(`shop${message.guild.id}.type`);
     
-        db.set(`shop${message.guild.id}`, {price: ['poop'], name: ['poop'], type: ['poop']});
+	if(itemListName == null || itemListName == undefined){
+        db.set(`shop${message.guild.id}`, {price: [''], name: [''], type: ['']});
+	}
   
     if (!message.member.hasPermission('ADMINISTRATOR')) {
         return message.reply('You do not have enough permission to use this command.');
