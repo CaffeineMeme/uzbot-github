@@ -4,9 +4,9 @@ const client = new Discord.Client()
 
 module.exports.run = async (bot, message, args) => {
     
-    	itemListName = db.get(`shop${message.guild.id.name}`);
-	itemListPrice = db.get(`shop${message.guild.id.price}`);
-	itemListType  = db.get(`shop${message.guild.id.type}`);
+    	itemListName = db.get(`shop${message.guild.id}.name`);
+	itemListPrice = db.get(`shop${message.guild.id}.price`);
+	itemListType  = db.get(`shop${message.guild.id}.type`);
     
         db.set(`shop${message.guild.id}`, {price: 'poop', name: 'poop', type: 'poop'});
   
@@ -41,9 +41,9 @@ module.exports.run = async (bot, message, args) => {
     itemString = price + " " + itemType + " " + name;
     console.log(itemString);
     
-    db.push(`shop${message.guild.id.price}`, price.toString);
-    db.push(`shop${message.guild.id.type}`, itemType);
-    db.push(`shop${message.guild.id.name}`, name);
+    db.push(`shop${message.guild.id}.price`, price.toString);
+    db.push(`shop${message.guild.id}.type`, itemType);
+    db.push(`shop${message.guild.id}.name`, name);
 	
 	console.log(itemListName);
 	console.log(itemListPrice);
