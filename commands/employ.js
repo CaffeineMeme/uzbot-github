@@ -33,8 +33,6 @@ exports.run = async (client, message, args, config) => {
           
         let level = db.fetch(`level_${message.author.id}`);
         let jobTitle = jobArgs.join(' ');
-        
-        let jobTitle = jobArgs;
         if((jobTitle == "preacher" || jobTitle == "street merchant") || ((jobTitle == "hijab maker" || jobTitle == "executioner") && level == 1) || ((jobTitle == "tech support" || jobTitle == "saudi comedian") && level == 2)){
          message.channel.send("okay you are a " + jobTitle + " now, gl bro" + "\n" + "If you wanna quit you gotta wait an hour");
         canApply = false;
