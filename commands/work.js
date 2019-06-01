@@ -29,57 +29,57 @@ exports.run = async (client, message, args, config) => {
             message.channel.send("you don't have a job, use -uz employ to get one");
         }else{
         if (job == 'preacher') {
-        earnMax = 150;
-        earnMin = 30;
+        earnMax = 190;
+        earnMin = 60;
         failMin = 0;
         failMax = 10;
-        cooldownTime = db.set(`job_${message.author.id}`, 15);
+        cooldownTime = db.set(`jobWait_${message.author.id}`, 15);
         successMsg = "You made allah happy so he gave you ";
         failSmg = "You made allah fuckin angry so he pissed on you and stole ";
         }
         else if (job == 'street merchant') {
-        earnMax = 250;
-        earnMin = 80;
+        earnMax = 275;
+        earnMin = 100;
         failMin = 0;
         failMax = 17;
-        cooldownTime =  db.set(`job_${message.author.id}`, 20);
-            successMsg = "You sold your garbage to dumbasses and got ";
+        cooldownTime =  db.set(`jobWait_${message.author.id}`, 20);
+        successMsg = "You sold your garbage to dumbasses and got ";
         failSmg = "Some niggas stole your shit and about ";
         }
         else if (job == 'hijab maker') {
-        earnMax = 280;
-        earnMin = 110;
+        earnMax = 360;
+        earnMin = 150;
         failMin = 0;
         failMax = 12;
-         db.set(`job_${message.author.id}`, 30);
+         db.set(`jobWait_${message.author.id}`, 30);
             successMsg = "The hijab covers her face well, so you get ";
         failSmg = "The hijab falls apart, and your client is beat to paralysis by the police, so she steals ";
         }
         else if (job == 'executioner') {
-        earnMax = 170;
-        earnMin = 90;
+        earnMax = 250;
+        earnMin = 100;
         failMin = 0;
         failMax = 6;
-         db.set(`job_${message.author.id}`, 45);
-            successMsg = "The head flies and the prince throws you ";
+         db.set(`jobWait_${message.author.id}`, 35);
+        successMsg = "The head flies and the prince throws you ";
         failSmg = "You chop off the retards nose, he runs away and from you steals ";
         }
         else if (job == 'tech support') {
-        earnMax = 340;
-        earnMin = 170;
+        earnMax = 650;
+        earnMin = 300;
         failMin = 0;
         failMax = 15;
-         db.set(`job_${message.author.id}`, 25);
+         db.set(`jobWait_${message.author.id}`, 25);
         successMsg = "You get the dumdum's bank account and grab a nice ";
         failSmg = "Your computer blows up and repairs cost ";
         }
         else if (job == 'saudi comedian') {
-        earnMax = 600;
-        earnMin = 270;
+        earnMax = 920;
+        earnMin = 500;
         failMin = 0;
         failMax = 22;
-        db.set(`job_${message.author.id}`, 55);
-            successMsg = "You make a funny and get ";
+        db.set(`jobWait_${message.author.id}`, 55);
+        successMsg = "You make a funny and get ";
         failSmg = "You make the audience mad. They stone you and medical bills cost ";
         }
         
