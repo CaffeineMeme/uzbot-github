@@ -41,5 +41,6 @@ exports.run = async (client, message, args, config) => {
         }
 };
 }
+}
 /* || ((jobTitle == "tech support" || == "saudi comedian") && level == 2) || ((jobTitle == "quran printer" || jobTitle == "ISIS manager") && level == 3) || ((jobTitle == "terrorist" || jobTitle == "shitting street supervisor") && level == 4)*/
 
