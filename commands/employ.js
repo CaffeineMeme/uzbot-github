@@ -35,7 +35,7 @@ exports.run = async (client, message, args, config) => {
         let jobTitle = jobArgs.join(' ');
         
         let jobTitle = jobArgs;
-        if((jobTitle == "preacher" || jobTitle == "street merchant") || ((jobTitle == "hijab maker" || jobTitle == "executioner") && level == 1) || ((jobTitle == "tech support" || jobTitle == "saudi comedian") && level == 2))
+        if((jobTitle == "preacher" || jobTitle == "street merchant") || ((jobTitle == "hijab maker" || jobTitle == "executioner") && level == 1) || ((jobTitle == "tech support" || jobTitle == "saudi comedian") && level == 2)){
          message.channel.send("okay you are a " + jobTitle + " now, gl bro" + "\n" + "If you wanna quit you gotta wait an hour");
         canApply = false;
         db.set(`jobCooldown_${message.author.id}`, 360);
@@ -44,16 +44,4 @@ exports.run = async (client, message, args, config) => {
 };
 }
 /* || ((jobTitle == "tech support" || == "saudi comedian") && level == 2) || ((jobTitle == "quran printer" || jobTitle == "ISIS manager") && level == 3) || ((jobTitle == "terrorist" || jobTitle == "shitting street supervisor") && level == 4)*/
-    if(args[0] == "quit"){
-      message.channel.send('ok bro u quit now find a new job lmao');
-      db.set(`job_${message.author.id}`, null);
-    }else{
-    let level = db.fetch(`level_${message.author.id}`);
-    let jobTitle = args.join(' ');
-    if((jobTitle == "preacher" || jobTitle == "street merchant") || ((jobTitle == "hijab maker" || jobTitle == "executioner") && level == 1) || ((jobTitle == "tech support" || jobTitle == "saudi comedian") && level == 2)){
-    db.set(`job_${message.author.id}`, jobTitle); 
-    message.channel.send("okay you are a " + jobTitle + " now, gl bro" + "\n" + "If you wanna quit you gotta wait an hour");
-    canApply = false;
-     db.set(`jobCooldown_${message.author.id}`, 360);
-     setTimeout(  () => {    canApply = true;  },  cooldown * 1000);
-    }
+
