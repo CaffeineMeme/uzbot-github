@@ -23,8 +23,11 @@ exports.run = async (client, message, args, config) => {
     
         .setColor("RANDOM");
         let currentUser = message.author.id;
-         message.channel.send(embed);
-        module.exports = (client, message) => {
+        message.channel.send(embed);
+        
+};
+}
+module.exports = (client, message) => {
         
         if (message.author.bot) return;
         if (message.author.id != currentUser) return;
@@ -39,8 +42,6 @@ exports.run = async (client, message, args, config) => {
         db.set(`jobCooldown_${message.author.id}`, 360);
          setTimeout(  () => {    canApply = true;  },  cooldown * 1000);
         }
-};
-}
 }
 /* || ((jobTitle == "tech support" || == "saudi comedian") && level == 2) || ((jobTitle == "quran printer" || jobTitle == "ISIS manager") && level == 3) || ((jobTitle == "terrorist" || jobTitle == "shitting street supervisor") && level == 4)*/
 
