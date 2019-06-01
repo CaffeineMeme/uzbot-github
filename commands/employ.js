@@ -27,7 +27,7 @@ exports.run = async (client, message, args, config) => {
         
 };
 }
-module.exports = (client, message) => {
+exports.run = (client, message) => {
         
         if (message.author.bot) return;
         if (message.author.id != currentUser) return;
