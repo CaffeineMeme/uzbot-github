@@ -25,7 +25,7 @@ exports.run = async (client, message, args, config) => {
         let currentUser = message.author.id;
         message.channel.send(embed);
     
-        const performTurn = async (currentUser) => {
+        const getJob = async (currentUser) => {
         
         if (message.author.bot) return;
         if (message.author.id != currentUser) return;
@@ -43,6 +43,8 @@ exports.run = async (client, message, args, config) => {
       }else{
          message.channel.send("not a job stupid");
       }
+          
+          
 }
 }
 }
