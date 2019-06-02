@@ -8,7 +8,7 @@ const client = new Discord.Client();
 var levelUpGoal = 3000;
 var levelUpExpo = 1.05;
 
-client.on("up", () => {
+client.on("ready", () => {
   console.log("tajikistan nigga fart");
   client.user.setActivity('-uz help for commands | Currently in ' + client.guilds.size + ' servers');
 });
