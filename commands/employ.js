@@ -44,6 +44,7 @@ exports.run = async (client, message, args, config) => {
          message.channel.send("not a job stupid");
       }
           
+        await getJob();
           
 }
 }
