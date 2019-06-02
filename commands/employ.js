@@ -24,7 +24,8 @@ exports.run = async (client, message, args, config) => {
         .setColor("RANDOM");
         let currentUser = message.author.id;
         message.channel.send(embed);
-    async (client, message) => {
+    
+        const performTurn = async (currentUser) => {
         
         if (message.author.bot) return;
         if (message.author.id != currentUser) return;
@@ -37,8 +38,11 @@ exports.run = async (client, message, args, config) => {
          message.channel.send("okay you are a " + jobTitle + " now, gl bro" + "\n" + "If you wanna quit you gotta wait an hour");
         canApply = false;
         db.set(`jobCooldown_${message.author.id}`, 360);
-         setTimeout(  () => {    canApply = true;  },  cooldown * 1000);
-}
+        setTimeout(  () => {    canApply = true;  },  cooldown * 1000);
+          return;
+      }else{
+         message.channel.send("not a job stupid");
+      }
 }
 }
 }
