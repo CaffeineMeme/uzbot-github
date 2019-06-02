@@ -1,7 +1,7 @@
 const Discord = require('discord.js')
 const db = require('quick.db')
 
-require('.../bot.js');
+require('/../bot.js');
 
 module.exports.run = async (bot, message, args) =>{
     
