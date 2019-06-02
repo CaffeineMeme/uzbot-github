@@ -17,4 +17,11 @@ module.exports = (client, message) => {
 
   // Run the command
   cmd.run(client, message, args);
+  
+  
+  awaitMessage (channelID, userID, timeout, filter = () => true) {
+    return new Promise(resolve => {
+      if (this.collectors[channelID + userID]) {
+        delete this.collectors[channelID + userID];
+    }
 };
