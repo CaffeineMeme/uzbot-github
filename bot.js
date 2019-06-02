@@ -11,15 +11,18 @@ var levelUpExpo = db.get(`levelUpExp_${message.author.id}`);
 client.on("ready", () => {
   console.log("tajikistan nigga fart");
   client.user.setActivity('-uz help for commands | Currently in ' + client.guilds.size + ' servers');
-  
-   db.set(`levelUpGoal_${message.author.id}`, 3000);
-   db.set(`levelUpExp_${message.author.id}`, 1.05);
+
 });
 
 client.on("message", message => 
 {
   
   let bal = db.fetch(`totalMoney_${message.author.id}`);
+  let userLevel = db.fetch('level_${message.author.id}');
+  if(userLevel < 1){    
+   db.set(`levelUpGoal_${message.author.id}`, 3000);
+   db.set(`levelUpExp_${message.author.id}`, 1.05);
+  }
   if(bal >= levelUpGoal)
   {
     db.add(`levelUpExp_${message.author.id}`, .0125);
