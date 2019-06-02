@@ -25,7 +25,7 @@ exports.run = async (client, message, args, config) => {
         let currentUser = message.author.id;
         message.channel.send(embed);
     
-        const getJob = async () => {
+        const getJob = async (message) => {
         
         if (message.author.bot) return;
         if (message.author.id != currentUser) return;
