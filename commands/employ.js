@@ -7,9 +7,27 @@ var canApply;
 exports.run = async (client, message, args, config) => {
   let cooldown = db.fetch(`jobCooldown_${message.author.id}`);
   let som = client.emojis.find(emoji => emoji.name === "som");
+  let canApply = db.fetch(`canWork_${message.author.id}`);
   if(canApply == false){
     message.channel.send('work more and then you can quit bro') 
   }else {
+  if(args[0] != null || args[0] != undefined)
+  {
+    if(args[0] == "quit"){
+      message.channel.send('ok bro u quit now find a new job lmao');
+      db.set(`job_${message.author.id}`, null);
+    }else{
+    let level = db.fetch(`level_${message.author.id}`);
+    let jobTitle = args.join(' ');
+    if((jobTitle == "preacher" || jobTitle == "street merchant") || ((jobTitle == "hijab maker" || jobTitle == "executioner") && level == 1) || ((jobTitle == "tech support" || jobTitle == "saudi comedian") && level == 2)){
+    db.set(`job_${message.author.id}`, jobTitle); 
+    message.channel.send("okay you are a " + jobTitle + " now, gl bro" + "\n" + "If you wanna quit you gotta wait an hour");
+    db.set(`canWork_${message.author.id}`, false);
+     db.set(`jobCooldown_${message.author.id}`, 360);
+     setTimeout(  () => {    db.set(`canWork_${message.author.id}`, true);  },  cooldown * 1000);
+    }
+    }
+  }else{
     message.channel.send('choose a job first');
     let embed = new Discord.RichEmbed()
         .setAuthor(`${message.author.tag}`, message.author.displayAvatarURL) 
@@ -22,32 +40,8 @@ exports.run = async (client, message, args, config) => {
         .addField("Saudi Comedian", "Make Allah laugh" + "\n" + "Payment: 270 - 600" + som + "\n" + "Fail Rate: 23%" + "\n" + "Level Requirement: 2+", true)
     
         .setColor("RANDOM");
-        let currentUser = message.author.id;
-        message.channel.send(embed);
-    
-        const getJob = async (message) => {
-        
-        if (message.author.bot) return;
-        if (message.author.id != currentUser) return;
-          
-        const jobArgs = message.content.split(/ +/g);
-          
-        let level = db.fetch(`level_${message.author.id}`);
-        let jobTitle = jobArgs.join(' ');
-        if((jobTitle == "preacher" || jobTitle == "street merchant") || ((jobTitle == "hijab maker" || jobTitle == "executioner") && level == 1) || ((jobTitle == "tech support" || jobTitle == "saudi comedian") && level == 2)){
-         message.channel.send("okay you are a " + jobTitle + " now, gl bro" + "\n" + "If you wanna quit you gotta wait an hour");
-        canApply = false;
-        db.set(`jobCooldown_${message.author.id}`, 360);
-        setTimeout(  () => {    canApply = true;  },  cooldown * 1000);
-          return;
-      }else{
-         message.channel.send("not a job stupid");
-      }
-          
-        await getJob();
-          
+  message.channel.send(embed);
 }
 }
 }
 /* || ((jobTitle == "tech support" || == "saudi comedian") && level == 2) || ((jobTitle == "quran printer" || jobTitle == "ISIS manager") && level == 3) || ((jobTitle == "terrorist" || jobTitle == "shitting street supervisor") && level == 4)*/
-
