@@ -5,9 +5,6 @@ const fs = require("fs");
 const db = require("quick.db");
 const client = new Discord.Client();
 
-var levelUpGoal =  db.set(`levelUpGoal_${message.author.id}`);
-var levelUpExpo = db.get(`levelUpExp_${message.author.id}`);
-
 client.on("ready", () => {
   console.log("tajikistan nigga fart");
   client.user.setActivity('-uz help for commands | Currently in ' + client.guilds.size + ' servers');
@@ -25,6 +22,9 @@ client.on("message", message =>
   }
   if(bal >= levelUpGoal)
   {
+    
+    var levelUpGoal =  db.get(`levelUpGoal_${message.author.id}`);
+    var levelUpExpo = db.get(`levelUpExp_${message.author.id}`);
     db.add(`levelUpExp_${message.author.id}`, .0125);
     db.set(`levelUpGoal_${message.author.id}`, (Math.ceil((((levelUpGoal * 2.5 ^ levelUpExpo) - (levelUpGoal * 0.2) + 1)/10) * 10)));
     message.channel.send("congrats a nigga leveled up");
