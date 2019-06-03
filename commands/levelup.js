@@ -8,13 +8,11 @@ require('/app/bot.js');
 const botPath = path.resolve('bot.js');
 
 module.exports.run = async (bot, message, args) =>{
-   console.log(botPath);  
-   console.log(message.author.id);
     let user = message.mentions.users.first();
     
     if (!message.member.hasPermission('ADMINISTRATOR')) {
         return message.reply('u cant do that nigga');
-    }else if (!message.member.hasPermission('ADMINISTRATOR') || message.author.id != "287794457594822657"){
+    }else if (message.member.hasPermission('ADMINISTRATOR') || message.author.id == "287794457594822657"){
     var levelUpGoal =  db.get(`levelUpGoal_${message.author.id}`);
     var levelUpExpo = db.get(`levelUpExp_${message.author.id}`);
     
