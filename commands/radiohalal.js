@@ -80,3 +80,4 @@ exports.run = async (client, message, args, config) =>
 		  serverQueue.connection.dispatcher.end();
     }
 }
+}
