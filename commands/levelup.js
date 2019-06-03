@@ -3,7 +3,7 @@ const db = require('quick.db')
 
 const path = require('path');
 
-//require('/../../bot.js');
+require('/app/bot.js');
 
 const botPath = path.resolve('bot.js');
 
