@@ -49,8 +49,7 @@ exports.run = async (client, message, args, config) =>
     
     if(args[0] == "play" || args[0] == "p")
     {
-      play(message, song) {
-		const queue = message.client.queue;
+      		const queue = message.client.queue;
 		const guild = message.guild;
 		const serverQueue = queue.get(message.guild.id);
 	
@@ -62,7 +61,7 @@ exports.run = async (client, message, args, config) =>
 	
 		const dispatcher = serverQueue.connection.playStream(ytdl(song.url))
 			.on('end', () => {
-				console.log('bro song done');
+				console.log('Music ended!');
 				serverQueue.songs.shift();
 				this.play(message, serverQueue.songs[0]);
 			})
@@ -70,7 +69,6 @@ exports.run = async (client, message, args, config) =>
 				console.error(error);
 			});
 		dispatcher.setVolumeLogarithmic(serverQueue.volume / 5);
-	}
     
     if(args[0] == "stop")
     {
