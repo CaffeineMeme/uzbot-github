@@ -47,7 +47,7 @@ exports.run = async (client, message, args, config) =>
 			return message.channel.send(`${song.title} has been added to the queue!`);
 		}
     
-    if(args[0] == "play" || args[0] = "p")
+    if(args[0] == "play" || args[0] == "p")
     {
       play(message, song) {
 		const queue = message.client.queue;
