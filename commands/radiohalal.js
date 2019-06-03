@@ -5,7 +5,7 @@ const queue = new Map();
 exports.run = async (client, message, args, config) =>
 {
     		const queue = message.client.queue;
-		//const serverQueue = queue.get(message.guild.id);
+		const serverQueue = queue.get(message.guild.id);
 		const voiceChannel = message.member.voiceChannel;
 		if (!voiceChannel) return message.channel.send('You need to be in a voice channel to play music!');
 		const permissions = voiceChannel.permissionsFor(message.client.user);
