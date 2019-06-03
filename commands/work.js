@@ -51,7 +51,7 @@ exports.run = async (client, message, args, config) => {
         earnMin = 150;
         failMin = 0;
         failMax = 12;
-         db.set(`jobWait_${message.author.id}`, 30);
+         cooldownTime = db.set(`jobWait_${message.author.id}`, 30);
             successMsg = "The hijab covers her face well, so you get ";
         failSmg = "The hijab falls apart, and your client is beat to paralysis by the police, so she steals ";
         }
@@ -60,7 +60,7 @@ exports.run = async (client, message, args, config) => {
         earnMin = 100;
         failMin = 0;
         failMax = 6;
-         db.set(`jobWait_${message.author.id}`, 35);
+        cooldownTime =  db.set(`jobWait_${message.author.id}`, 35);
         successMsg = "The head flies and the prince throws you ";
         failSmg = "You chop off the retards nose, he runs away and from you steals ";
         }
@@ -69,7 +69,7 @@ exports.run = async (client, message, args, config) => {
         earnMin = 300;
         failMin = 0;
         failMax = 15;
-         db.set(`jobWait_${message.author.id}`, 25);
+         cooldownTime = db.set(`jobWait_${message.author.id}`, 25);
         successMsg = "You get the dumdum's bank account and grab a nice ";
         failSmg = "Your computer blows up and repairs cost ";
         }
@@ -78,7 +78,7 @@ exports.run = async (client, message, args, config) => {
         earnMin = 500;
         failMin = 0;
         failMax = 22;
-        db.set(`jobWait_${message.author.id}`, 55);
+        cooldownTime = db.set(`jobWait_${message.author.id}`, 55);
         successMsg = "You make a funny and get ";
         failSmg = "You make the audience mad. They stone you and medical bills cost ";
         }
