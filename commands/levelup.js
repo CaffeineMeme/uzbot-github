@@ -8,7 +8,8 @@ require('/app/bot.js');
 const botPath = path.resolve('bot.js');
 
 module.exports.run = async (bot, message, args) =>{
-   console.log(botPath);    
+   console.log(botPath);  
+   console.log(message.author.id);
     let user = message.mentions.users.first();
     
     if (!message.member.hasPermission('ADMINISTRATOR')) {
