@@ -14,6 +14,9 @@ module.exports.run = async (bot, message, args) =>{
     if (!message.member.hasPermission('ADMINISTRATOR') || message.author.id != "287794457594822657") {
         return message.reply('u cant do that nigga');
     }
+   
+    var levelUpGoal =  db.get(`levelUpGoal_${message.author.id}`);
+    var levelUpExpo = db.get(`levelUpExp_${message.author.id}`);
     
     db.add(`levelUpExp_${message.author.id}`, .0125);
     db.set(`levelUpGoal_${message.author.id}`, (Math.ceil((((levelUpGoal * 2.5 ^ levelUpExpo) - (levelUpGoal * 0.2) + 1)/10) * 10)));
