@@ -5,12 +5,12 @@ const queue = new Map();
 exports.run = async (client, message, args, config) =>
 {
     		const queue = message.client.queue;
-		const serverQueue = message.guild.id;
 		const voiceChannel = message.member.voiceChannel;
 		if (!voiceChannel) return message.channel.send('You need to be in a voice channel to play music!');
 		const permissions = voiceChannel.permissionsFor(message.client.user);
 		if (!permissions.has('CONNECT') || !permissions.has('SPEAK')) {
 			return message.channel.send('I need the permissions to join and speak in your voice channel!');
+			console.log('I need the permissions to join and speak in your voice channel!');
 		}
     
     		const songInfo = await ytdl.getInfo(args[1]);
@@ -18,6 +18,8 @@ exports.run = async (client, message, args, config) =>
 			title: songInfo.title,
 			url: songInfo.video_url,
 		};
+	
+		const serverQueue = message.guild.id;
 
 		if (!serverQueue) {
 			const queueContruct = {
