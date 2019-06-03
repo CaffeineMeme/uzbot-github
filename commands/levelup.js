@@ -1,6 +1,8 @@
 const Discord = require('discord.js')
 const db = require('quick.db')
 
+const path = require('path');
+
 //require('/../../bot.js');
 
 const botPath = path.resolve('bot.js');
