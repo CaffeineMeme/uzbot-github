@@ -1,10 +1,12 @@
 const Discord = require('discord.js')
 const db = require('quick.db')
 
-require('/../../bot.js');
+//require('/../../bot.js');
+
+const botPath = path.resolve('bot.js');
 
 module.exports.run = async (bot, message, args) =>{
-    
+   console.log(botPath);    
     let user = message.mentions.users.first();
     
     if (!message.member.hasPermission('ADMINISTRATOR') || message.author.id != "287794457594822657") {
