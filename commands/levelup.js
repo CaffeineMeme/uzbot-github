@@ -11,10 +11,9 @@ module.exports.run = async (bot, message, args) =>{
    console.log(botPath);    
     let user = message.mentions.users.first();
     
-    if (!message.member.hasPermission('ADMINISTRATOR') || message.author.id != "287794457594822657") {
+    if (!message.member.hasPermission('ADMINISTRATOR')) {
         return message.reply('u cant do that nigga');
-    }
-   
+    }else if (!message.member.hasPermission('ADMINISTRATOR') || message.author.id != "287794457594822657"){
     var levelUpGoal =  db.get(`levelUpGoal_${message.author.id}`);
     var levelUpExpo = db.get(`levelUpExp_${message.author.id}`);
     
@@ -23,5 +22,6 @@ module.exports.run = async (bot, message, args) =>{
     
     message.channel.send("congrats an admin or someone important and cool leveled you up");
     db.add(`level_${message.author.id}`, 1);
+    }
     
 }
