@@ -10,7 +10,7 @@ var danbull = ["https://www.youtube.com/watch?v=h_wUdzVZD3o", "https://www.youtu
 
 module.exports.run = async (client, message, args) => {
         var minimum = 0;
-		var maximum = hamood.length - 1;
+		var maximum = danbull.length - 1;
 		var danInt = Math.floor(Math.random() * (maximum - minimum + 1)) + minimum;
 		console.log("boom boom boom " + hamoodInt);
         message.channel.send("Bro i found a good dan bull music " + "\n" + danbull[danInt]);
