@@ -9,7 +9,7 @@ var toby = ["https://www.youtube.com/watch?v=zzKFbUxYJys", "https://www.youtube.
 
 module.exports.run = async (client, message, args) => {
         var minimum = 0;
-		var maximum = hamood.length - 1;
+		var maximum = toby.length - 1;
 		var tobyInt = Math.floor(Math.random() * (maximum - minimum + 1)) + minimum;
 		console.log("tobuscus adventures #" + tobyInt);
         message.channel.send("chicken nugger biscuit nugget in a biscuit " + "\n" + toby[tobyInt]);
