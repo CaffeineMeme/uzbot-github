@@ -14,6 +14,8 @@ client.on("ready", () => {
 client.on("message", message => 
 {
   
+  client.user.setActivity('-uz help for commands | Currently in ' + client.guilds.size + ' servers');
+  
   let bal = db.fetch(`totalMoney_${message.author.id}`);
   let userLevel = db.fetch('level_${message.author.id}');
   if(userLevel < 1){    
