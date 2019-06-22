@@ -14,6 +14,16 @@ module.exports.run = async (client, message, args) => {
                 job = "Unemployed lol";
         }
         
+        if(level == null)
+        {
+             level = 0
+        }
+        
+        if(bal == null)
+        {
+             bal = 0
+        }
+        
         let embed = new Discord.RichEmbed()
         .setAuthor(`${message.author.tag}`, message.author.displayAvatarURL) 
         .setTitle(`alright bro here's your stats`)
@@ -22,7 +32,7 @@ module.exports.run = async (client, message, args) => {
         .addField("Current Balance", bal + som)
         .addField("Current Job", job)
         .addField("Current Level", level)
-        .addField("Leveling Progress", bal + '/' + levelUpGoal + " (" + (Math.round((bal/levelUpGoal)  * 10) / 10) + ")");
+        .addField("Leveling Progress", bal + '/' + levelUpGoal + "      (" + (Math.round((bal/levelUpGoal)  * 10) / 10) + "%)");
         message.channel.send(embed);
         
 }
