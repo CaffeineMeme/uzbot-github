@@ -15,6 +15,6 @@ module.exports.run = async (client, message, args) => {
         .addField("Username", `${message.author}`)
         .addField("Current Balance", bal + som)
         .addField("Current Level", level)
-        .addField("Leveling Progress", bal + '/' + levelUpGoal + " (" + (Math.round((bal/levelUpGoal  * 10) / 10) + ")");
+        .addField("Leveling Progress", bal + '/' + levelUpGoal + " (" + (Math.round((bal/levelUpGoal)  * 10) / 10) + ")");
         
 }
