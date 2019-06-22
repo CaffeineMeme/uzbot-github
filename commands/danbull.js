@@ -12,6 +12,6 @@ module.exports.run = async (client, message, args) => {
         var minimum = 0;
 		var maximum = danbull.length - 1;
 		var danInt = Math.floor(Math.random() * (maximum - minimum + 1)) + minimum;
-		console.log("boom boom boom " + hamoodInt);
+		console.log("boom boom boom " + danInt);
         message.channel.send("Bro i found a good dan bull music " + "\n" + danbull[danInt]);
 }
