@@ -31,6 +31,7 @@ module.exports.run = async (client, message, args) => {
         }
         
         let jobTitle =  job.charAt(0).toUpperCase() + job.slice(1);
+        let percentage = progress / levelUpGoal;
         
         let embed = new Discord.RichEmbed()
         .setAuthor(`${message.author.tag}`, message.author.displayAvatarURL) 
@@ -41,7 +42,7 @@ module.exports.run = async (client, message, args) => {
         .addField("Net Worth", progress + som)
         .addField("Current Job", job)
         .addField("Current Level", level)
-        .addField("Leveling Progress", progress + '/' + levelUpGoal + "      (" + (Math.round((progress/levelUpGoal)  * 100))/10 + "%)");
+        .addField("Leveling Progress", progress + '/' + levelUpGoal + "\n" + "(" + (Math.round(percentage * 1000)/10) + "%)");
         message.channel.send(embed);
         
 }
