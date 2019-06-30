@@ -110,7 +110,7 @@ exports.run = async (client, message, args, config) => {
             message.channel.send(embed);
              db.add(`money_${message.author.id}`, (amount * -1));
             db.set(`canWork_${message.author.id}`, false);
-            setTimeout(  () => {    canWork = true;  },  cooldownTime * 1000);
+            setTimeout(  () => {   db.set(`canWork_${message.author.id}`, true);  },  cooldownTime * 1000);
         }else
         {
             let embed = new Discord.RichEmbed()
@@ -121,7 +121,7 @@ exports.run = async (client, message, args, config) => {
             db.add(`money_${message.author.id}`, (amount));
             db.add(`totalMoney_${message.author.id}`, (amount));
             db.set(`canWork_${message.author.id}`, false);
-            setTimeout(  () => {    canWork = true;  },  cooldownTime * 1000);
+            setTimeout(  () => {   db.set(`canWork_${message.author.id}`, true);  },  cooldownTime * 1000);
         }
         }
         console.log(cooldownTime);
