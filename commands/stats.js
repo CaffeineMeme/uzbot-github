@@ -41,7 +41,7 @@ module.exports.run = async (client, message, args) => {
         .addField("Net Worth", progress + som)
         .addField("Current Job", job)
         .addField("Current Level", level)
-        .addField("Leveling Progress", progress + '/' + levelUpGoal + "      (" + (Math.round((progress/levelUpGoal)  * 10)) + "%)");
+        .addField("Leveling Progress", progress + '/' + levelUpGoal + "      (" + (Math.round((progress/levelUpGoal)  * 100))/10 + "%)");
         message.channel.send(embed);
         
 }
