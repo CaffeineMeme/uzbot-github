@@ -17,9 +17,10 @@ module.exports.run = async (bot, message, args) =>{
     }else if (message.member.hasPermission('ADMINISTRATOR') || message.author.id == "287794457594822657"){
     let levelUpGoal =  db.fetch(`levelUpGoal_${user.id}`);
     let levelUpExpo = db.fetch(`levelUpExp_${user.id}`);
+    let amountToAdd = (Math.ceil((((levelUpGoal * 2.35 ^ levelUpExpo)/10) * 10)) );
     
     db.add(`levelUpExp_${user.id}`, .0125);
-    levelUpGoal = levelUpGoal + (Math.ceil((((levelUpGoal * 2.35 ^ levelUpExpo)/10) * 10)) );
+    levelUpGoal = levelUpGoal + amountToAdd;
     
     message.channel.send("congrats an admin or someone important and cool leveled you up");
     console.log(levelUpGoal);
