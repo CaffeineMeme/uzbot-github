@@ -8,6 +8,7 @@ module.exports.run = async (client, message, args) => {
         let level = db.fetch(`level_${message.author.id}`);
         let levelUpGoal =  db.get(`levelUpGoal_${message.author.id}`);
         let job =  db.get(`job_${message.author.id}`);
+        let progress = db.get(`totalMoney_${message.author.id}`);
         
         if(job == undefined || job == null)
         {
@@ -24,15 +25,18 @@ module.exports.run = async (client, message, args) => {
              bal = 0
         }
         
+        let jobTitle =  job.charAt(0).toUpperCase() + job.slice(1);
+        
         let embed = new Discord.RichEmbed()
         .setAuthor(`${message.author.tag}`, message.author.displayAvatarURL) 
         .setTitle(`alright bro here's your stats`)
         .setColor("RANDOM")
         .addField("Username", `${message.author}`)
         .addField("Current Balance", bal + som)
+        .addField("Net Worth", progress + som)
         .addField("Current Job", job)
         .addField("Current Level", level)
-        .addField("Leveling Progress", bal + '/' + levelUpGoal + "      (" + (Math.round((bal/levelUpGoal)  * 10) / 10) + "%)");
+        .addField("Leveling Progress", progress + '/' + levelUpGoal + "      (" + (Math.round((progress/levelUpGoal)  * 10)) + "%)");
         message.channel.send(embed);
         
 }
