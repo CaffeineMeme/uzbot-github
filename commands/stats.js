@@ -6,9 +6,9 @@ module.exports.run = async (client, message, args) => {
         let som = client.emojis.find(emoji => emoji.name === "som");
         let bal = db.fetch(`money_${message.author.id}`);
         let level = db.fetch(`level_${message.author.id}`);
-        let levelUpGoal =  db.get(`levelUpGoal_${message.author.id}`);
-        let job =  db.get(`job_${message.author.id}`);
-        let progress = db.get(`totalMoney_${message.author.id}`);
+        let levelUpGoal =  db.fetch(`levelUpGoal_${message.author.id}`);
+        let job =  db.fetch(`job_${message.author.id}`);
+        let progress = db.fetch(`totalMoney_${message.author.id}`);
         
         if(job == undefined || job == null)
         {
