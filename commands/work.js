@@ -129,5 +129,6 @@ exports.run = async (client, message, args, config) => {
     else{
         message.channel.send("hold on faggot, let's not spam commands");
     }
+    console.log(canWork);
 }
 
