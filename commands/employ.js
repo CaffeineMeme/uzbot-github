@@ -20,16 +20,13 @@ exports.run = async (client, message, args, config) => {
     let level = db.fetch(`level_${message.author.id}`);
     let jobTitle = args.join(' ');
     if(jobTitle == "preacher" || jobTitle == "street merchant" || ((jobTitle == "hijab maker" || jobTitle == "executioner") && level == 1) || ((jobTitle == "tech support" || jobTitle == "saudi comedian" || jobTitle == "kaaba repairman") && level == 2) || ((jobTitle == "quran printer" || jobTitle == "ISIS manager") && level == 3) || ((jobTitle == "street shitting supervisor" || jobTitle == "terrorist") && level == 4) || ((jobTitle == "gay stripper" || jobTitle == "booze smuggler") && level == 5)){
-     //if((jobTitle == "preacher" || jobTitle == "street merchant") || ((jobTitle == "hijab maker" || jobTitle == "executioner") && level == 1) || ((jobTitle == "tech support" || jobTitle == "saudi comedian") && level == 2) || ((jobTitle == "quran printer" || jobTitle == "ISIS manager") && level == 3) || ((jobTitle == "terrorist" || jobTitle == "shitting street supervisor") && level == 4) || ((jobTitle == "gay stripper" || jobTitle == "booze smuggler") && level == 5)){ 
+    //if((jobTitle == "preacher" || jobTitle == "street merchant") || ((jobTitle == "hijab maker" || jobTitle == "executioner") && level == 1) || ((jobTitle == "tech support" || jobTitle == "saudi comedian") && level == 2) || ((jobTitle == "quran printer" || jobTitle == "ISIS manager") && level == 3) || ((jobTitle == "terrorist" || jobTitle == "shitting street supervisor") && level == 4) || ((jobTitle == "gay stripper" || jobTitle == "booze smuggler") && level == 5)){ 
     //if((jobTitle == "preacher" || jobTitle == "street merchant") || ((jobTitle == "hijab maker" || jobTitle == "executioner") && level == 1) || ((jobTitle == "tech support" || jobTitle == "saudi comedian" || jobTitle == "kaaba repairman") && level == 2) || ((jobTitle == "quran printer" || jobTitle == "ISIS manager") && level == 3) || ((jobTitle == "terrorist" || jobTitle == "shitting street supervisor") && level == 4) || ((jobTitle == "gay stripper" || jobTitle = "booze smuggler") && level == 5)){
     db.set(`job_${message.author.id}`, jobTitle); 
     message.channel.send("okay you are a " + jobTitle + " now, gl bro" + "\n" + "If you wanna quit you gotta wait an hour");
     db.set(`canWork_${message.author.id}`, false);
      db.set(`jobCooldown_${message.author.id}`, 360);
      setTimeout(  () => {    db.set(`canWork_${message.author.id}`, true);  },  cooldown * 1000);
-    }else 
-    {
-       message.channel.send("nigga that isn't a job");
     }
     }
   }else{
