@@ -15,8 +15,8 @@ module.exports.run = async (bot, message, args) =>{
     }else if (user == undefined) {
     return message.reply('name a user retard');
     }else if (message.member.hasPermission('ADMINISTRATOR') || message.author.id == "287794457594822657"){
-    var levelUpGoal =  db.get(`levelUpGoal_${user.id}`);
-    var levelUpExpo = db.get(`levelUpExp_${user.id}`);
+    var levelUpGoal =  db.fetch(`levelUpGoal_${user.id}`);
+    var levelUpExpo = db.fetch(`levelUpExp_${user.id}`);
     
     db.add(`levelUpExp_${user.id}`, .0125);
     levelUpGoal = levelUpGoal + (Math.ceil((((levelUpGoal * 2.35 ^ levelUpExpo)/10) * 10)) );
