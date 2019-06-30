@@ -24,6 +24,7 @@ module.exports.run = async (bot, message, args) =>{
     message.channel.send("congrats an admin or someone important and cool leveled you up");
     goal = db.get(`levelUpGoal_${user.id}`);
     console.log(goal);
+    console.log(user.id);
     db.add(`level_${user.id}`, 1);
     }
     
