@@ -19,27 +19,36 @@ exports.run = async (client, message, args, config) => {
     }else{
     let level = db.fetch(`level_${message.author.id}`);
     let jobTitle = args.join(' ');
-    if((jobTitle == "preacher" || jobTitle == "street merchant") || ((jobTitle == "hijab maker" || jobTitle == "executioner") && level == 1) || ((jobTitle == "tech support" || jobTitle == "saudi comedian") && level == 2)){
+    if((jobTitle == "preacher" || jobTitle == "street merchant" ||) || ((jobTitle == "hijab maker" || jobTitle == "executioner") && level == 1) || ((jobTitle == "tech support" || jobTitle == "saudi comedian" || jobTitle == "kaaba repairman") && level == 2) || ((jobTitle == "quran printer" || jobTitle == "ISIS manager") && level == 3) || ((jobTitle == "terrorist" || jobTitle == "shitting street supervisor") && level == 4) || ((jobTitle == "gay stripper" || jobTitle = "booze smuggler") && level == 5)){
     db.set(`job_${message.author.id}`, jobTitle); 
     message.channel.send("okay you are a " + jobTitle + " now, gl bro" + "\n" + "If you wanna quit you gotta wait an hour");
     db.set(`canWork_${message.author.id}`, false);
      db.set(`jobCooldown_${message.author.id}`, 360);
      setTimeout(  () => {    db.set(`canWork_${message.author.id}`, true);  },  cooldown * 1000);
+    }else 
+    {
+       message.channel.send("nigga that isn't a job");
     }
     }
   }else{
     message.channel.send('choose a job first');
     let embed = new Discord.RichEmbed()
         .setAuthor(`${message.author.tag}`, message.author.displayAvatarURL) 
-        .setDescription(`List of available jobs`, ` `)
-        .addField("Preacher", "Praise allah to pay off allah" + "\n" + "Payment: 30 - 150" + som + "\n" + "Fail Rate: 10%" + "\n" + "Level Requirement: 0+", true)
-        .addField("Street Merchant", "Sell your trash to dumb niggas" + "\n" + "Payment: 80 - 250" + som + "\n" + "Fail Rate: 17%" + "\n" + "Level Requirement: 0+", true)
-        .addField("Hijab Maker", "Cover em up" + "\n" + "Payment: 110 - 280" + som + "\n" + "Fail Rate: 12%" + "\n" + "Level Requirement: 1+", true)
-        .addField("Executioner", "Fun job for everyone" + "\n" + "Payment: 90 - 170" + som + "\n" + "Fail Rate: 6%" + "\n" + "Level Requirement: 1+", true)
-        .addField("Tech Support", "Hello this is Rajeesh of Microsoft, how may I assist you?" + "\n" + "Payment: 170 - 340" + som + "\n" + "Fail Rate: 15%" + "\n" + "Level Requirement: 2+", true)
-        .addField("Saudi Comedian", "Make Allah laugh" + "\n" + "Payment: 270 - 600" + som + "\n" + "Fail Rate: 23%" + "\n" + "Level Requirement: 2+", true)
-    
-        .setColor("RANDOM");
+        .setDescription(`List of available jobs`, `FORMAT EXAMPLE: -uz employ preacher`)
+        .addField("Preacher", "Praise allah to pay off allah" + "\n" + "Payment: 60 - 190" + som + "\n" + "Fail Rate: 10%" + "\n" +  "Level Requirement: 0+", true)
+        .addField("Street Merchant", "Sell your trash to dumb niggas" + "\n" + "Payment: 100 - 275" + som + "\n" + "Fail Rate: 17%" + "\n" + "Level Requirement: 0+", true)
+        .addField("Hijab Maker", "Cover em up" + "\n" + "Payment: 150 - 360" + som + "\n" + "Fail Rate: 12%" + "\n" + "Level Requirement: 1+", true)
+        .addField("Executioner", "Fun job for everyone" + "\n" + "Payment: 100 - 250" + som + "\n" + "Fail Rate: 6%" + "\n" + "Level Requirement: 1+", true)
+        .addField("Tech Support", "Hello this is Rajeesh of Microsoft, how may I assist you?" + "\n" + "Payment: 300 - 650" + som + "\n" + "Fail Rate: 15%" + "\n" + "Level Requirement: 2+", true)
+        .addField("Saudi Comedian", "Make Allah laugh" + "\n" + "Payment: 500 - 920" + som + "\n" + "Fail Rate: 23%" + "\n" + "Level Requirement: 2+", true)
+        .addField("Kaaba Repairman", "Fix the holy block please" + "\n" + "Payment: 270 - 600" + som + "\n" + "Fail Rate: 18%" + "\n" + "Level Requirement: 2+", true)
+        .addField("Quran Printer", "Print holy books for Allah" + "\n" + "Payment: 370 - 810" + som + "\n" + "Fail Rate: 16%" + "\n" + "Level Requirement: 3+", true)
+        .addField("ISIS Manager", "Show the infidels who's the boss" + "\n" + "Payment: 660 - 1060" + som + "\n" + "Fail Rate: 26%" + "\n" + "Level Requirement: 3+", true)
+        .addField("Terrorist", "I don't like big towers" + "\n" + "Payment: 870 - 1380" + som + "\n" + "Fail Rate: 30%" + "\n" + "Level Requirement: 4+", true)
+        .addField("Shitting Street Supervisor", "Pajeet say no to Poo2Loo" + "\n" + "Payment: 570 - 990" + som + "\n" + "Fail Rate: 14%" + "\n" + "Level Requirement: 4+", true)
+        .addField("Gay Stripper", "Appeal to the gay" + "\n" + "Payment: 2400 - 4800" + som + "\n" + "Fail Rate: 69%" + "\n" + "Level Requirement: 5+", true)
+        .addField("Booze Smuggler", "Pay for drink and drive please" + "\n" + "Payment: 1230 - 1940" + som + "\n" + "Fail Rate: 30%" + "\n" + "Level Requirement: 4+", true)
+    .setColor("RANDOM");
   message.channel.send(embed);
     db.set(`canWork_${message.author.id}`, true);
 }
