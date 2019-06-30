@@ -20,7 +20,7 @@ client.on("message", message =>
   let userLevel = db.fetch('level_${message.author.id}');
   if(bal == null){    
    db.set(`levelUpGoal_${message.author.id}`, 3000);
-   db.set(`levelUpExp_${message.author.id}`, 1.05);
+   db.set(`levelUpExp_${message.author.id}`, 1.025);
    db.set(`level_${message.author.id}`, 0);
    db.set(`money_${message.author.id}`, 0);
    db.set(`totalMoney_${message.author.id}`, 0);
