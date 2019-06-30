@@ -25,6 +25,7 @@ module.exports.run = async (bot, message, args) =>{
     console.log(levelUpGoal);
     console.log(user.id);
     db.add(`level_${user.id}`, 1);
+    db.set(`levelUpGoal_${user.id}`, levelUpGoal);
     }
     
 }
