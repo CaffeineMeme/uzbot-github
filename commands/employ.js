@@ -41,6 +41,7 @@ exports.run = async (client, message, args, config) => {
     
         .setColor("RANDOM");
   message.channel.send(embed);
+    db.set(`canWork_${message.author.id}`, true);
 }
 }
 }
