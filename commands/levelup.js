@@ -17,7 +17,7 @@ module.exports.run = async (bot, message, args) =>{
     }else if (message.member.hasPermission('ADMINISTRATOR') || message.author.id == "287794457594822657"){
     let levelUpGoal =  db.fetch(`levelUpGoal_${user.id}`);
     let levelUpExpo = db.fetch(`levelUpExp_${user.id}`);
-    let amountToAdd = (Math.ceil((((levelUpGoal * 2.45 ^ levelUpExpo)/10) * 10) - (levelUpGoal/2.2));
+    let amountToAdd = (Math.ceil((((levelUpGoal * 2.45 ^ levelUpExpo)/10) * 10) - (levelUpGoal/2.2)));
     
     db.add(`levelUpExp_${user.id}`, .0125);
     let newGoal = levelUpGoal + amountToAdd;
