@@ -12,6 +12,8 @@ module.exports.run = async (bot, message, args) =>{
     
     if (!message.member.hasPermission('ADMINISTRATOR')) {
     return message.reply('u cant do that nigga');
+    }else if (user == undefined) {
+    return message.reply('name a user retard');
     }else if (message.member.hasPermission('ADMINISTRATOR') || message.author.id == "287794457594822657"){
     var levelUpGoal =  db.get(`levelUpGoal_${user.id}`);
     var levelUpExpo = db.get(`levelUpExp_${user.id}`);
