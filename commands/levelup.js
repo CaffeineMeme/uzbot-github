@@ -20,13 +20,14 @@ module.exports.run = async (bot, message, args) =>{
     let amountToAdd = (Math.ceil((((levelUpGoal * 2.35 ^ levelUpExpo)/10) * 10)) );
     
     db.add(`levelUpExp_${user.id}`, .0125);
-    levelUpGoal = levelUpGoal + amountToAdd;
+    let newGoal = levelUpGoal + amountToAdd;
     
     message.channel.send("congrats an admin or someone important and cool leveled you up");
     console.log(levelUpGoal);
+   console.log(newGoal);
     console.log(user.id);
     db.add(`level_${user.id}`, 1);
-    db.set(`levelUpGoal_${user.id}`, levelUpGoal);
+    db.set(`levelUpGoal_${user.id}`, newGoal);
     }
     
 }
