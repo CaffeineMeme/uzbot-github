@@ -16,7 +16,7 @@ client.on("message", message =>
   
   client.user.setActivity('-uz help for commands | Currently in ' + client.guilds.size + ' servers');
   
-  let bal = db.fetch(`totalMoney_${message.author.id}`);
+  /*let bal = db.fetch(`totalMoney_${message.author.id}`);
   let userLevel = db.fetch('level_${message.author.id}');
   if(bal == null){    
    db.set(`levelUpGoal_${message.author.id}`, 3000);
@@ -33,7 +33,7 @@ client.on("message", message =>
     db.set(`levelUpGoal_${message.author.id}`, (Math.ceil((((levelUpGoal * 2.5 ^ levelUpExpo) - (levelUpGoal * 0.2) + 1)/10) * 10)));
     message.channel.send("congrats a nigga leveled up");
     db.add(`level_${message.author.id}`, 1);
-  }
+  }*/
 });
 
 fs.readdir("./events/", (err, files) => {
