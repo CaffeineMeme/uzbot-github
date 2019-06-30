@@ -45,7 +45,7 @@ exports.run = async (client, message, args, config) => {
         earnMin = 100;
         failMin = 0;
         failMax = 17;
-        if(cooldownTime = 0) {
+        if(cooldownTime == 0) {
         cooldownTime =  db.set(`jobWait_${message.author.id}`, 20);
         }
         successMsg = "You sold your garbage to dumbasses and got ";
@@ -56,7 +56,7 @@ exports.run = async (client, message, args, config) => {
         earnMin = 150;
         failMin = 0;
         failMax = 12;
-            if(cooldownTime = 0) {
+            if(cooldownTime == 0) {
          cooldownTime = db.set(`jobWait_${message.author.id}`, 30);
             }
             successMsg = "The hijab covers her face well, so you get ";
@@ -67,7 +67,7 @@ exports.run = async (client, message, args, config) => {
         earnMin = 100;
         failMin = 0;
         failMax = 6;
-            if(cooldownTime = 0) {
+            if(cooldownTime == 0) {
         cooldownTime =  db.set(`jobWait_${message.author.id}`, 35);
             }
         successMsg = "The head flies and the prince throws you ";
@@ -78,7 +78,7 @@ exports.run = async (client, message, args, config) => {
         earnMin = 300;
         failMin = 0;
         failMax = 15;
-            if(cooldownTime = 0) {
+            if(cooldownTime == 0) {
          cooldownTime = db.set(`jobWait_${message.author.id}`, 25);
             }
         successMsg = "You get the dumdum's bank account and grab a nice ";
@@ -89,7 +89,7 @@ exports.run = async (client, message, args, config) => {
         earnMin = 500;
         failMin = 0;
         failMax = 22;
-            if(cooldownTime = 0) {
+            if(cooldownTime == 0) {
         cooldownTime = db.set(`jobWait_${message.author.id}`, 55);
             }
         successMsg = "You make a funny and get ";
