@@ -16,14 +16,15 @@ client.on("message", message =>
   
   client.user.setActivity('-uz help for commands | Currently in ' + client.guilds.size + ' servers');
   
-  /*let bal = db.fetch(`totalMoney_${message.author.id}`);
+  let bal = db.fetch(`totalMoney_${message.author.id}`);
   let userLevel = db.fetch('level_${message.author.id}');
   if(bal == null){    
    db.set(`levelUpGoal_${message.author.id}`, 3000);
    db.set(`levelUpExp_${message.author.id}`, 1.05);
    db.set(`level_${message.author.id}`, 0);
-   db.set(`bal_${message.author.id}`, 0);
-  }
+   db.set(`money_${message.author.id}`, 0);
+   db.set(`totalMoney_${message.author.id}`, 0);
+  }/*
   if(bal >= levelUpGoal)
   {
     
