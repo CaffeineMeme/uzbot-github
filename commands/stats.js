@@ -25,6 +25,11 @@ module.exports.run = async (client, message, args) => {
              bal = 0
         }
         
+         if(progress == null)
+        {
+             progress = 0
+        }
+        
         let jobTitle =  job.charAt(0).toUpperCase() + job.slice(1);
         
         let embed = new Discord.RichEmbed()
