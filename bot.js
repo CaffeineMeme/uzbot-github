@@ -26,6 +26,7 @@ client.on("message", message =>
    db.set(`totalMoney_${message.author.id}`, 0);
    db.set(`job_${message.author.id}`, "Unemployed lol");
    db.set(`canWork_${message.author.id}`, true);
+   db.set(`canApply_${message.author.id}`, true);
   }/*
   if(bal >= levelUpGoal)
   {
