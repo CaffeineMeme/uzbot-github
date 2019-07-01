@@ -9,6 +9,7 @@ const botPath = path.resolve('bot.js');
 
 module.exports.run = async (bot, message, args) =>{
     let user = message.mentions.users.first();
+    let level =  db.fetch(`level_${user.id}`)
     
     if (!message.member.hasPermission('ADMINISTRATOR')) {
     return message.reply('u cant do that nigga');
