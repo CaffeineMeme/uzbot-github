@@ -153,7 +153,7 @@ exports.run = async (client, message, args, config) => {
         failMin = 0;
         failMax = 26;
             if(canWork = true) {
-        cooldownTime = db.set(`jobWait_${message.author.id}`, 75);
+        cooldownTime = db.set(`jobWait_${message.author.id}`, 65);
             }
         successMsg = "You send your best men to kill the infidels and they loot ";
         successMsg2 = " from the pigs and give it to you";
@@ -177,9 +177,9 @@ exports.run = async (client, message, args, config) => {
         earnMax = 2400;
         earnMin = 4800;
         failMin = 0;
-        failMax = 69;
+        failMax = 41;
             if(canWork = true) {
-        cooldownTime = db.set(`jobWait_${message.author.id}`, 120);
+        cooldownTime = db.set(`jobWait_${message.author.id}`, 100);
             }
         successMsg = "You strip like a mega gay and the fags toss you ";
         successMsg2 = " which you stuff in your ass";
@@ -190,7 +190,7 @@ exports.run = async (client, message, args, config) => {
         earnMax = 1230;
         earnMin = 1990;
         failMin = 0;
-        failMax = 30;
+        failMax = 27;
             if(canWork = true) {
         cooldownTime = db.set(`jobWait_${message.author.id}`, 40);
             }
