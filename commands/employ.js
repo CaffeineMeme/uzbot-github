@@ -7,7 +7,7 @@ var canApply;
 exports.run = async (client, message, args, config) => {
   let cooldown = db.fetch(`jobCooldown_${message.author.id}`);
   let som = client.emojis.find(emoji => emoji.name === "som");
-  let canApply = db.fetch(`canWork_${message.author.id}`);
+  let canApply = db.fetch(`canApply_${message.author.id}`);
   if(canApply == false){
     message.channel.send('work more and then you can quit bro') 
   }else {
@@ -26,7 +26,7 @@ exports.run = async (client, message, args, config) => {
     message.channel.send("okay you are a " + jobTitle + " now, gl bro" + "\n" + "If you wanna quit you gotta wait an hour");
     db.set(`canWork_${message.author.id}`, false);
      db.set(`jobCooldown_${message.author.id}`, 360);
-     setTimeout(  () => {    db.set(`canWork_${message.author.id}`, true);  },  cooldown * 1000);
+     setTimeout(  () => {    db.set(`canApply_${message.author.id}`, true);  },  cooldown * 1000);
     }
     }
   }else{
@@ -49,7 +49,7 @@ exports.run = async (client, message, args, config) => {
         .addField("Booze Smuggler", "Pay for drink and drive please" + "\n" + "Payment: 1230 - 1940" + som + "\n" + "Fail Rate: 28%" + "\n" + "Level Requirement: 4+", true)
     .setColor("RANDOM");
   message.channel.send(embed);
-    db.set(`canWork_${message.author.id}`, true);
+    db.set(`canApply_${message.author.id}`, true);
 }
 }
 }
