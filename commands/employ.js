@@ -45,8 +45,8 @@ exports.run = async (client, message, args, config) => {
         .addField("ISIS Manager", "Show the infidels who's the boss" + "\n" + "Payment: 660 - 1060" + som + "\n" + "Fail Rate: 26%" + "\n" + "Level Requirement: 3+", true)
         .addField("Terrorist", "I don't like big towers" + "\n" + "Payment: 870 - 1380" + som + "\n" + "Fail Rate: 30%" + "\n" + "Level Requirement: 4+", true)
         .addField("Shitting Street Supervisor", "Pajeet say no to Poo2Loo" + "\n" + "Payment: 570 - 990" + som + "\n" + "Fail Rate: 14%" + "\n" + "Level Requirement: 4+", true)
-        .addField("Gay Stripper", "Appeal to the gay" + "\n" + "Payment: 2400 - 4800" + som + "\n" + "Fail Rate: 69%" + "\n" + "Level Requirement: 5+", true)
-        .addField("Booze Smuggler", "Pay for drink and drive please" + "\n" + "Payment: 1230 - 1940" + som + "\n" + "Fail Rate: 30%" + "\n" + "Level Requirement: 4+", true)
+        .addField("Gay Stripper", "Appeal to the gay" + "\n" + "Payment: 2400 - 4800" + som + "\n" + "Fail Rate: 42%" + "\n" + "Level Requirement: 5+", true)
+        .addField("Booze Smuggler", "Pay for drink and drive please" + "\n" + "Payment: 1230 - 1940" + som + "\n" + "Fail Rate: 28%" + "\n" + "Level Requirement: 4+", true)
     .setColor("RANDOM");
   message.channel.send(embed);
     db.set(`canWork_${message.author.id}`, true);
