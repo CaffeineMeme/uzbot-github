@@ -22,7 +22,7 @@ exports.run = async (client, message, args, config) => {
     console.log(job);
     
     if(canWork === true){
-        if (job == undefined || job == null){
+        if (job == undefined || job == null || job == "Unemployed lol"){
             earnMax = 0;
             minimum = 0;
             failMax = 0;
