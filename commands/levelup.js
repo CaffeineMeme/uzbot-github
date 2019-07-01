@@ -28,7 +28,7 @@ module.exports.run = async (bot, message, args) =>{
     }else if(level > 0 && level < 6){
     newGoal = Math.round((levelUpGoal * 0.875) + amountToAdd);   
     }else if(level > 5){
-    newGoal = Math.round((levelUpGoal * 0.6) + (amountToAdd * 0.8));   
+    newGoal = Math.round((levelUpGoal * 0.65) + (amountToAdd * 0.85));   
     }
     
     message.channel.send("congrats an admin or someone important and cool leveled you up");
