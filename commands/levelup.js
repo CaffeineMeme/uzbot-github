@@ -9,7 +9,6 @@ const botPath = path.resolve('bot.js');
 
 module.exports.run = async (bot, message, args) =>{
     let user = message.mentions.users.first();
-    let level =  db.fetch(`level_${user.id}`);
     
     if (!message.member.hasPermission('ADMINISTRATOR')) {
     return message.reply('u cant do that nigga');
@@ -21,6 +20,8 @@ module.exports.run = async (bot, message, args) =>{
     let amountToAdd = (Math.ceil(((((levelUpGoal * 1.35) ^ levelUpExpo)/10) * 10) - (levelUpGoal * 0.4)));
     
     db.add(`levelUpExp_${user.id}`, .0035);
+        
+    let level =  db.get(`level_${user.id}`);
     if(level == 0){
     let newGoal = Math.round((levelUpGoal * 1.2) + amountToAdd);
     }else{
