@@ -20,7 +20,11 @@ module.exports.run = async (bot, message, args) =>{
     let amountToAdd = (Math.ceil(((((levelUpGoal * 1.35) ^ levelUpExpo)/10) * 10) - (levelUpGoal * 0.4)));
     
     db.add(`levelUpExp_${user.id}`, .0035);
-    let newGoal = Math.round((levelUpGoal * 0.875) + amountToAdd);
+    if(level == 0){
+    let newGoal = Math.round((levelUpGoal * 1.2) + amountToAdd);
+    }else{
+     let newGoal = Math.round((levelUpGoal * 0.875) + amountToAdd);   
+    }
     
     message.channel.send("congrats an admin or someone important and cool leveled you up");
     console.log(levelUpGoal);
