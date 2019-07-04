@@ -46,10 +46,11 @@ exports.run = async (client, message, args, config) => {
     .setColor("RANDOM");
   message.channel.send(embed);
   pageNum = 1;
-  client.on('messageReactionAdd', (reaction, user) => {
+  
   message.react(':arrow_backward:');
   message.react(':arrow_forward:');
   message.react(':stop_button:');
+    client.on('messageReactionAdd', (reaction, user) => {
   if(reaction.emoji.name == ':arrow_backward:' && reaction.count >= 2)
   {
     reaction.remove(message.author.id);
@@ -72,7 +73,7 @@ exports.run = async (client, message, args, config) => {
   {
     message.delete();
   }
-  }
+  });
             
  if(pageNum == 1){
     let embed = new Discord.RichEmbed()
