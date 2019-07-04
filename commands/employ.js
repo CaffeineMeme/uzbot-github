@@ -44,14 +44,14 @@ exports.run = async (client, message, args, config) => {
         .addField("Kaaba Repairman", "Fix the holy block please" + "\n" + "Payment: 270 - 600" + som + "\n" + "Fail Rate: 18%" + "\n" + "Level Requirement: 2+", true)
 
     .setColor("RANDOM");
-  message.channel.send(embed);
+  message.channel.send(embed).then((msg)=>{
   pageNum = 1;
   
-  message.react('arrow_backward');
-  message.react('arrow_forward');
-  message.react('stop_button');
+  message.react('⬅️');
+  message.react('➡️');
+  message.react('⏹');
     client.on('messageReactionAdd', (reaction, user) => {
-  if(reaction.emoji.name == 'arrow_backward' && reaction.count >= 2)
+  if(reaction.emoji.name == '⬅️' && reaction.count >= 2)
   {
     reaction.remove(message.author.id);
     if(pageNum > 1)
@@ -60,7 +60,7 @@ exports.run = async (client, message, args, config) => {
     }
   }
     
-  if(reaction.emoji.name == 'arrow_forward' && reaction.count >= 2)
+  if(reaction.emoji.name == '➡️' && reaction.count >= 2)
   {
     reaction.remove(message.author.id);
     if(pageNum < 2)
@@ -69,7 +69,7 @@ exports.run = async (client, message, args, config) => {
     }
   }
     
-  if(reaction.emoji.name == 'stop' && reaction.count >= 2)
+  if(reaction.emoji.name == '⏹' && reaction.count >= 2)
   {
     message.delete();
   }
@@ -105,6 +105,7 @@ exports.run = async (client, message, args, config) => {
     .setColor("RANDOM");
    
    message.edit(embed);
+     });
  }
     
     db.set(`canApply_${message.author.id}`, true);
