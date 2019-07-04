@@ -6,7 +6,6 @@ var canApply;
 var pageNum;
 
 exports.run = async (client, message, args, config) => {
-  bot.on('messageReactionAdd', (reaction, user) => {
   let cooldown = db.fetch(`jobCooldown_${message.author.id}`);
   let som = client.emojis.find(emoji => emoji.name === "som");
   let canApply = db.fetch(`canApply_${message.author.id}`);
@@ -47,6 +46,7 @@ exports.run = async (client, message, args, config) => {
     .setColor("RANDOM");
   message.channel.send(embed);
   pageNum = 1;
+  client.on('messageReactionAdd', (reaction, user) => {
   message.react(':arrow_backward:');
   message.react(':arrow_forward:');
   message.react(':stop_button:');
@@ -72,7 +72,8 @@ exports.run = async (client, message, args, config) => {
   {
     message.delete();
   }
-    
+  }
+            
  if(pageNum == 1){
     let embed = new Discord.RichEmbed()
         .setAuthor(`${message.author.tag}`, message.author.displayAvatarURL) 
@@ -109,5 +110,4 @@ exports.run = async (client, message, args, config) => {
 }
 }
 }
-     }
 /* || ((jobTitle == "tech support" || == "saudi comedian") && level == 2) || ((jobTitle == "quran printer" || jobTitle == "ISIS manager") && level == 3) || ((jobTitle == "terrorist" || jobTitle == "shitting street supervisor") && level == 4)*/
