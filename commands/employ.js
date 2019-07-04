@@ -100,7 +100,7 @@ exports.run = async (client, message, args, config) => {
         .addField("Terrorist", "I don't like big towers" + "\n" + "Payment: 870 - 1380" + som + "\n" + "Fail Rate: 30%" + "\n" + "Level Requirement: 4+", true)
         .addField("Shitting Street Supervisor", "Pajeet say no to Poo2Loo" + "\n" + "Payment: 570 - 990" + som + "\n" + "Fail Rate: 14%" + "\n" + "Level Requirement: 4+", true)
         .addField("Gay Stripper", "Appeal to the gay" + "\n" + "Payment: 2400 - 4800" + som + "\n" + "Fail Rate: 42%" + "\n" + "Level Requirement: 5+", true)
-        .addField("Booze Smuggler", "Pay for drink and drive please" + "\n" + "Payment: 1230 - 1940" + som + "\n" + "Fail Rate: 28%" + "\n" + "Level Requirement: 5+", true) Rate: 18%" + "\n" + "Level Requirement: 2+", true)
+        .addField("Booze Smuggler", "Pay for drink and drive please" + "\n" + "Payment: 1230 - 1940" + som + "\n" + "Fail Rate: 28%" + "\n" + "Level Requirement: 5+", true)
 
     .setColor("RANDOM");
    
