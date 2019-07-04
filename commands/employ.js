@@ -105,8 +105,8 @@ exports.run = async (client, message, args, config) => {
     .setColor("RANDOM");
    
    message.edit(embed);
-     });
- }
+     }
+ });
     
     db.set(`canApply_${message.author.id}`, true);
 }
