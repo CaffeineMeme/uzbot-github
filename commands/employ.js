@@ -24,7 +24,8 @@ exports.run = async (client, message, args, config) => {
     //if((jobTitle == "preacher" || jobTitle == "street merchant") || ((jobTitle == "hijab maker" || jobTitle == "executioner") && level == 1) || ((jobTitle == "tech support" || jobTitle == "saudi comedian" || jobTitle == "kaaba repairman") && level == 2) || ((jobTitle == "quran printer" || jobTitle == "ISIS manager") && level == 3) || ((jobTitle == "terrorist" || jobTitle == "shitting street supervisor") && level == 4) || ((jobTitle == "gay stripper" || jobTitle = "booze smuggler") && level == 5)){
     db.set(`job_${message.author.id}`, jobTitle); 
     message.channel.send("okay you are a " + jobTitle + " now, gl bro" + "\n" + "If you wanna quit you gotta wait an hour");
-    db.set(`canWork_${message.author.id}`, false);
+    db.set(`canWork_${message.author.id}`, true);
+    db.set(`canApply_${message.author.id}`, true);
      db.set(`jobCooldown_${message.author.id}`, 360);
      setTimeout(  () => {    db.set(`canApply_${message.author.id}`, true);  },  cooldown * 1000);
     }
