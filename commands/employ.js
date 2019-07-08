@@ -31,11 +31,11 @@ exports.run = async (client, message, args, config) => {
      setTimeout(  () => {    db.set(`canApply_${message.author.id}`, true);  },  cooldown * 1000);
     }
     }
-  }else if((args[0] != null || args[0] != undefined) && !isNaN(args[0]) && (args[0] =< limit && args[0] > 0)){
+  }else if((args[0] != null || args[0] != undefined) && !isNaN(args[0]) && (args[0] < limit && args[0] > 0)){
     message.channel.send();
     let embed = new Discord.RichEmbed()
         .setAuthor(`${message.author.tag}`, message.author.displayAvatarURL) 
-        .setDescription('Page ' + args[0] + " of Job Listings", "Page " + args[0] + "of " + limit)
+        .setDescription('Page ' + args[0] + " of Job Listings", "Page " + args[0] + "of " + limit - 1)
         if(args[0] == 1){
         .addField("Preacher", "Praise allah to pay off allah" + "\n" + "Payment: 60 - 190" + som + "\n" + "Fail Rate: 10%" + "\n" +  "Level Requirement: 0+", true)
         .addField("Street Merchant", "Sell your trash to dumb niggas" + "\n" + "Payment: 100 - 275" + som + "\n" + "Fail Rate: 17%" + "\n" + "Level Requirement: 0+", true)
