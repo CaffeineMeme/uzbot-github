@@ -51,6 +51,23 @@ exports.run = async (client, message, args, config) => {
     .setColor("RANDOM");
   message.channel.send(embed);
     db.set(`canApply_${message.author.id}`, true);
+
+const collector = message.createReactionCollector((reaction, user) => 
+    user.id === message.author.id &&
+    reaction.emoji.name === "◀" ||
+    reaction.emoji.name === "▶" ||
+    reaction.emoji.name === "❌"
+).once("collect", reaction => {
+    const chosen = reaction.emoji.name;
+    if(chosen === "◀"){
+        console.log("workinglol");
+    }else if(chosen === "▶"){
+        console.log("lolworking");
+    }else{
+        console.log("fart");
+    }
+    collector.stop();
+});
 }
 }
 }
