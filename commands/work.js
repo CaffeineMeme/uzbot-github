@@ -29,6 +29,7 @@ exports.run = async (client, message, args, config) => {
             failMin = 0;
             cooldownTime = 0;
             message.channel.send("you don't have a job, use -uz employ to get one");
+            canWork = db.set(`canWork_${message.author.id}`, true);
         }else{
         if (job == 'preacher') {
         earnMax = 190;
