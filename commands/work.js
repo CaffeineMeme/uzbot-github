@@ -18,6 +18,8 @@ exports.run = async (client, message, args, config) => {
     let som = client.emojis.find(emoji => emoji.name === "som");
     let cooldownTime = db.fetch(`jobWait_${message.author.id}`);
     let canWork = db.fetch(`canWork_${message.author.id}`);
+    let failMod = db.fetch(`failMod_${message.author.id}`);
+    let earnMult = db.fetch(`earningsMulti_${message.author.id}`);
     
     console.log(job);
     
@@ -44,7 +46,7 @@ exports.run = async (client, message, args, config) => {
         failSmg = "You made allah fuckin angry so he pissed on you and stole ";
             failSmg2 = " in reparations";
         }
-        else if (job == 'street merchant') {
+        else if (job == 'chinese sweatshop worker') {
         earnMax = 275;
         earnMin = 100;
         failMin = 0;
@@ -57,7 +59,7 @@ exports.run = async (client, message, args, config) => {
         failSmg = "Some niggas stole your shit and you lost about ";
             failSmg2 = " and like half your stock";
         }
-        else if (job == 'hijab maker') {
+        else if (job == 'dildo designer') {
         earnMax = 360;
         earnMin = 150;
         failMin = 0;
@@ -65,10 +67,10 @@ exports.run = async (client, message, args, config) => {
             if(canWork = true) {
          db.set(`jobWait_${message.author.id}`, 30);
             }
-            successMsg = "The hijab covers her face well, so you get ";
-            successMsg2 = "";
-        failSmg = "The hijab falls apart, and your client is beat to paralysis by the police, so she steals ";
-            failSmg2 = " from you";
+            successMsg = "Your client slips it in an nuts, she gives you ";
+            successMsg2 = " but it's kinda sticky";
+        failSmg = "Your client falls on the dildo but its not ready yet so she get impaled and steals";
+            failSmg2 = " from you for medical costs";
         }
         else if (job == 'executioner') {
         earnMax = 250;
@@ -109,7 +111,7 @@ exports.run = async (client, message, args, config) => {
         failSmg = "You make the audience mad. They stone you and medical bills cost ";
             failSmg2 = "";
         }
-        else if (job == 'kaaba repairman') {
+        else if (job == 'somali pirate') {
         earnMax = 600;
         earnMin = 270;
         failMin = 0;
@@ -117,12 +119,12 @@ exports.run = async (client, message, args, config) => {
             if(canWork = true) {
         cooldownTime = db.set(`jobWait_${message.author.id}`, 30);
             }
-        successMsg = "You fix the kaaba very good and Allah gives you ";
+        successMsg = "You pirate very good movie and earn ";
             successMsg2 = "";
-        failSmg = "You chip off a block killing a diciple and their hospital bill costs ";
+        failSmg = "You pirate a porno and it's not a good one, so you are robbed and lose ";
             failSmg2 = "";
         }
-        else if (job == 'quran printer') {
+        else if (job == 'peru counterfeiter') {
         earnMax = 810;
         earnMin = 370;
         failMin = 0;
@@ -130,10 +132,10 @@ exports.run = async (client, message, args, config) => {
             if(canWork = true) {
         cooldownTime = db.set(`jobWait_${message.author.id}`, 25);
             }
-        successMsg = "You print a nice quran and get ";
+        successMsg = "You make a very good money and you earn ";
              successMsg2 = "";
-        failSmg = "Your dumb ass printed it all in English and you need to reprint, and you spend ";
-        failSmg2 = " to make arab subtitles";
+        failSmg = "You printed the wrong currency and you spend ";
+        failSmg2 = " to fix it";
         }
         else if (job == 'ISIS manager') {
         earnMax = 600;
@@ -148,7 +150,7 @@ exports.run = async (client, message, args, config) => {
         failSmg = "Some of your best men are killed and you have to pay a lowly peasant ";
         failSmg2 = " to fetch their AK47s, after all, you can't let them go to waste";
         }
-        else if (job == 'terrorist') {
+        else if (job == 'fursuit designer') {
         earnMax = 600;
         earnMin = 1160;
         failMin = 0;
@@ -156,10 +158,10 @@ exports.run = async (client, message, args, config) => {
             if(canWork = true) {
         cooldownTime = db.set(`jobWait_${message.author.id}`, 65);
             }
-        successMsg = "You send your best men to kill the infidels and they loot ";
-        successMsg2 = " from the pigs and give it to you";
-        failSmg = "Some of your best men are killed and you have to pay a lowly peasant ";
-        failSmg2 = " to fetch their AK47s, after all, you can't let them go to waste";
+        successMsg = "You make an epic yiffsuit and the retard pays ";
+        successMsg2 = " for it";
+        failSmg = "The fursuit burns and your client rapes you for it, legal fees cost you ";
+        failSmg2 = " ";
         }
         else if (job == 'street shitting supervisor') {
         earnMax = 570;
@@ -187,7 +189,7 @@ exports.run = async (client, message, args, config) => {
         failSmg = "The police bust the bar and shoot everyone in the bar and you get shot in the cock. Repairs cost ";
         failSmg2 = " and they overcharge because you're gay";
         }
-             else if (job == 'booze smuggler') {
+             else if (job == 'male gynecologist') {
         earnMax = 1230;
         earnMin = 1990;
         failMin = 0;
@@ -195,15 +197,15 @@ exports.run = async (client, message, args, config) => {
             if(canWork = true) {
         cooldownTime = db.set(`jobWait_${message.author.id}`, 40);
             }
-        successMsg = "You sell booze to the infidel and make ";
-        successMsg2 = " before you ask Allah for forgiveness";
-        failSmg = "The saudi prince sees you and steals all of your booze for himself. Oh yeah and he also steals ";
-        failSmg2 = " for recoupment fines.";
+        successMsg = "You check her pussy and resist busting a nut, earing you ";
+        successMsg2 = " ";
+        failSmg = "You accidentially rape your client, landing you and jail, and you pay ";
+        failSmg2 = " for bail.";
         }
             
         
         
-        let fail = Math.floor(Math.random() * (100 - 0 + 1)) + 0;
+        let fail = (Math.floor(Math.random() * (100 - 0 + 1)) + 0) - failMod;
         let amount = Math.floor(Math.random() * (earnMax - earnMin + 1)) + earnMin;
         
         if(fail <= failMax)
@@ -213,7 +215,7 @@ exports.run = async (client, message, args, config) => {
             .setDescription(`${message.author} , ${failSmg}${amount}${som}${failSmg2}`)
             .setColor("RANDOM");
             message.channel.send(embed);
-             db.add(`money_${message.author.id}`, (amount * -1));
+             db.add(`money_${message.author.id}`, ((amount * -1) * earnMult));
             db.set(`canWork_${message.author.id}`, false);
             setTimeout(  () => {   db.set(`canWork_${message.author.id}`, true);  },  cooldownTime * 1000);
         }else
