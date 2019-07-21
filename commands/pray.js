@@ -25,7 +25,7 @@ exports.run = async (client, message, args, config) => {
   }
   else
   {
-    db.add('money_${message.author.id}`, amount * -1);
+    db.add(`money_${message.author.id}`, amount * -1);
   }
   
   if(fail <= failMax)
@@ -70,7 +70,7 @@ exports.run = async (client, message, args, config) => {
    else
         {
           var minimum = 1;
-		      var maximum = 3;
+          var maximum = 3;
           var numberPoop = Math.floor(Math.random() * (maximum - minimum + 1)) + minimum;
           switch(numberPoop)
           {
