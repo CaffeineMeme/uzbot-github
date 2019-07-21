@@ -42,6 +42,8 @@ exports.run = async (client, message, args, config) => {
         .addField("Tech Support", "Hello this is Rajeesh of Microsoft, how may I assist you?" + "\n" + "Payment: 300 - 650" + som + "\n" + "Fail Rate: 15%" + "\n" + "Level Requirement: 2+", true)
         .addField("Saudi Comedian", "Make Allah laugh" + "\n" + "Payment: 500 - 920" + som + "\n" + "Fail Rate: 23%" + "\n" + "Level Requirement: 2+", true)
          .setColor("RANDOM");
+          message.channel.send(embed);
+          db.set(`canApply_${message.author.id}`, true);
         }else if(args[0] == 2){
          let embed = new Discord.RichEmbed()
         .setAuthor(`${message.author.tag}`, message.author.displayAvatarURL) 
@@ -54,9 +56,9 @@ exports.run = async (client, message, args, config) => {
         .addField("Gay Stripper", "Appeal to the gay" + "\n" + "Payment: 2400 - 4800" + som + "\n" + "Fail Rate: 42%" + "\n" + "Level Requirement: 5+", true)
         .addField("Male Gynecologist", "Vagina inspection" + "\n" + "Payment: 1230 - 1940" + som + "\n" + "Fail Rate: 28%" + "\n" + "Level Requirement: 5+", true)
          .setColor("RANDOM");
+          message.channel.send(embed);
+          db.set(`canApply_${message.author.id}`, true);
         }
-        message.channel.send(embed);
-        db.set(`canApply_${message.author.id}`, true);
 
 }else{
   message.channel.send("you didn't put an valid argument dumbass" + "\n" + "type in a page valid page number to see job listings (ex. -uz employ 2)" + "\n" + "or type in the job you want (ex. -uz employ preacher)");
