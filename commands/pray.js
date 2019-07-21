@@ -64,7 +64,7 @@ exports.run = async (client, message, args, config) => {
              message.channel.send("Your offering makes Allah so mad he takes some more of your money");
             db.set(`prayCool_${message.author.id}`, 30);
             bal = db.fetch(`money_${message.author.id}`);
-            db.add(`money_${message.author.id}`, -1 * Math.floor(bal/12.5));
+            db.add(`money_${message.author.id}`, -1 * Math.floor(bal/8));
             setTimeout(  () => {   db.set(`canPray_${message.author.id}`, true); },  cooldownTime * 1000000);
             break;
             
@@ -98,7 +98,7 @@ exports.run = async (client, message, args, config) => {
             message.channel.send("Allah gives you money for making a good offering");
             db.set(`prayCool_${message.author.id}`, 30);
             bal = db.fetch(`money_${message.author.id}`);
-            db.add(`money_${message.author.id}`, Math.floor(bal/12.5));
+            db.add(`money_${message.author.id}`, Math.floor(bal/8));
             setTimeout(  () => {   db.set(`canPray_${message.author.id}`, true); },  cooldownTime * 1000000);
             break;
 
