@@ -19,7 +19,7 @@ exports.run = async (client, message, args, config) => {
   {
     message.channel.send("you don't even have that much money stupid");
   }
-  else if(args[0] == undefined)
+  else if(args[0] == undefined && canPray == true)
   {
     message.channel.send("you need to put an amount to offer (ex. -uz pray 2000)");
   }
@@ -39,6 +39,7 @@ exports.run = async (client, message, args, config) => {
             message.channel.send("Allah fucking hates your offering so he decides to make you fail more often, lol");
             db.set(`prayCool_${message.author.id}`, 30);
             db.set(`failMod_${message.author.id}`, 25);
+           db.set(`canPray_${message.author.id}`, false);
             setTimeout(  () => {   db.set(`canPray_${message.author.id}`, true); },  cooldownTime * 1000000);
             setTimeout(  () => {   db.set(`failMod_${message.author.id}`, 0); },  cooldownTime * 1000000);
 
@@ -48,6 +49,7 @@ exports.run = async (client, message, args, config) => {
             message.channel.send("Allah spits on your offering, now you earn less and lose more lol better luck next time");
             db.set(`prayCool_${message.author.id}`, 30);
             db.set(`earningsMulti_${message.author.id}`, 1.35);
+			  db.set(`canPray_${message.author.id}`, false);
             setTimeout(  () => {   db.set(`canPray_${message.author.id}`, true); },  cooldownTime * 1000000);
 	    setTimeout(  () => {   db.set(`earningsMulti_${message.author.id}`, 1); },  cooldownTime * 1000000);
             break;
@@ -56,6 +58,7 @@ exports.run = async (client, message, args, config) => {
             message.channel.send("Allah thinks your offering is gay, now you can't work for half an hour lol");
             db.set(`prayCool_${message.author.id}`, 30);
             db.set(`canWork_${message.author.id}`, false);
+			  db.set(`canPray_${message.author.id}`, false);
             setTimeout(  () => {   db.set(`canPray_${message.author.id}`, true); },  cooldownTime * 1000000);
 	    setTimeout(  () => {   db.set(`canWork_${message.author.id}`, true); },  cooldownTime * 1000000);
             break;
@@ -64,6 +67,7 @@ exports.run = async (client, message, args, config) => {
              message.channel.send("Your offering makes Allah so mad he takes some more of your money");
             db.set(`prayCool_${message.author.id}`, 30);
             bal = db.fetch(`money_${message.author.id}`);
+			  db.set(`canPray_${message.author.id}`, false);
             db.add(`money_${message.author.id}`, -1 * Math.floor(bal/8));
             setTimeout(  () => {   db.set(`canPray_${message.author.id}`, true); },  cooldownTime * 1000000);
             break;
@@ -82,6 +86,7 @@ exports.run = async (client, message, args, config) => {
             message.channel.send("Allah loves your offering and makes you more successful");
             db.set(`prayCool_${message.author.id}`, 30);
             db.set(`failMod_${message.author.id}`, -30);
+			  db.set(`canPray_${message.author.id}`, false);
             setTimeout(  () => {   db.set(`failMod_${message.author.id}`, 0); },  cooldownTime * 1000000);
 	    setTimeout(  () => {   db.set(`canPray_${message.author.id}`, true);},  cooldownTime * 1000000);
             break;
@@ -90,6 +95,7 @@ exports.run = async (client, message, args, config) => {
             message.channel.send("Allah accepts your offering and decides you're cool and should make more money");
             db.set(`prayCool_${message.author.id}`, 30);
             db.set(`earningsMulti_${message.author.id}`, 0.625);
+			  db.set(`canPray_${message.author.id}`, false);
             setTimeout(  () => {   db.set(`canPray_${message.author.id}`, true); },  cooldownTime * 1000000);
 	    setTimeout(  () => {   db.set(`earningsMulti_${message.author.id}`, 1); },  cooldownTime * 1000000);
             break;
@@ -98,6 +104,7 @@ exports.run = async (client, message, args, config) => {
             message.channel.send("Allah gives you money for making a good offering");
             db.set(`prayCool_${message.author.id}`, 30);
             bal = db.fetch(`money_${message.author.id}`);
+			  db.set(`canPray_${message.author.id}`, false);
             db.add(`money_${message.author.id}`, Math.floor(bal/8));
             setTimeout(  () => {   db.set(`canPray_${message.author.id}`, true); },  cooldownTime * 1000000);
             break;
