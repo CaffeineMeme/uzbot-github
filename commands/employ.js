@@ -41,6 +41,7 @@ exports.run = async (client, message, args, config) => {
         .addField("Executioner", "Fun job for everyone" + "\n" + "Payment: 100 - 250" + som + "\n" + "Fail Rate: 6%" + "\n" + "Level Requirement: 1+", true)
         .addField("Tech Support", "Hello this is Rajeesh of Microsoft, how may I assist you?" + "\n" + "Payment: 300 - 650" + som + "\n" + "Fail Rate: 15%" + "\n" + "Level Requirement: 2+", true)
         .addField("Saudi Comedian", "Make Allah laugh" + "\n" + "Payment: 500 - 920" + som + "\n" + "Fail Rate: 23%" + "\n" + "Level Requirement: 2+", true)
+         .setColor("RANDOM");
         }else if(args[0] == 2){
          let embed = new Discord.RichEmbed()
         .setAuthor(`${message.author.tag}`, message.author.displayAvatarURL) 
@@ -51,9 +52,9 @@ exports.run = async (client, message, args, config) => {
         .addField("Fursuit designer", "Yiff yiff" + "\n" + "Payment: 870 - 1380" + som + "\n" + "Fail Rate: 30%" + "\n" + "Level Requirement: 4+", true)
         .addField("Shitting Street Supervisor", "Pajeet say no to Poo2Loo" + "\n" + "Payment: 570 - 990" + som + "\n" + "Fail Rate: 14%" + "\n" + "Level Requirement: 4+", true)
         .addField("Gay Stripper", "Appeal to the gay" + "\n" + "Payment: 2400 - 4800" + som + "\n" + "Fail Rate: 42%" + "\n" + "Level Requirement: 5+", true)
-        .addField("Male Gynecologist", "Vagina inspection" + "\n" + "Payment: 1230 - 1940" + som + "\n" + "Fail Rate: 28%" + "\n" + "Level Requirement: 4+", true)
+        .addField("Male Gynecologist", "Vagina inspection" + "\n" + "Payment: 1230 - 1940" + som + "\n" + "Fail Rate: 28%" + "\n" + "Level Requirement: 5+", true)
+         .setColor("RANDOM");
         }
-        .setColor("RANDOM");
         message.channel.send(embed);
         db.set(`canApply_${message.author.id}`, true);
 
