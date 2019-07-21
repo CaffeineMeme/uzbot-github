@@ -39,14 +39,14 @@ exports.run = async (client, message, args, config) => {
             message.channel.send("Allah fucking hates your offering so he decides to make you fail more often, lol");
             db.set(`prayCool_${message.author.id}`, 30);
             db.set(`failMod_${message.author.id}`, 25);
-            setTimeout(  () => {   db.set(`canPray_${message.author.id}`, true); db.set('failMod_${message.author.id}`, 0); },  cooldownTime * 1000000);
+            setTimeout(  () => {   db.set(`canPray_${message.author.id}`, true); db.set(`failMod_${message.author.id}`, 0); },  cooldownTime * 1000000);
             break;
             
             case 2:
             message.channel.send("Allah spits on your offering, now you earn less and lose more lol better luck next time");
             db.set(`prayCool_${message.author.id}`, 30);
             db.set(`earningsMulti_${message.author.id}`, 1.35);
-            setTimeout(  () => {   db.set(`canPray_${message.author.id}`, true); db.set('earningsMulti_${message.author.id}`, 1); },  cooldownTime * 1000000);
+            setTimeout(  () => {   db.set(`canPray_${message.author.id}`, true); db.set(`earningsMulti_${message.author.id}`, 1); },  cooldownTime * 1000000);
             break;
             
             case 3:
