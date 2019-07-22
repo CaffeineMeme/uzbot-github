@@ -9,8 +9,8 @@ exports.run = async (client, message, args, config) => {
   
   let amount = args[0];
   
-  let fail = Math.floor(Math.random() * (100 - 0 + 1)) + Math.floor(bal/1000);
-  let failMax = 20 + Math.floor(Math.random() * (100 - 0 + 1)/2);
+  let fail = Math.floor(Math.random() * (100 - 0 + 1)) + Math.floor(bal/2000);
+  let failMax = 35 + Math.floor(Math.random() * (100 - 0 + 1)/2);
   
   if(canPray == false){
     message.channel.send("you can't pray yet dumbass");
